@@ -1,26 +1,27 @@
+---
+title: "Quarto Basics"
+format:
+  html:
+    code-fold: true
+jupyter: python3
+---
 
+For a demonstration of a line plot on a polar axis, see @fig-polar.
 
+```{python}
+#| label: fig-polar
+#| fig-cap: "A line plot on a polar axis"
 
-```d2
-# Actors
-hans: Hans Niemann
+import numpy as np
+import matplotlib.pyplot as plt
 
-defendants: {
-  mc: Magnus Carlsen
-  playmagnus: Play Magnus Group
-  chesscom: Chess.com
-  naka: Hikaru Nakamura
-
-  mc -> playmagnus: Owns majority
-  playmagnus <-> chesscom: Merger talks
-  chesscom -> naka: Sponsoring
-}
-
-# Accusations
-hans -> defendants: 'sueing for $100M'
-
-# Claim
-defendants.naka -> hans: Accused of cheating on his stream
-defendants.mc -> hans: Lost then withdrew with accusations
-defendants.chesscom -> hans: 72 page report of cheating
+r = np.arange(0, 2, 0.01)
+theta = 2 * np.pi * r
+fig, ax = plt.subplots(
+  subplot_kw = {'projection': 'polar'} 
+)
+ax.plot(theta, r)
+ax.set_rticks([0.5, 1, 1.5, 2])
+ax.grid(True)
+plt.show()
 ```
