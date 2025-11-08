@@ -1,0 +1,289 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{lastpage}
+
+\geometry{margin=1in}
+
+\definecolor{nis2blue}{RGB}{0,51,153}
+\definecolor{nis2gray}{RGB}{100,100,100}
+\definecolor{urgent}{RGB}{204,0,0}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{nis2blue}{\textbf{NIS2 Early Warning (24h)}}}
+\fancyhead[R]{\includegraphics[height=0.8cm]{logo.png}}
+\fancyfoot[L]{\textcolor{nis2gray}{\small \jobname}}
+\fancyfoot[C]{\textcolor{urgent}{\small\textbf{URGENT - REGULATORY NOTIFICATION}}}
+\fancyfoot[R]{\textcolor{nis2gray}{\small Page \thepage\ of \pageref{LastPage}}}
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=nis2blue,
+    filecolor=nis2blue,
+    urlcolor=nis2blue,
+}
+
+\begin{document}
+
+\begin{center}
+{\Huge\bfseries\textcolor{urgent}{NIS2 EARLY WARNING}}\\
+\vspace{0.3cm}
+{\Large 24-Hour Notification to Competent Authority}\\
+\vspace{0.5cm}
+{\large Directive (EU) 2022/2555 - Article 23(1)}
+\end{center}
+
+\vspace{0.5cm}
+
+\section*{Notification Details}
+
+\subsection*{Entity Information}
+
+\begin{tabular}{|p{4.5cm}|p{9cm}|}
+\hline
+\textbf{Entity Name} & [ORGANIZATION LEGAL NAME] \\
+\hline
+\textbf{Registration Number} & [NIS2 REGISTRATION NUMBER] \\
+\hline
+\textbf{Entity Type} & $\square$ Essential Entity \quad $\square$ Important Entity \\
+\hline
+\textbf{Sector} & [SECTOR - e.g., Energy, Transport, Healthcare, Banking] \\
+\hline
+\textbf{Subsector} & [SUBSECTOR - if applicable] \\
+\hline
+\textbf{Member State} & [COUNTRY] \\
+\hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\subsection*{Contact Point}
+
+\begin{tabular}{|p{4.5cm}|p{9cm}|}
+\hline
+\textbf{Primary Contact} & [NAME] \\
+\hline
+\textbf{Position/Title} & [TITLE - e.g., CISO, CIO] \\
+\hline
+\textbf{Email} & [EMAIL ADDRESS] \\
+\hline
+\textbf{Phone} & [PHONE NUMBER - 24/7 availability] \\
+\hline
+\textbf{Alternative Contact} & [NAME] - [PHONE] - [EMAIL] \\
+\hline
+\end{tabular}
+
+\vspace{1cm}
+
+\section*{Incident Summary}
+
+\subsection*{Incident Identification}
+
+\begin{tabular}{|p{4.5cm}|p{9cm}|}
+\hline
+\textbf{Internal Incident ID} & INC-[YEAR]-[NUMBER] \\
+\hline
+\textbf{Detection Date/Time} & [DATE] at [TIME] [TIMEZONE] \\
+\hline
+\textbf{Notification Date/Time} & [DATE] at [TIME] [TIMEZONE] \\
+\hline
+\textbf{Time Elapsed} & [HOURS] hours since detection \\
+\hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\subsection*{Incident Type}
+
+Select primary incident type:
+
+$\square$ \textbf{Cyber Attack} (specify):
+\begin{itemize}
+    \item $\square$ Ransomware
+    \item $\square$ Malware
+    \item $\square$ DDoS/DoS
+    \item $\square$ Unauthorized Access
+    \item $\square$ Data Breach
+    \item $\square$ Supply Chain Attack
+    \item $\square$ Other: \underline{\hspace{6cm}}
+\end{itemize}
+
+$\square$ \textbf{System Failure}
+\begin{itemize}
+    \item $\square$ Infrastructure failure
+    \item $\square$ Software failure
+    \item $\square$ Configuration error
+\end{itemize}
+
+$\square$ \textbf{Human Error}
+
+$\square$ \textbf{Natural Disaster}
+
+$\square$ \textbf{Other}: \underline{\hspace{8cm}}
+
+\vspace{0.5cm}
+
+\subsection*{Initial Impact Assessment}
+
+\begin{tabular}{|p{4.5cm}|p{9cm}|}
+\hline
+\textbf{Service Disruption} & $\square$ YES \quad $\square$ NO \quad $\square$ Potential \\
+\hline
+\textbf{Services Affected} & [LIST SERVICES] \\
+& \\
+\hline
+\textbf{Geographic Scope} & $\square$ Local \quad $\square$ Regional \quad $\square$ National \\
+& $\square$ Cross-border \quad $\square$ EU-wide \\
+\hline
+\textbf{Users Affected (Est.)} & $\square$ <100 \quad $\square$ 100-1,000 \quad $\square$ 1,000-10,000 \\
+& $\square$ 10,000-100,000 \quad $\square$ >100,000 \\
+\hline
+\textbf{Critical Infrastructure} & $\square$ YES \quad $\square$ NO \\
+\hline
+\end{tabular}
+
+\vspace{1cm}
+
+\section*{Preliminary Information}
+
+\subsection*{Brief Description}
+
+Provide a concise description of the incident (3-5 sentences):
+
+\vspace{4cm}
+
+\subsection*{Current Status}
+
+\begin{tabular}{|p{4.5cm}|p{9cm}|}
+\hline
+\textbf{Incident Ongoing} & $\square$ YES \quad $\square$ NO \quad $\square$ Under Investigation \\
+\hline
+\textbf{Containment Status} & $\square$ Not Contained \quad $\square$ Partially Contained \\
+& $\square$ Fully Contained \\
+\hline
+\textbf{Expected Duration} & [ESTIMATE - hours/days] or $\square$ Unknown \\
+\hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\subsection*{Immediate Actions Taken}
+
+\begin{itemize}
+    \item $\square$ Affected systems isolated
+    \item $\square$ Incident response team activated
+    \item $\square$ Forensic investigation initiated
+    \item $\square$ Stakeholders notified
+    \item $\square$ Business continuity plan activated
+    \item $\square$ Other: \underline{\hspace{8cm}}
+\end{itemize}
+
+\vspace{1cm}
+
+\section*{Cross-Border Impact}
+
+\begin{tabular}{|p{4.5cm}|p{9cm}|}
+\hline
+\textbf{Cross-Border Impact} & $\square$ YES \quad $\square$ NO \quad $\square$ Unknown \\
+\hline
+\textbf{Affected Member States} & [LIST COUNTRIES] \\
+& \\
+\hline
+\textbf{Other Sectors Impacted} & $\square$ YES \quad $\square$ NO \quad $\square$ Unknown \\
+\hline
+\end{tabular}
+
+\vspace{1cm}
+
+\section*{Preliminary Assessment}
+
+\subsection*{Significance Criteria}
+
+This incident is considered significant because (select all that apply):
+
+$\square$ Has caused or is capable of causing severe operational disruption of services
+
+$\square$ Has caused or is capable of causing severe financial loss to the entity
+
+$\square$ Has affected or is capable of affecting other natural or legal persons by causing considerable material or non-material damage
+
+\vspace{0.5cm}
+
+\subsection*{Additional Information}
+
+Any other relevant information for the competent authority:
+
+\vspace{3cm}
+
+\vspace{1cm}
+
+\section*{Next Steps}
+
+\begin{tabular}{|p{4.5cm}|p{9cm}|}
+\hline
+\textbf{72-Hour Report} & Will be submitted by: [DATE] at [TIME] \\
+\hline
+\textbf{Updates} & Will provide updates: $\square$ As available \quad $\square$ Daily \\
+\hline
+\textbf{Support Needed} & $\square$ None at this time \\
+& $\square$ Coordination with other authorities \\
+& $\square$ Technical assistance \\
+& $\square$ Other: \underline{\hspace{5cm}} \\
+\hline
+\end{tabular}
+
+\vspace{1cm}
+
+\section*{Declaration}
+
+I, the undersigned, declare that the information provided in this early warning notification is accurate to the best of my knowledge at the time of submission.
+
+\vspace{1cm}
+
+\begin{tabular}{|p{4.5cm}|p{9cm}|}
+\hline
+\textbf{Name} & [FULL NAME] \\
+\hline
+\textbf{Position} & [TITLE] \\
+\hline
+\textbf{Date \& Time} & [DATE] at [TIME] \\
+\hline
+\textbf{Signature} & \\
+& \\
+\hline
+\end{tabular}
+
+\vspace{1cm}
+
+\hrule
+\vspace{0.3cm}
+
+\footnotesize
+\textbf{Submission Instructions:}
+\begin{itemize}
+    \item Submit to: [COMPETENT AUTHORITY NAME]
+    \item Email: [AUTHORITY EMAIL]
+    \item Portal: [REPORTING PORTAL URL]
+    \item Phone (emergencies): [AUTHORITY PHONE]
+\end{itemize}
+
+\textbf{Reference:} NIS2 Directive (EU) 2022/2555, Article 23(1) - Early Warning without undue delay and in any event within 24 hours of becoming aware of the significant incident.
+
+\textbf{Follow-up Required:}
+\begin{itemize}
+    \item Incident Notification within 72 hours (Article 23(2))
+    \item Final Report within 1 month (Article 23(4))
+\end{itemize}
+
+\end{document}

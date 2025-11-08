@@ -1,0 +1,135 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{xcolor}
+\geometry{margin=1in}
+\definecolor{nis2blue}{RGB}{0,51,153}
+\definecolor{pass}{RGB}{0,153,51}
+\definecolor{fail}{RGB}{204,0,0}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{nis2blue}{\textbf{DR Test Report}}}
+\fancyfoot[C]{\small Page \thepage}
+\begin{document}
+\begin{center}
+{\Huge\bfseries Disaster Recovery Test Report}\\
+{\Large DR Exercise Results}
+\end{center}
+
+\section*{Test Overview}
+
+\begin{tabular}{|p{4cm}|p{9cm}|}
+\hline
+\textbf{Test Date} & [DATE] \\
+\hline
+\textbf{Test Type} & $\square$ Full Failover \quad $\square$ Partial \quad $\square$ Tabletop \\
+\hline
+\textbf{Test Leader} & [NAME] \\
+\hline
+\textbf{Participants} & [NUMBER] participants \\
+\hline
+\textbf{Duration} & [HOURS/DAYS] \\
+\hline
+\end{tabular}
+
+\section*{Test Objectives}
+
+\begin{enumerate}
+\item Validate RTO/RPO targets
+\item Test recovery procedures
+\item Verify backup integrity
+\item Train DR team
+\item Identify gaps/improvements
+\end{enumerate}
+
+\section*{Systems Tested}
+
+\begin{longtable}{|p{4cm}|p{2cm}|p{2cm}|p{2cm}|p{3cm}|}
+\hline
+\textbf{System} & \textbf{RTO Target} & \textbf{Actual} & \textbf{Status} & \textbf{Notes} \\
+\hline
+\endfirsthead
+\hline
+\textbf{System} & \textbf{RTO Target} & \textbf{Actual} & \textbf{Status} & \textbf{Notes} \\
+\hline
+\endhead
+[System 1] & 4h & 3.5h & \textcolor{pass}{PASS} & \\
+\hline
+[System 2] & 24h & 26h & \textcolor{fail}{FAIL} & Exceeded target \\
+\hline
+\end{longtable}
+
+\section*{Test Results}
+
+\subsection*{Success Criteria}
+
+\begin{tabular}{|p{6cm}|p{2cm}|p{5cm}|}
+\hline
+\textbf{Criterion} & \textbf{Met?} & \textbf{Comments} \\
+\hline
+All critical systems recovered & YES/NO & \\
+\hline
+RTO targets met & YES/NO & \\
+\hline
+RPO targets met & YES/NO & \\
+\hline
+Data integrity verified & YES/NO & \\
+\hline
+Applications functional & YES/NO & \\
+\hline
+\end{tabular}
+
+\subsection*{Issues Encountered}
+
+\begin{enumerate}
+\item [Issue 1 - Impact - Resolution]
+\item [Issue 2 - Impact - Resolution]
+\end{enumerate}
+
+\section*{Lessons Learned}
+
+\textbf{What Worked Well:}
+\begin{itemize}
+\item [Success 1]
+\item [Success 2]
+\end{itemize}
+
+\textbf{What Needs Improvement:}
+\begin{itemize}
+\item [Improvement 1]
+\item [Improvement 2]
+\end{itemize}
+
+\section*{Action Items}
+
+\begin{longtable}{|p{1.5cm}|p{5cm}|p{3cm}|p{3cm}|}
+\hline
+\textbf{ID} & \textbf{Action} & \textbf{Owner} & \textbf{Due Date} \\
+\hline
+A-01 & [Action description] & [Owner] & [Date] \\
+\hline
+A-02 & [Action description] & [Owner] & [Date] \\
+\hline
+\end{longtable}
+
+\section*{Recommendations}
+
+\begin{enumerate}
+\item Update DR procedures
+\item Additional training
+\item Infrastructure improvements
+\end{enumerate}
+
+\section*{Conclusion}
+
+Overall test result: $\square$ \textcolor{pass}{SUCCESSFUL} \quad $\square$ \textcolor{fail}{UNSUCCESSFUL} \quad $\square$ PARTIAL
+
+Next DR test scheduled for: [DATE]
+
+\vspace{1cm}
+
+\textbf{Approved:} \underline{\hspace{6cm}} \textbf{Date:} \underline{\hspace{3cm}}
+
+\end{document}

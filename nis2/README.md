@@ -21,20 +21,48 @@ The NIS2 Directive (EU) 2022/2555 is the EU's comprehensive cybersecurity legisl
 nis2/
 ├── risk-management/           # Risk assessment and management documents
 │   └── risk-assessment-report.tex
-├── governance/                # Policies and governance frameworks
-│   └── cybersecurity-policy.tex
+├── governance/                # Policies and governance frameworks (6 templates)
+│   ├── cybersecurity-policy.tex
+│   ├── asset-management-policy.tex
+│   ├── data-classification-policy.tex
+│   ├── remote-work-policy.tex
+│   ├── acceptable-use-policy.tex
+│   └── backup-retention-policy.tex
 ├── incident-response/         # Incident handling and response plans
 │   └── incident-response-plan.tex
 ├── security-measures/         # Technical security policies
 │   └── access-control-policy.tex
-├── business-continuity/       # BC/DR planning
-│   └── business-continuity-plan.tex
+├── business-continuity/       # BC/DR planning (2 templates)
+│   ├── business-continuity-plan.tex
+│   └── disaster-recovery-plan.tex
 ├── supply-chain/              # Vendor and supply chain security
 │   └── vendor-security-assessment.tex
 ├── training-awareness/        # Security awareness and training
 │   └── security-awareness-program.tex
 ├── compliance-reporting/      # Compliance assessment and reporting
 │   └── nis2-compliance-report.tex
+├── procedures/                # Operational procedures (2 templates)
+│   ├── vulnerability-management-procedure.tex
+│   └── change-management-procedure.tex
+├── notifications/             # NIS2 regulatory notifications (3 templates)
+│   ├── nis2-early-warning-24h.tex
+│   ├── nis2-incident-notification-72h.tex
+│   └── nis2-final-report-1month.tex
+├── playbooks/                 # Incident response playbooks (4 templates)
+│   ├── ransomware-response-playbook.tex
+│   ├── data-breach-response-playbook.tex
+│   ├── ddos-response-playbook.tex
+│   └── phishing-campaign-response-playbook.tex
+├── forms/                     # Operational forms (3 templates)
+│   ├── security-incident-report.tex
+│   ├── risk-acceptance-form.tex
+│   └── security-exception-request.tex
+├── audit/                     # Audit and assessment (1 template)
+│   └── internal-security-audit-checklist.tex
+├── reports/                   # Testing and management reports (3 templates)
+│   ├── penetration-test-report.tex
+│   ├── dr-test-report.tex
+│   └── executive-security-briefing.tex
 ├── examples/                  # Example content in markdown format
 │   ├── risk-assessment-example.md
 │   ├── incident-response-example.md
@@ -66,6 +94,26 @@ nis2/
   - Governance structure and responsibilities
   - Security requirements across all domains
   - Compliance obligations
+- `asset-management-policy.tex` - IT asset lifecycle management
+  - Asset inventory and classification
+  - Lifecycle management (acquisition to disposal)
+  - Data sanitization standards
+- `data-classification-policy.tex` - Data handling and protection
+  - 4-tier classification scheme (CRITICAL/CONFIDENTIAL/INTERNAL/PUBLIC)
+  - Handling requirements per classification
+  - GDPR and PCI DSS alignment
+- `remote-work-policy.tex` - Remote work and BYOD security
+  - VPN and secure connectivity requirements
+  - Device security (encryption, MDM)
+  - BYOD eligibility and controls
+- `acceptable-use-policy.tex` - IT resource usage policy
+  - Acceptable and prohibited activities
+  - Personal use guidelines
+  - Monitoring and enforcement
+- `backup-retention-policy.tex` - Backup and data retention
+  - 3-2-1 backup strategy
+  - Retention schedules by data type
+  - Ransomware protection (immutable backups)
 
 **NIS2 Reference**: Article 21 - Cybersecurity risk management measures
 
@@ -111,6 +159,11 @@ nis2/
   - Recovery point objectives (RPO)
   - Backup and recovery strategies
   - Testing schedule
+- `disaster-recovery-plan.tex` - IT disaster recovery procedures
+  - DR team structure and roles
+  - Recovery objectives by tier (4h/24h/48h)
+  - Failover and failback procedures
+  - DR site management
 
 **NIS2 Reference**: Article 21(2)(c) - Business continuity and crisis management
 
@@ -151,6 +204,130 @@ nis2/
   - Management oversight documentation
 
 **NIS2 Reference**: Article 21(2)(f) - Assessment of security measures effectiveness
+
+### 9. Operational Procedures
+**Purpose**: Standardize operational security processes
+
+**Templates**:
+- `vulnerability-management-procedure.tex` - Vulnerability scanning and remediation
+  - Scanning schedules (weekly/monthly)
+  - Severity classification
+  - Remediation SLAs (Critical: 72h, High: 7d, Medium: 30d, Low: 90d)
+  - Exception and tracking processes
+- `change-management-procedure.tex` - Change control process
+  - Change Advisory Board (CAB) procedures
+  - Change categories (Standard/Normal/Emergency)
+  - Approval workflows
+  - Rollback procedures
+
+**NIS2 Reference**: Article 21(2)(e) - Security in acquisition, development, and maintenance
+
+### 10. NIS2 Notifications
+**Purpose**: Regulatory incident reporting to competent authorities
+
+**Templates**:
+- `nis2-early-warning-24h.tex` - 24-hour early warning
+  - Basic incident notification
+  - Preliminary impact assessment
+  - Contact information
+- `nis2-incident-notification-72h.tex` - 72-hour detailed notification
+  - Detailed impact assessment
+  - Indicators of Compromise (IoCs)
+  - Attack timeline
+  - Response measures taken
+- `nis2-final-report-1month.tex` - 1-month comprehensive final report
+  - Complete timeline and root cause analysis
+  - Detailed impact breakdown
+  - Lessons learned
+  - Preventive measures implemented
+
+**NIS2 Reference**: Article 23 - Reporting obligations
+
+### 11. Incident Response Playbooks
+**Purpose**: Step-by-step guides for specific incident types
+
+**Templates**:
+- `ransomware-response-playbook.tex` - Ransomware attack response
+  - Detection and initial response (0-15 min)
+  - Containment procedures (15-60 min)
+  - Assessment and decision-making (1-4h)
+  - Recovery procedures (1-3 days)
+  - Critical DO/DO NOT guidance
+- `data-breach-response-playbook.tex` - GDPR 72-hour compliance
+  - Breach assessment
+  - NIS2 and GDPR notification requirements
+  - Communication templates
+  - Evidence preservation
+- `ddos-response-playbook.tex` - DDoS attack mitigation
+  - Attack type identification (Volume/Protocol/Application layer)
+  - Mitigation strategies (Cloud scrubbing, ISP coordination)
+  - Traffic analysis and filtering
+- `phishing-campaign-response-playbook.tex` - Social engineering attacks
+  - Validation and scoping
+  - Email blocking and quarantine
+  - User communication
+  - Investigation procedures
+
+**NIS2 Reference**: Article 21(2)(b) - Incident handling
+
+### 12. Operational Forms
+**Purpose**: Standardized documentation and approvals
+
+**Templates**:
+- `security-incident-report.tex` - Incident documentation form
+  - Incident classification and severity
+  - Affected systems and data
+  - Timeline and actions taken
+  - NIS2/GDPR reporting status
+- `risk-acceptance-form.tex` - Formal risk acceptance
+  - Risk description and assessment
+  - Business justification
+  - Compensating controls
+  - Approval authority matrix (Critical/High/Medium/Low)
+- `security-exception-request.tex` - Policy exception requests
+  - Policy/standard violated
+  - Business justification
+  - Compensating controls
+  - Duration and review requirements
+
+**NIS2 Reference**: Article 21(2)(a) - Risk management
+
+### 13. Audit & Assessment
+**Purpose**: Internal security audits and compliance verification
+
+**Templates**:
+- `internal-security-audit-checklist.tex` - NIS2 Article 21 audit
+  - Comprehensive checklist for all 10 NIS2 requirements
+  - Pass/fail verification
+  - Technical controls assessment
+  - Compliance rate calculation
+
+**NIS2 Reference**: Article 21(2)(f) - Assessment of security measures effectiveness
+
+### 14. Testing & Management Reports
+**Purpose**: Security testing results and executive reporting
+
+**Templates**:
+- `penetration-test-report.tex` - Security assessment results
+  - Executive summary
+  - Methodology (reconnaissance, scanning, exploitation)
+  - Findings by severity with CVSS scores
+  - Remediation timelines and recommendations
+- `dr-test-report.tex` - Disaster recovery test results
+  - Test overview and objectives
+  - RTO/RPO validation
+  - System recovery status (pass/fail)
+  - Lessons learned and action items
+- `executive-security-briefing.tex` - Monthly C-level security report
+  - Security posture score
+  - KPI dashboard
+  - Incident summary
+  - Threat landscape
+  - Compliance status
+  - Budget tracking
+  - Recommendations
+
+**NIS2 Reference**: Article 21(2)(c,f) - Business continuity testing and effectiveness assessment
 
 ## How to Use These Templates
 
@@ -387,6 +564,17 @@ For questions or issues:
 
 ## Version History
 
+- **v2.0** (2025-11-08): Complete NIS2 compliance suite
+  - 14 document categories
+  - 30 LaTeX templates
+  - 3 comprehensive examples (3,000+ lines)
+  - Full NIS2 Article 21 & 23 coverage
+  - Complete incident reporting framework (24h/72h/1month)
+  - Incident response playbooks (Ransomware, Data Breach, DDoS, Phishing)
+  - Operational procedures and forms
+  - Audit checklists and testing reports
+  - Executive management reporting
+
 - **v1.0** (2025-01-01): Initial release
   - 8 document categories
   - 8 LaTeX templates
@@ -402,4 +590,4 @@ These templates are provided as open resources for NIS2 compliance. Organization
 
 **Prepared for NIS2 Directive Compliance**
 **Last Updated**: November 2025
-**Template Version**: 1.0
+**Template Version**: 2.0 (30 Templates)

@@ -1,0 +1,187 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\geometry{margin=1in}
+\definecolor{nis2blue}{RGB}{0,51,153}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{nis2blue}{\textbf{Security Exception Request}}}
+\fancyfoot[C]{\small Page \thepage}
+\begin{document}
+\begin{center}
+{\Huge\bfseries Security Exception Request}\\
+{\Large Policy Exception Request Form}
+\end{center}
+
+\section*{Request Information}
+
+\begin{tabular}{|p{4cm}|p{9cm}|}
+\hline
+\textbf{Request ID} & EXC-[YEAR]-[NUMBER] \\
+\hline
+\textbf{Request Date} & [DATE] \\
+\hline
+\textbf{Requestor} & [NAME] - [TITLE] \\
+\hline
+\textbf{Department} & [DEPARTMENT] \\
+\hline
+\textbf{Contact} & [EMAIL] - [PHONE] \\
+\hline
+\end{tabular}
+
+\section*{Exception Details}
+
+\subsection*{Policy/Standard Violated}
+
+\begin{tabular}{|p{4cm}|p{9cm}|}
+\hline
+\textbf{Policy Name} & [POLICY NAME] \\
+\hline
+\textbf{Specific Requirement} & [SECTION/REQUIREMENT] \\
+\hline
+\end{tabular}
+
+\subsection*{Requested Exception}
+
+Describe specifically what exception is being requested:
+
+\vspace{3cm}
+
+\subsection*{Systems/Applications Affected}
+
+\begin{tabular}{|p{4cm}|p{9cm}|}
+\hline
+\textbf{Systems} & [LIST ALL AFFECTED SYSTEMS] \\
+& \\
+\hline
+\textbf{Data Involved} & [DATA TYPES AND CLASSIFICATION] \\
+& \\
+\hline
+\textbf{Users Affected} & [NUMBER AND TYPE OF USERS] \\
+\hline
+\end{tabular}
+
+\section*{Business Justification}
+
+\subsection*{Business Need}
+
+Explain why this exception is necessary:
+
+\vspace{4cm}
+
+\subsection*{Alternatives Considered}
+
+What alternatives were considered and why were they rejected?
+
+\vspace{3cm}
+
+\section*{Duration}
+
+\begin{tabular}{|p{4cm}|p{9cm}|}
+\hline
+\textbf{Exception Type} & $\square$ Temporary - Until: [DATE] \\
+& $\square$ Permanent (requires strong justification) \\
+\hline
+\textbf{Maximum Duration} & [TIMEFRAME - e.g., 90 days] \\
+\hline
+\end{tabular}
+
+\section*{Risk Assessment}
+
+\begin{tabular}{|p{4cm}|p{9cm}|}
+\hline
+\textbf{Risk Level} & $\square$ High \quad $\square$ Medium \quad $\square$ Low \\
+\hline
+\textbf{Potential Impact} & [DESCRIBE SECURITY IMPACT] \\
+& \\
+& \\
+\hline
+\end{tabular}
+
+\section*{Compensating Controls}
+
+List all compensating controls that will be implemented:
+
+\begin{enumerate}
+\item [Compensating control 1]
+\vspace{1cm}
+\item [Compensating control 2]
+\vspace{1cm}
+\item [Compensating control 3]
+\vspace{1cm}
+\end{enumerate}
+
+\section*{Security Review}
+
+\textbf{Security Team Assessment:}
+
+\vspace{3cm}
+
+\begin{tabular}{|p{4cm}|p{9cm}|}
+\hline
+\textbf{Recommendation} & $\square$ Approve \quad $\square$ Approve with conditions \\
+& $\square$ Deny \\
+\hline
+\textbf{Conditions (if any)} & \\
+& \\
+& \\
+\hline
+\textbf{Security Reviewer} & [NAME] - [DATE] \\
+\hline
+\end{tabular}
+
+\section*{Approval}
+
+\textbf{Approval Authority:}
+\begin{itemize}
+\item \textbf{High Risk:} CISO + CIO/CTO
+\item \textbf{Medium Risk:} CISO
+\item \textbf{Low Risk:} Security Manager
+\end{itemize}
+
+\vspace{1cm}
+
+\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+\hline
+\textbf{Role} & \textbf{Name} & \textbf{Decision \& Date} \\
+\hline
+Security Manager & & $\square$ Approve $\square$ Deny \\
+& & \\
+\hline
+CISO & & $\square$ Approve $\square$ Deny \\
+& & \\
+\hline
+CIO/CTO (if req'd) & & $\square$ Approve $\square$ Deny \\
+& & \\
+\hline
+\end{tabular}
+
+\section*{Conditions and Monitoring}
+
+\begin{tabular}{|p{4cm}|p{9cm}|}
+\hline
+\textbf{Review Date} & [DATE] \\
+\hline
+\textbf{Monitoring Required} & $\square$ Enhanced logging \\
+& $\square$ Weekly status reports \\
+& $\square$ Monthly reviews \\
+& $\square$ Other: \underline{\hspace{5cm}} \\
+\hline
+\textbf{Renewal Process} & $\square$ Automatic (if criteria met) \\
+& $\square$ Requires new request \\
+\hline
+\end{tabular}
+
+\vspace{1cm}
+
+\hrule
+\vspace{0.3cm}
+
+\footnotesize
+\textbf{Exception Registry:} Log all approved exceptions in Exception Registry
+
+\textbf{Audit Trail:} Maintain complete documentation for audit purposes
+
+\end{document}

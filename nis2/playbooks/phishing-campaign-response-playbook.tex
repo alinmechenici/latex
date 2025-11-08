@@ -1,0 +1,85 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\geometry{margin=1in}
+\definecolor{nis2blue}{RGB}{0,51,153}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{nis2blue}{\textbf{Phishing Response Playbook}}}
+\fancyfoot[C]{\small Page \thepage}
+\begin{document}
+\begin{center}
+{\Huge\bfseries Phishing Campaign Response}\\
+{\Large Social Engineering Attack Response}
+\end{center}
+
+\section*{Quick Actions}
+\textbf{User Reports Phishing:}
+\begin{enumerate}
+\item DO NOT click links or open attachments
+\item Forward email to security@[ORG].com
+\item Delete from inbox
+\item Report via phishing button
+\end{enumerate}
+
+\section{Response Phases}
+
+\subsection{Phase 1: Validation (0-15 min)}
+\textbf{Verify Phishing Email:}
+\begin{itemize}
+\item Check sender address (spoofed?)
+\item Analyze links/attachments
+\item Review email headers
+\item Search for similar reports
+\end{itemize}
+
+\subsection{Phase 2: Containment (15-60 min)}
+\textbf{If Phishing Confirmed:}
+\begin{enumerate}
+\item Block sender domain/address
+\item Quarantine similar emails
+\item Scan for delivered messages
+\item Remove from all inboxes
+\item Block malicious URLs/IPs
+\end{enumerate}
+
+\textbf{Affected Users:}
+\begin{itemize}
+\item Identify who clicked/opened
+\item Force password reset
+\item Revoke active sessions
+\item Scan endpoints for malware
+\item Monitor account activity
+\end{itemize}
+
+\subsection{Phase 3: Investigation}
+\textbf{Determine Impact:}
+\begin{itemize}
+\item Number of recipients
+\item Number who clicked
+\item Credentials compromised?
+\item Malware delivered?
+\item Data accessed?
+\end{itemize}
+
+\subsection{Phase 4: Communication}
+\textbf{Alert Users:}
+\begin{itemize}
+\item Email warning about phishing
+\item Indicators (subject, sender)
+\item What to do if received
+\item Reinforce reporting process
+\end{itemize}
+
+\section{Prevention}
+\begin{itemize}
+\item Advanced email filtering
+\item Link/attachment sandboxing
+\item DMARC/SPF/DKIM enforcement
+\item Monthly phishing simulations
+\item Security awareness training
+\end{itemize}
+
+\end{document}

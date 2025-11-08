@@ -1,0 +1,176 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\geometry{margin=1in}
+\definecolor{nis2blue}{RGB}{0,51,153}
+\definecolor{nis2red}{RGB}{204,0,0}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{nis2blue}{\textbf{Risk Acceptance Form}}}
+\fancyfoot[C]{\small Page \thepage}
+\begin{document}
+\begin{center}
+{\Huge\bfseries\textcolor{nis2blue}{Risk Acceptance Form}}\\
+\vspace{0.3cm}
+{\Large Formal Risk Acceptance Documentation}
+\end{center}
+
+\section*{Form Information}
+
+\begin{tabular}{|p{4cm}|p{9cm}|}
+\hline
+\textbf{Risk ID} & RISK-[YEAR]-[NUMBER] \\
+\hline
+\textbf{Submission Date} & [DATE] \\
+\hline
+\textbf{Submitted By} & [NAME] - [TITLE] \\
+\hline
+\textbf{Department} & [DEPARTMENT] \\
+\hline
+\end{tabular}
+
+\section*{Risk Description}
+
+\subsection*{Risk Summary}
+Briefly describe the risk being accepted:
+
+\vspace{3cm}
+
+\subsection*{Risk Details}
+
+\begin{tabular}{|p{4cm}|p{9cm}|}
+\hline
+\textbf{Risk Category} & $\square$ Technical \quad $\square$ Operational \quad $\square$ Compliance \\
+& $\square$ Financial \quad $\square$ Reputational \quad $\square$ Other \\
+\hline
+\textbf{Affected Systems} & [LIST SYSTEMS/APPLICATIONS] \\
+& \\
+\hline
+\textbf{Affected Data} & [DATA TYPES AND CLASSIFICATION] \\
+& \\
+\hline
+\end{tabular}
+
+\section*{Risk Assessment}
+
+\begin{tabular}{|p{4cm}|p{9cm}|}
+\hline
+\textbf{Likelihood} & $\square$ Very High (5) \quad $\square$ High (4) \quad $\square$ Medium (3) \\
+& $\square$ Low (2) \quad $\square$ Very Low (1) \\
+\hline
+\textbf{Impact} & $\square$ Critical (5) \quad $\square$ High (4) \quad $\square$ Medium (3) \\
+& $\square$ Low (2) \quad $\square$ Minimal (1) \\
+\hline
+\textbf{Risk Score} & Likelihood × Impact = \underline{\hspace{2cm}} \\
+\hline
+\textbf{Risk Level} & $\square$ Critical (16-25) \quad $\square$ High (11-15) \\
+& $\square$ Medium (6-10) \quad $\square$ Low (1-5) \\
+\hline
+\end{tabular}
+
+\section*{Risk Treatment Options Considered}
+
+\subsection*{Why Not Mitigate?}
+
+Explain why risk mitigation is not feasible:
+
+\vspace{3cm}
+
+\subsection*{Why Not Transfer?}
+
+Explain why risk transfer (insurance, outsourcing) is not chosen:
+
+\vspace{2cm}
+
+\subsection*{Why Not Avoid?}
+
+Explain why avoiding the risk (discontinuing activity) is not an option:
+
+\vspace{2cm}
+
+\section*{Business Justification}
+
+Explain the business reason for accepting this risk:
+
+\vspace{4cm}
+
+\section*{Compensating Controls}
+
+List any compensating controls in place to reduce (but not eliminate) the risk:
+
+\begin{enumerate}
+\item [Control 1]
+\vspace{1cm}
+\item [Control 2]
+\vspace{1cm}
+\item [Control 3]
+\vspace{1cm}
+\end{enumerate}
+
+\section*{Acceptance Terms}
+
+\begin{tabular}{|p{4cm}|p{9cm}|}
+\hline
+\textbf{Acceptance Duration} & $\square$ Permanent \\
+& $\square$ Temporary until: [DATE] \\
+& $\square$ Until specific condition met: \underline{\hspace{4cm}} \\
+\hline
+\textbf{Review Frequency} & $\square$ Quarterly \quad $\square$ Semi-annual \quad $\square$ Annual \\
+\hline
+\textbf{Next Review Date} & [DATE] \\
+\hline
+\textbf{Conditions for Review} & $\square$ Risk score increases \\
+& $\square$ New threats emerge \\
+& $\square$ Compensating controls fail \\
+& $\square$ Regulatory requirements change \\
+\hline
+\end{tabular}
+
+\section*{Approval}
+
+\textbf{\textcolor{nis2red}{Risk acceptance requires appropriate management approval based on risk level.}}
+
+\vspace{0.5cm}
+
+\textbf{Approval Requirements:}
+\begin{itemize}
+\item \textbf{Critical/High Risk:} CISO + CIO + CEO
+\item \textbf{Medium Risk:} CISO + CIO or Risk Owner
+\item \textbf{Low Risk:} CISO or Department Head
+\end{itemize}
+
+\vspace{1cm}
+
+\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+\hline
+\textbf{Role} & \textbf{Name} & \textbf{Signature \& Date} \\
+\hline
+Risk Owner & & \\
+& & \\
+\hline
+CISO & & \\
+& & \\
+\hline
+CIO (if req'd) & & \\
+& & \\
+\hline
+CEO (if req'd) & & \\
+& & \\
+\hline
+\end{tabular}
+
+\vspace{1cm}
+
+\hrule
+\vspace{0.3cm}
+
+\footnotesize
+\textbf{Risk Acceptance Registry:} This form must be logged in the Risk Acceptance Registry
+
+\textbf{Retention:} Retain for duration of acceptance + 2 years
+
+\textbf{Review:} Re-assess on review date or when conditions change
+
+\end{document}

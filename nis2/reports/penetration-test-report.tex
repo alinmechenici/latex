@@ -1,0 +1,107 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{xcolor}
+\geometry{margin=1in}
+\definecolor{nis2blue}{RGB}{0,51,153}
+\definecolor{critical}{RGB}{204,0,0}
+\definecolor{high}{RGB}{255,102,0}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{nis2blue}{\textbf{Penetration Test Report}}}
+\fancyfoot[C]{\small Page \thepage}
+\begin{document}
+\begin{center}
+{\Huge\bfseries Penetration Test Report}\\
+{\Large Security Assessment}
+\end{center}
+
+\section*{Executive Summary}
+
+\begin{tabular}{|p{4cm}|p{9cm}|}
+\hline
+\textbf{Test Date} & [DATE RANGE] \\
+\hline
+\textbf{Tester} & [NAME/COMPANY] \\
+\hline
+\textbf{Test Type} & $\square$ External \quad $\square$ Internal \quad $\square$ Web App \\
+\hline
+\textbf{Scope} & [SYSTEMS/IP RANGES TESTED] \\
+\hline
+\end{tabular}
+
+\subsection*{Key Findings}
+
+\begin{tabular}{|l|r|}
+\hline
+\textbf{Critical} & [NUMBER] \\
+\hline
+\textbf{High} & [NUMBER] \\
+\hline
+\textbf{Medium} & [NUMBER] \\
+\hline
+\textbf{Low} & [NUMBER] \\
+\hline
+\textbf{Informational} & [NUMBER] \\
+\hline
+\end{tabular}
+
+\section{Methodology}
+
+\begin{itemize}
+\item \textbf{Reconnaissance:} Information gathering
+\item \textbf{Scanning:} Vulnerability identification
+\item \textbf{Exploitation:} Vulnerability validation
+\item \textbf{Post-Exploitation:} Impact assessment
+\item \textbf{Reporting:} Documentation
+\end{itemize}
+
+\section{Findings}
+
+\begin{longtable}{|p{1cm}|p{4cm}|p{2cm}|p{1.5cm}|p{4cm}|}
+\hline
+\textbf{ID} & \textbf{Finding} & \textbf{Severity} & \textbf{CVSS} & \textbf{System} \\
+\hline
+\endfirsthead
+\hline
+\textbf{ID} & \textbf{Finding} & \textbf{Severity} & \textbf{CVSS} & \textbf{System} \\
+\hline
+\endhead
+F-01 & [Vulnerability Name] & Critical & 9.8 & [System] \\
+\hline
+F-02 & [Vulnerability Name] & High & 7.5 & [System] \\
+\hline
+\end{longtable}
+
+\section{Detailed Findings}
+
+\subsection{F-01: [Vulnerability Name]}
+
+\textbf{Severity:} \textcolor{critical}{CRITICAL} (CVSS 9.8)
+
+\textbf{Description:} [Detailed description]
+
+\textbf{Impact:} [What attacker could achieve]
+
+\textbf{Affected Systems:} [List]
+
+\textbf{Proof of Concept:} [Steps to reproduce]
+
+\textbf{Remediation:} [How to fix]
+
+\textbf{Timeline:} Remediate within 72 hours
+
+\section{Recommendations}
+
+\begin{enumerate}
+\item [Recommendation 1]
+\item [Recommendation 2]
+\end{enumerate}
+
+\section{Conclusion}
+
+Overall security posture: [Assessment]
+
+\end{document}
