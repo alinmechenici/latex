@@ -1,0 +1,425 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{lastpage}
+\usepackage{enumitem}
+
+\geometry{margin=1in}
+
+\definecolor{nis2blue}{RGB}{0,51,153}
+\definecolor{nis2gray}{RGB}{100,100,100}
+\definecolor{nis2red}{RGB}{204,0,0}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{nis2blue}{\textbf{Security Incident Report Form}}}
+\fancyhead[R]{\includegraphics[height=0.8cm]{logo.png}}
+\fancyfoot[L]{\textcolor{nis2gray}{\small \jobname}}
+\fancyfoot[C]{\textcolor{nis2red}{\small\textbf{CONFIDENTIAL}}}
+\fancyfoot[R]{\textcolor{nis2gray}{\small Page \thepage\ of \pageref{LastPage}}}
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=nis2blue,
+    filecolor=nis2blue,
+    urlcolor=nis2blue,
+}
+
+\begin{document}
+
+\begin{center}
+{\Huge\bfseries\textcolor{nis2blue}{Security Incident Report}}\\
+\vspace{0.3cm}
+{\Large NIS2 Directive Compliance}\\
+\vspace{0.5cm}
+\textcolor{nis2red}{\textbf{CONFIDENTIAL - INCIDENT RESPONSE USE ONLY}}
+\end{center}
+
+\vspace{0.5cm}
+
+\section*{Report Information}
+
+\begin{tabular}{|p{4cm}|p{10cm}|}
+\hline
+\textbf{Incident ID} & INC-[YEAR]-[NUMBER] \\
+\hline
+\textbf{Report Date/Time} & [DATE] at [TIME] \\
+\hline
+\textbf{Reported By} & [NAME, ROLE] \\
+\hline
+\textbf{Contact Info} & Phone: [NUMBER] | Email: [EMAIL] \\
+\hline
+\end{tabular}
+
+\vspace{1cm}
+
+\section*{Incident Overview}
+
+\subsection*{Discovery Information}
+
+\begin{tabular}{|p{4cm}|p{10cm}|}
+\hline
+\textbf{Discovery Date/Time} & [DATE] at [TIME] \\
+\hline
+\textbf{Discovery Method} & $\square$ Automated Alert \quad $\square$ User Report \quad $\square$ Routine Check \\
+& $\square$ External Notification \quad $\square$ Other: \underline{\hspace{4cm}} \\
+\hline
+\textbf{Discovered By} & [NAME/SYSTEM] \\
+\hline
+\end{tabular}
+
+\subsection*{Incident Classification}
+
+\begin{tabular}{|p{4cm}|p{10cm}|}
+\hline
+\textbf{Incident Type} & $\square$ Malware/Ransomware \quad $\square$ Phishing/Social Engineering \\
+& $\square$ Unauthorized Access \quad $\square$ Data Breach \\
+& $\square$ DoS/DDoS Attack \quad $\square$ Insider Threat \\
+& $\square$ System Compromise \quad $\square$ Data Loss \\
+& $\square$ Policy Violation \quad $\square$ Other: \underline{\hspace{3cm}} \\
+\hline
+\textbf{Severity Level} & $\square$ \textcolor{nis2red}{\textbf{CRITICAL (P1)}} - Immediate action required \\
+& $\square$ \textbf{HIGH (P2)} - Urgent response needed \\
+& $\square$ \textbf{MEDIUM (P3)} - Standard response \\
+& $\square$ \textbf{LOW (P4)} - Informational \\
+\hline
+\textbf{NIS2 Significant?} & $\square$ YES - Report to competent authority required \\
+& $\square$ NO - Internal handling only \\
+& $\square$ TBD - Further assessment needed \\
+\hline
+\end{tabular}
+
+\subsection*{Brief Description}
+
+Provide a concise summary of the incident (2-3 sentences):
+
+\vspace{3cm}
+
+\section*{Affected Systems and Data}
+
+\subsection*{Systems Affected}
+
+\begin{longtable}{|p{4cm}|p{4cm}|p{3cm}|p{2cm}|}
+\hline
+\textbf{System/Application} & \textbf{Hostname/IP} & \textbf{Criticality} & \textbf{Status} \\
+\hline
+\endfirsthead
+\hline
+\textbf{System/Application} & \textbf{Hostname/IP} & \textbf{Criticality} & \textbf{Status} \\
+\hline
+\endhead
+& & $\square$ Critical & $\square$ Affected \\
+& & $\square$ High & $\square$ Isolated \\
+& & $\square$ Medium & $\square$ Recovered \\
+\hline
+& & $\square$ Critical & $\square$ Affected \\
+& & $\square$ High & $\square$ Isolated \\
+& & $\square$ Medium & $\square$ Recovered \\
+\hline
+& & $\square$ Critical & $\square$ Affected \\
+& & $\square$ High & $\square$ Isolated \\
+& & $\square$ Medium & $\square$ Recovered \\
+\hline
+\caption{Affected Systems}
+\end{longtable}
+
+\subsection*{Data Impact}
+
+\begin{tabular}{|p{4cm}|p{10cm}|}
+\hline
+\textbf{Data Affected?} & $\square$ YES \quad $\square$ NO \quad $\square$ Unknown \\
+\hline
+\textbf{Data Classification} & $\square$ CRITICAL \quad $\square$ CONFIDENTIAL \\
+& $\square$ INTERNAL \quad $\square$ PUBLIC \\
+\hline
+\textbf{Data Types} & $\square$ Personal Data (GDPR) \quad $\square$ Payment Card Data (PCI) \\
+& $\square$ Health Information \quad $\square$ Intellectual Property \\
+& $\square$ Business Confidential \quad $\square$ Other: \underline{\hspace{3cm}} \\
+\hline
+\textbf{Records Affected} & Approximate Number: \underline{\hspace{5cm}} \\
+\hline
+\textbf{Data Exfiltration?} & $\square$ YES \quad $\square$ NO \quad $\square$ Suspected \quad $\square$ Unknown \\
+\hline
+\end{tabular}
+
+\section*{Business Impact}
+
+\subsection*{Service Impact}
+
+\begin{tabular}{|p{4cm}|p{10cm}|}
+\hline
+\textbf{Services Affected} & $\square$ Customer-Facing Services \quad $\square$ Internal Operations \\
+& $\square$ None \quad $\square$ Other: \underline{\hspace{4cm}} \\
+\hline
+\textbf{Users Impacted} & $\square$ External Customers: [NUMBER] \\
+& $\square$ Internal Users: [NUMBER] \\
+& $\square$ Partners/Vendors: [NUMBER] \\
+\hline
+\textbf{Downtime} & Start: [DATE/TIME] \\
+& End: [DATE/TIME] or $\square$ Ongoing \\
+& Total Duration: \underline{\hspace{4cm}} \\
+\hline
+\end{tabular}
+
+\subsection*{Financial Impact (Estimated)}
+
+\begin{tabular}{|p{4cm}|p{10cm}|}
+\hline
+\textbf{Direct Costs} & Investigation: €\underline{\hspace{3cm}} \\
+& Remediation: €\underline{\hspace{3cm}} \\
+& Recovery: €\underline{\hspace{3cm}} \\
+\hline
+\textbf{Revenue Loss} & €\underline{\hspace{5cm}} \\
+\hline
+\textbf{Total Estimated} & €\underline{\hspace{5cm}} \\
+\hline
+\end{tabular}
+
+\section*{Incident Timeline}
+
+\begin{longtable}{|p{3cm}|p{10cm}|}
+\hline
+\textbf{Date/Time} & \textbf{Event} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Date/Time} & \textbf{Event} \\
+\hline
+\endhead
+[TIME] & Initial compromise / Incident start (estimated) \\
+\hline
+[TIME] & Incident detected \\
+\hline
+[TIME] & IR Team notified \\
+\hline
+[TIME] & Containment initiated \\
+\hline
+[TIME] & Containment completed \\
+\hline
+[TIME] & Eradication completed \\
+\hline
+[TIME] & Recovery initiated \\
+\hline
+[TIME] & Services restored \\
+\hline
+[TIME] & Incident closed \\
+\hline
+\caption{Incident Timeline}
+\end{longtable}
+
+\section*{Response Actions Taken}
+
+\subsection*{Immediate Actions}
+
+$\square$ Affected systems isolated from network \\
+$\square$ User accounts disabled/reset \\
+$\square$ Malicious IPs/domains blocked \\
+$\square$ Forensic evidence preserved \\
+$\square$ Backups verified \\
+$\square$ Enhanced monitoring deployed \\
+$\square$ Other: \underline{\hspace{8cm}}
+
+\subsection*{Investigation}
+
+\begin{tabular}{|p{4cm}|p{10cm}|}
+\hline
+\textbf{Root Cause} & \\
+& \\
+& \\
+\hline
+\textbf{Attack Vector} & $\square$ Phishing Email \quad $\square$ Vulnerable Software \\
+& $\square$ Weak Credentials \quad $\square$ Misconfiguration \\
+& $\square$ Supply Chain \quad $\square$ Insider \quad $\square$ Unknown \\
+& $\square$ Other: \underline{\hspace{6cm}} \\
+\hline
+\textbf{Threat Actor} & $\square$ External - Cybercriminal \\
+& $\square$ External - Nation State \\
+& $\square$ External - Hacktivist \\
+& $\square$ Internal - Malicious \\
+& $\square$ Internal - Accidental \\
+& $\square$ Unknown \\
+\hline
+\end{tabular}
+
+\subsection*{Indicators of Compromise (IoCs)}
+
+\begin{longtable}{|p{3cm}|p{10cm}|}
+\hline
+\textbf{IoC Type} & \textbf{Value} \\
+\hline
+\endfirsthead
+\hline
+\textbf{IoC Type} & \textbf{Value} \\
+\hline
+\endhead
+IP Addresses & \\
+\hline
+Domains & \\
+\hline
+File Hashes & \\
+\hline
+URLs & \\
+\hline
+Email Addresses & \\
+\hline
+\caption{Indicators of Compromise}
+\end{longtable}
+
+\section*{Regulatory Reporting}
+
+\subsection*{NIS2 Incident Reporting}
+
+\begin{tabular}{|p{4cm}|p{10cm}|}
+\hline
+\textbf{Significant Incident?} & $\square$ YES \quad $\square$ NO \\
+\hline
+\textbf{Early Warning (24h)} & Submitted: $\square$ YES on [DATE] at [TIME] \\
+& $\square$ NO - Reason: \underline{\hspace{5cm}} \\
+& $\square$ Not Required \\
+\hline
+\textbf{Incident Report (72h)} & Submitted: $\square$ YES on [DATE] at [TIME] \\
+& $\square$ NO - Reason: \underline{\hspace{5cm}} \\
+& $\square$ Not Required \\
+\hline
+\textbf{Final Report (1 month)} & Submitted: $\square$ YES on [DATE] at [TIME] \\
+& $\square$ Pending - Due: [DATE] \\
+& $\square$ Not Required \\
+\hline
+\textbf{Authority Notified} & [COMPETENT AUTHORITY NAME] \\
+& Reference Number: \underline{\hspace{5cm}} \\
+\hline
+\end{tabular}
+
+\subsection*{Other Regulatory Notifications}
+
+\begin{tabular}{|p{4cm}|p{10cm}|}
+\hline
+\textbf{GDPR Data Breach} & $\square$ YES - DPA notified on [DATE] \\
+& $\square$ NO - Not applicable \\
+& Data subjects notified: $\square$ YES on [DATE] $\square$ NO \\
+\hline
+\textbf{Other Regulations} & $\square$ PCI DSS - Card brands notified \\
+& $\square$ Sector-specific regulations \\
+& $\square$ Law enforcement notified \\
+& $\square$ None applicable \\
+\hline
+\end{tabular}
+
+\section*{Communications}
+
+\subsection*{Internal Communications}
+
+\begin{tabular}{|p{4cm}|p{10cm}|}
+\hline
+\textbf{Management Briefed} & $\square$ YES on [DATE] at [TIME] \\
+& Attendees: \underline{\hspace{7cm}} \\
+\hline
+\textbf{Employee Notification} & $\square$ YES - Method: \underline{\hspace{6cm}} \\
+& $\square$ NO - Not required \\
+\hline
+\end{tabular}
+
+\subsection*{External Communications}
+
+\begin{tabular}{|p{4cm}|p{10cm}|}
+\hline
+\textbf{Customer Notification} & $\square$ YES on [DATE] \\
+& Method: $\square$ Email $\square$ Website $\square$ Direct Contact \\
+& $\square$ NO - Not required \\
+\hline
+\textbf{Media Statement} & $\square$ YES - Released on [DATE] \\
+& $\square$ NO - Not required \\
+\hline
+\textbf{Partner Notification} & $\square$ YES - Notified on [DATE] \\
+& $\square$ NO - Not required \\
+\hline
+\end{tabular}
+
+\section*{Lessons Learned}
+
+\subsection*{What Worked Well}
+
+\vspace{3cm}
+
+\subsection*{What Could Be Improved}
+
+\vspace{3cm}
+
+\subsection*{Action Items}
+
+\begin{longtable}{|p{2cm}|p{6cm}|p{2.5cm}|p{2.5cm}|}
+\hline
+\textbf{Action \#} & \textbf{Description} & \textbf{Owner} & \textbf{Due Date} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Action \#} & \textbf{Description} & \textbf{Owner} & \textbf{Due Date} \\
+\hline
+\endhead
+1 & & & \\
+\hline
+2 & & & \\
+\hline
+3 & & & \\
+\hline
+\caption{Action Items}
+\end{longtable}
+
+\section*{Closure and Sign-Off}
+
+\begin{tabular}{|p{4cm}|p{10cm}|}
+\hline
+\textbf{Incident Status} & $\square$ Closed - Resolved \\
+& $\square$ Closed - Unresolved (explain): \underline{\hspace{3cm}} \\
+& $\square$ Open - In Progress \\
+\hline
+\textbf{Closure Date} & [DATE] \\
+\hline
+\end{tabular}
+
+\vspace{1cm}
+
+\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+\hline
+\textbf{Role} & \textbf{Name} & \textbf{Signature \& Date} \\
+\hline
+IR Team Leader & & \\
+& & \\
+\hline
+CISO & & \\
+& & \\
+\hline
+Incident Owner & & \\
+& & \\
+\hline
+\end{tabular}
+
+\vspace{1cm}
+
+\textbf{Final Report Location:} \underline{\hspace{10cm}}
+
+\textbf{Evidence Location:} \underline{\hspace{10cm}}
+
+\vspace{0.5cm}
+
+\hrule
+
+\vspace{0.3cm}
+
+\footnotesize
+\textbf{Document Classification:} CONFIDENTIAL - INCIDENT RESPONSE ONLY \\
+\textbf{Retention Period:} 3 years minimum per NIS2 requirements \\
+\textbf{Access:} IR Team, CISO, Legal Counsel, Authorized Personnel Only \\
+\textbf{Form Version:} 1.0 | \textbf{Last Updated:} \today
+
+\end{document}

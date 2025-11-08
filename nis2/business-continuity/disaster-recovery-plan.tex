@@ -1,0 +1,578 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{lastpage}
+\usepackage{tikz}
+
+\geometry{margin=1in}
+
+\definecolor{nis2blue}{RGB}{0,51,153}
+\definecolor{nis2gray}{RGB}{100,100,100}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{nis2blue}{\textbf{Disaster Recovery Plan}}}
+\fancyhead[R]{\includegraphics[height=0.8cm]{logo.png}}
+\fancyfoot[L]{\textcolor{nis2gray}{\small \jobname}}
+\fancyfoot[C]{\textcolor{nis2gray}{\small CONFIDENTIAL}}
+\fancyfoot[R]{\textcolor{nis2gray}{\small Page \thepage\ of \pageref{LastPage}}}
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=nis2blue,
+    filecolor=nis2blue,
+    urlcolor=nis2blue,
+}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\Huge\bfseries\textcolor{nis2blue}{Disaster Recovery Plan}\par}
+    \vspace{0.5cm}
+    {\Large NIS2 Directive Compliance\par}
+    \vspace{2cm}
+    {\Large\textbf{Organization:} [ORGANIZATION]\par}
+    \vspace{0.5cm}
+    {\Large\textbf{Version:} 1.0\par}
+    \vspace{0.5cm}
+    {\Large\textbf{Date:} \today\par}
+    \vspace{0.5cm}
+    {\Large\textbf{DR Site:} [LOCATION]\par}
+    \vfill
+    {\small NIS2 Article 21(2)(c) - Disaster Recovery\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Document Control}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Document Title} & Disaster Recovery Plan \\
+\hline
+\textbf{Document Owner} & Chief Information Officer \\
+\hline
+\textbf{Version} & 1.0 \\
+\hline
+\textbf{Last Updated} & \today \\
+\hline
+\textbf{Review Frequency} & Semi-Annual \\
+\hline
+\textbf{Next Review} & [DATE] \\
+\hline
+\textbf{Classification} & CONFIDENTIAL \\
+\hline
+\end{tabular}
+\caption{Document Control}
+\end{table}
+
+\section{Executive Summary}
+
+This Disaster Recovery Plan (DRP) provides detailed procedures for recovering IT systems and infrastructure following a disaster, ensuring compliance with NIS2 requirements for business continuity and operational resilience.
+
+\subsection{Objectives}
+\begin{itemize}
+    \item Minimize downtime of critical systems
+    \item Meet defined Recovery Time Objectives (RTO)
+    \item Prevent data loss beyond Recovery Point Objectives (RPO)
+    \item Maintain business operations during recovery
+    \item Ensure regulatory compliance
+\end{itemize}
+
+\subsection{Scope}
+This plan covers:
+\begin{itemize}
+    \item All critical IT systems and applications
+    \item Data centers and infrastructure
+    \item Network and communications
+    \item Cloud services and SaaS applications
+    \item Third-party IT services
+\end{itemize}
+
+\section{Disaster Declaration}
+
+\subsection{Disaster Definition}
+A disaster is an event that causes:
+\begin{itemize}
+    \item Complete loss of primary data center
+    \item Prolonged unavailability of critical systems (>4 hours for Tier 1)
+    \item Catastrophic data loss or corruption
+    \item Major infrastructure failure preventing normal operations
+\end{itemize}
+
+\subsection{Authority to Declare Disaster}
+Authorized personnel:
+\begin{itemize}
+    \item Chief Information Officer (CIO)
+    \item Chief Technology Officer (CTO)
+    \item Chief Information Security Officer (CISO)
+    \item Chief Executive Officer (CEO)
+\end{itemize}
+
+\subsection{Declaration Process}
+\begin{enumerate}
+    \item Assess severity and scope of incident
+    \item Determine if recovery within normal timeframe is possible
+    \item Consult with Crisis Management Team
+    \item Formally declare disaster
+    \item Activate DR team and procedures
+    \item Notify all stakeholders
+\end{enumerate}
+
+\section{DR Team Structure}
+
+\subsection{Disaster Recovery Team}
+
+\begin{longtable}{|p{3.5cm}|p{3cm}|p{4cm}|p{3cm}|}
+\hline
+\textbf{Role} & \textbf{Name} & \textbf{Responsibilities} & \textbf{Contact} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Role} & \textbf{Name} & \textbf{Responsibilities} & \textbf{Contact} \\
+\hline
+\endhead
+DR Manager & [Name] & Overall coordination, decision-making & [Phone/Email] \\
+\hline
+Infrastructure Lead & [Name] & Server and storage recovery & [Phone/Email] \\
+\hline
+Network Lead & [Name] & Network and connectivity & [Phone/Email] \\
+\hline
+Application Lead & [Name] & Application restoration & [Phone/Email] \\
+\hline
+Database Lead & [Name] & Database recovery & [Phone/Email] \\
+\hline
+Security Lead & [Name] & Security controls verification & [Phone/Email] \\
+\hline
+Communications Lead & [Name] & Stakeholder communications & [Phone/Email] \\
+\hline
+\caption{Disaster Recovery Team}
+\end{longtable}
+
+\section{Recovery Time Objectives}
+
+\begin{longtable}{|p{1cm}|p{4cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
+\hline
+\textbf{Tier} & \textbf{System/Application} & \textbf{RTO} & \textbf{RPO} & \textbf{Priority} & \textbf{Strategy} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Tier} & \textbf{System/Application} & \textbf{RTO} & \textbf{RPO} & \textbf{Priority} & \textbf{Strategy} \\
+\hline
+\endhead
+1 & [Critical System 1] & 4h & 15min & P1 & Hot Site \\
+\hline
+1 & [Critical System 2] & 4h & 1h & P1 & Hot Site \\
+\hline
+2 & [Important System 1] & 24h & 4h & P2 & Warm Site \\
+\hline
+2 & [Important System 2] & 24h & 8h & P2 & Warm Site \\
+\hline
+3 & [Standard System 1] & 72h & 24h & P3 & Cold Site \\
+\hline
+\caption{Recovery Time Objectives by System}
+\end{longtable}
+
+\section{DR Infrastructure}
+
+\subsection{Primary Data Center}
+\begin{itemize}
+    \item \textbf{Location:} [ADDRESS]
+    \item \textbf{Provider:} [PROVIDER NAME]
+    \item \textbf{Capacity:} [SPECIFICATIONS]
+    \item \textbf{Connectivity:} [BANDWIDTH/REDUNDANCY]
+\end{itemize}
+
+\subsection{Disaster Recovery Site}
+\begin{itemize}
+    \item \textbf{Location:} [ADDRESS] (minimum 100km from primary)
+    \item \textbf{Type:} Hot Site for Tier 1, Warm Site for Tier 2
+    \item \textbf{Provider:} [PROVIDER NAME]
+    \item \textbf{Capacity:} [SPECIFICATIONS]
+    \item \textbf{Connectivity:} [BANDWIDTH/REDUNDANCY]
+    \item \textbf{Failover Method:} Automated for critical systems, manual for others
+\end{itemize}
+
+\subsection{Cloud DR Resources}
+\begin{itemize}
+    \item \textbf{Provider:} [AWS/Azure/GCP]
+    \item \textbf{Region:} [REGION]
+    \item \textbf{Services:} [EC2, RDS, S3, etc.]
+    \item \textbf{Failover:} Automated via [TOOL]
+\end{itemize}
+
+\section{Backup Strategy}
+
+\subsection{Backup Schedule}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{System/Data} & \textbf{Frequency} & \textbf{Method} & \textbf{Retention} \\
+\hline
+Critical Databases & Hourly incremental & Snapshots & 30 days \\
+\hline
+Critical Databases & Daily full & Backup software & 90 days \\
+\hline
+File Servers & Daily full & Backup software & 60 days \\
+\hline
+Virtual Machines & Daily snapshots & Hypervisor & 14 days \\
+\hline
+Configuration Data & Weekly & Version control & 365 days \\
+\hline
+\end{tabular}
+\caption{Backup Schedule}
+\end{table}
+
+\subsection{Backup Locations}
+\begin{enumerate}
+    \item \textbf{Primary Backup:} On-site backup storage (7-day retention)
+    \item \textbf{Secondary Backup:} DR site (30-day retention)
+    \item \textbf{Tertiary Backup:} Cloud storage (90-day retention)
+    \item \textbf{Archive:} Tape storage off-site (7-year retention)
+\end{enumerate}
+
+\subsection{Backup Verification}
+\begin{itemize}
+    \item Daily: Automated backup success monitoring
+    \item Weekly: Random restoration test of 5 files/databases
+    \item Monthly: Full restoration test of one critical system
+    \item Quarterly: Complete DR site restoration test
+\end{itemize}
+
+\section{Recovery Procedures}
+
+\subsection{Phase 1: Assessment (0-1 hour)}
+
+\subsubsection{Actions}
+\begin{enumerate}
+    \item Assess disaster scope and impact
+    \item Identify affected systems and services
+    \item Determine estimated recovery time with primary site
+    \item Decide on DR site activation
+    \item Notify DR team members
+    \item Assemble at Emergency Operations Center (EOC)
+\end{enumerate}
+
+\subsubsection{Decision Criteria}
+Activate DR site if:
+\begin{itemize}
+    \item Primary site unavailable for >4 hours (estimated)
+    \item Physical damage to data center
+    \item Complete power or cooling failure
+    \item Natural disaster affecting region
+    \item Security breach requiring infrastructure rebuild
+\end{itemize}
+
+\subsection{Phase 2: Activation (1-4 hours)}
+
+\subsubsection{Infrastructure Activation}
+\begin{enumerate}
+    \item Notify DR site provider
+    \item Verify DR site availability and readiness
+    \item Establish network connectivity to DR site
+    \item Activate compute and storage resources
+    \item Configure network routing and firewalls
+    \item Test connectivity and accessibility
+\end{enumerate}
+
+\subsubsection{Data Replication}
+\begin{enumerate}
+    \item Verify last successful replication timestamp
+    \item Assess data currency (how recent)
+    \item Break replication from primary (if accessible)
+    \item Prepare data for recovery
+    \item Document data loss window (if any)
+\end{enumerate}
+
+\subsection{Phase 3: Recovery (4-24 hours)}
+
+\subsubsection{System Recovery Order}
+
+\textbf{Priority 1 (0-4 hours):}
+\begin{enumerate}
+    \item Network infrastructure and firewalls
+    \item Active Directory and authentication services
+    \item Email and communication systems
+    \item [Critical Application 1]
+    \item [Critical Application 2]
+\end{enumerate}
+
+\textbf{Priority 2 (4-24 hours):}
+\begin{enumerate}
+    \item [Important Application 1]
+    \item [Important Application 2]
+    \item File and collaboration services
+    \item Monitoring and management tools
+\end{enumerate}
+
+\textbf{Priority 3 (24-72 hours):}
+\begin{enumerate}
+    \item [Standard Application 1]
+    \item [Standard Application 2]
+    \item Development and test environments
+    \item Reporting and analytics systems
+\end{enumerate}
+
+\subsubsection{Recovery Procedures by System}
+
+\textbf{[Critical System 1] Recovery:}
+\begin{enumerate}
+    \item Power on DR site servers
+    \item Verify latest backup/replication data
+    \item Restore database from most recent backup
+    \item Apply transaction logs (if available)
+    \item Start application services
+    \item Verify application functionality
+    \item Update DNS to point to DR site
+    \item Test user access and key functions
+    \item Monitor for errors
+    \item Declare system operational
+\end{enumerate}
+
+\textit{Estimated Time: 2 hours}
+\textit{Team: Infrastructure Lead, Database Lead, Application Lead}
+
+\subsection{Phase 4: Verification (Ongoing)}
+
+\subsubsection{System Validation}
+\begin{itemize}
+    \item Functionality testing of all recovered systems
+    \item Performance benchmarking
+    \item Security controls verification
+    \item Data integrity checks
+    \item Integration testing between systems
+    \item User acceptance testing
+\end{itemize}
+
+\subsubsection{Monitoring}
+\begin{itemize}
+    \item Enhanced monitoring of recovered systems
+    \item Capacity and performance tracking
+    \item Error and exception logging
+    \item User issue tracking
+    \item Daily status reports to management
+\end{itemize}
+
+\section{Failback Procedures}
+
+\subsection{Failback Planning}
+Once primary site is restored:
+\begin{enumerate}
+    \item Assess primary site readiness
+    \item Plan failback window (minimize business impact)
+    \item Communicate planned downtime to users
+    \item Prepare data synchronization strategy
+    \item Test failback procedures in isolated environment
+\end{enumerate}
+
+\subsection{Failback Execution}
+\begin{enumerate}
+    \item Synchronize data from DR to primary site
+    \item Verify data consistency
+    \item Plan cutover timing
+    \item Perform gradual failback (by tier)
+    \item Test each system after failback
+    \item Update DNS and routing
+    \item Monitor primary site stability
+    \item Maintain DR site active for 48 hours (rollback capability)
+    \item Decommission DR resources after confirmation
+\end{enumerate}
+
+\subsection{Post-Failback}
+\begin{itemize}
+    \item Verify all systems operational on primary
+    \item Document lessons learned
+    \item Update DR procedures based on experience
+    \item Restore normal backup schedules
+    \item Conduct post-incident review
+\end{itemize}
+
+\section{Communication Plan}
+
+\subsection{Internal Communications}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Stakeholder} & \textbf{Information} & \textbf{Frequency} & \textbf{Method} \\
+\hline
+Executive Team & Status, impact, ETA & Hourly & Phone/Email \\
+\hline
+IT Staff & Technical updates & Every 2 hours & Slack/Teams \\
+\hline
+Employees & Service status & Every 4 hours & Email/Intranet \\
+\hline
+Customers & Service impact & Initial + updates & Email/Portal \\
+\hline
+\end{tabular}
+\caption{Communication Matrix}
+\end{table}
+
+\subsection{External Communications}
+\begin{itemize}
+    \item \textbf{Customers:} Service status updates via email and status page
+    \item \textbf{Partners:} Direct notification if integration affected
+    \item \textbf{Regulators:} NIS2 incident reporting if applicable
+    \item \textbf{Media:} Only through designated spokesperson
+    \item \textbf{Vendors:} DR site provider, cloud providers as needed
+\end{itemize}
+
+\section{Testing and Exercises}
+
+\subsection{DR Test Schedule}
+
+\begin{longtable}{|p{3cm}|p{3.5cm}|p{3cm}|p{4cm}|}
+\hline
+\textbf{Test Type} & \textbf{Frequency} & \textbf{Duration} & \textbf{Scope} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Test Type} & \textbf{Frequency} & \textbf{Duration} & \textbf{Scope} \\
+\hline
+\endhead
+Backup Restore & Weekly & 2 hours & Random files/databases \\
+\hline
+Single System DR & Monthly & 4 hours & One Tier 2 system \\
+\hline
+Partial Failover & Quarterly & 8 hours & All Tier 1 systems \\
+\hline
+Full DR Exercise & Annual & 24-48 hours & Complete failover \\
+\hline
+Tabletop Exercise & Semi-annual & 4 hours & Scenario walkthrough \\
+\hline
+\caption{DR Testing Schedule}
+\end{longtable}
+
+\subsection{Test Documentation}
+Each test must document:
+\begin{itemize}
+    \item Date and time of test
+    \item Participants and roles
+    \item Systems tested
+    \item Success criteria
+    \item Issues encountered
+    \item Resolution steps
+    \item Lessons learned
+    \item Action items for improvement
+\end{itemize}
+
+\section{Dependencies and Contacts}
+
+\subsection{Critical Vendors}
+
+\begin{longtable}{|p{3.5cm}|p{3.5cm}|p{3cm}|p{3cm}|}
+\hline
+\textbf{Vendor} & \textbf{Service} & \textbf{Contact} & \textbf{SLA} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Vendor} & \textbf{Service} & \textbf{Contact} & \textbf{SLA} \\
+\hline
+\endhead
+[DR Site Provider] & DR facility & [Phone/Email] & 4h response \\
+\hline
+[Cloud Provider] & Cloud DR & [Phone/Email] & 24/7 support \\
+\hline
+[ISP Primary] & Network connectivity & [Phone/Email] & 4h restore \\
+\hline
+[ISP Backup] & Backup connectivity & [Phone/Email] & 8h restore \\
+\hline
+\caption{Critical Vendor Contacts}
+\end{longtable}
+
+\subsection{Utilities and Services}
+\begin{itemize}
+    \item \textbf{Power Company:} [Contact] - Generator on-site
+    \item \textbf{Cooling:} Redundant HVAC units
+    \item \textbf{Physical Security:} 24/7 security service
+    \item \textbf{Building Management:} [Contact]
+\end{itemize}
+
+\section{Plan Maintenance}
+
+\subsection{Update Requirements}
+This plan must be updated when:
+\begin{itemize}
+    \item New critical systems deployed
+    \item Infrastructure changes
+    \item Contact information changes
+    \item After DR tests reveal issues
+    \item After actual disaster recovery
+    \item Regulatory requirements change
+    \item Organizational changes
+\end{itemize}
+
+\subsection{Review Schedule}
+\begin{itemize}
+    \item \textbf{Semi-Annual:} Complete plan review
+    \item \textbf{Quarterly:} Contact list verification
+    \item \textbf{Monthly:} System inventory update
+    \item \textbf{After Each Test:} Procedure updates
+\end{itemize}
+
+\section{Appendices}
+
+\subsection{Appendix A: System Recovery Procedures}
+Detailed step-by-step recovery procedures for each critical system
+
+\subsection{Appendix B: Network Diagrams}
+\begin{itemize}
+    \item Primary site network topology
+    \item DR site network topology
+    \item Failover routing configuration
+\end{itemize}
+
+\subsection{Appendix C: Configuration Documentation}
+\begin{itemize}
+    \item Server configurations
+    \item Network device configs
+    \item Application settings
+    \item Security configurations
+\end{itemize}
+
+\subsection{Appendix D: Vendor Contracts}
+\begin{itemize}
+    \item DR site agreement
+    \item Cloud services agreements
+    \item Support contracts
+\end{itemize}
+
+\subsection{Appendix E: Historical Test Results}
+Documentation of previous DR tests and outcomes
+
+\section{Approval}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Role} & \textbf{Name} & \textbf{Date} \\
+\hline
+CIO & & \\
+\hline
+CISO & & \\
+\hline
+CEO & & \\
+\hline
+\end{tabular}
+\end{table}
+
+\end{document}

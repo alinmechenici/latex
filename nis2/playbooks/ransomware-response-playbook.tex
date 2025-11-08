@@ -1,0 +1,616 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{lastpage}
+\usepackage{enumitem}
+
+\geometry{margin=1in}
+
+\definecolor{nis2blue}{RGB}{0,51,153}
+\definecolor{nis2gray}{RGB}{100,100,100}
+\definecolor{nis2red}{RGB}{204,0,0}
+\definecolor{warning}{RGB}{255,102,0}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{nis2blue}{\textbf{Ransomware Response Playbook}}}
+\fancyhead[R]{\includegraphics[height=0.8cm]{logo.png}}
+\fancyfoot[L]{\textcolor{nis2gray}{\small \jobname}}
+\fancyfoot[C]{\textcolor{nis2red}{\small\textbf{CONFIDENTIAL}}}
+\fancyfoot[R]{\textcolor{nis2gray}{\small Page \thepage\ of \pageref{LastPage}}}
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=nis2blue,
+    filecolor=nis2blue,
+    urlcolor=nis2blue,
+}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\Huge\bfseries\textcolor{nis2blue}{Ransomware Response Playbook}\par}
+    \vspace{0.5cm}
+    {\Large Incident Response - NIS2 Compliance\par}
+    \vspace{1cm}
+    {\Large\textbf{CRITICAL INCIDENT - PRIORITY 1}\par}
+    \vspace{2cm}
+    \textcolor{nis2red}{\Large\textbf{DO NOT DELAY - EVERY MINUTE COUNTS}}
+    \vfill
+    {\large Organization: [ORGANIZATION]\par}
+    {\large Version: 1.0\par}
+    {\large Last Updated: \today\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Quick Reference Card}
+
+\begin{center}
+\fbox{\begin{minipage}{0.9\textwidth}
+\textbf{\large RANSOMWARE DETECTION - IMMEDIATE ACTIONS (First 15 Minutes)}
+
+\textbf{Indicators:}
+\begin{itemize}[nosep]
+    \item Files with unusual extensions (.encrypted, .locked, .crypto)
+    \item Ransom notes appearing (README.txt, HOW\_TO\_DECRYPT.html)
+    \item Mass file modifications
+    \item Disabled antivirus/security tools
+    \item Desktop wallpaper changed to ransom demand
+\end{itemize}
+
+\textbf{CRITICAL - DO NOT:}
+\begin{itemize}[nosep]
+    \item ❌ Power off affected systems (preserves evidence in RAM)
+    \item ❌ Pay ransom immediately
+    \item ❌ Delete ransom notes
+    \item ❌ Attempt data recovery without forensic copies
+\end{itemize}
+
+\textbf{DO IMMEDIATELY:}
+\begin{enumerate}[nosep]
+    \item \textbf{ISOLATE:} Disconnect affected systems from network
+    \item \textbf{CALL:} IR Hotline: [PHONE NUMBER]
+    \item \textbf{PROTECT:} Isolate backup systems
+    \item \textbf{DOCUMENT:} Take photos of ransom notes
+    \item \textbf{PRESERVE:} Do not reboot or shut down
+\end{enumerate}
+
+\textbf{Emergency Contacts:}
+\begin{itemize}[nosep]
+    \item IR Team Leader: [NAME] - [PHONE]
+    \item CISO: [NAME] - [PHONE]
+    \item CIO: [NAME] - [PHONE]
+\end{itemize}
+\end{minipage}}
+\end{center}
+
+\newpage
+
+\section{Ransomware Response Timeline}
+
+\begin{longtable}{|p{2.5cm}|p{5cm}|p{6cm}|}
+\hline
+\textbf{Phase} & \textbf{Timeline} & \textbf{Key Actions} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Phase} & \textbf{Timeline} & \textbf{Key Actions} \\
+\hline
+\endhead
+\rowcolor{nis2red!30}
+\textbf{Detection} & 0-15 min & Identify ransomware, call IR team \\
+\hline
+\rowcolor{warning!30}
+\textbf{Containment} & 15-60 min & Isolate systems, protect backups \\
+\hline
+\textbf{Assessment} & 1-4 hours & Determine scope, variant, impact \\
+\hline
+\textbf{Eradication} & 4-24 hours & Remove malware, rebuild systems \\
+\hline
+\textbf{Recovery} & 1-3 days & Restore from backups, verify \\
+\hline
+\textbf{Post-Incident} & 1-2 weeks & Lessons learned, improvements \\
+\hline
+\caption{Ransomware Response Timeline}
+\end{longtable}
+
+\section{Phase 1: Detection and Initiation (0-15 Minutes)}
+
+\subsection{Detection Methods}
+
+\textbf{Automated Alerts:}
+\begin{itemize}
+    \item EDR/antivirus ransomware detection
+    \item File integrity monitoring (mass file changes)
+    \item Network traffic anomalies
+    \item Backup system alerts
+\end{itemize}
+
+\textbf{User Reports:}
+\begin{itemize}
+    \item Cannot open files
+    \item Files with strange extensions
+    \item Ransom note appearing
+    \item Performance degradation
+\end{itemize}
+
+\subsection{Immediate Response Checklist}
+
+\textbf{First Responder Actions (0-5 minutes):}
+\begin{enumerate}
+    \item ✅ Document current time and date
+    \item ✅ Photograph ransom note (DO NOT CLOSE IT)
+    \item ✅ Note file extension of encrypted files
+    \item ✅ Identify first user/system reporting issue
+    \item ✅ Call IR Hotline immediately: \textbf{[PHONE NUMBER]}
+\end{enumerate}
+
+\textbf{IR Team Notification (5-10 minutes):}
+\begin{enumerate}
+    \item ✅ IR Team Leader notified
+    \item ✅ CISO notified
+    \item ✅ CIO notified
+    \item ✅ War room activated
+    \item ✅ Incident ID created: INC-[DATE]-[NUMBER]
+\end{enumerate}
+
+\textbf{Initial Assessment (10-15 minutes):}
+\begin{enumerate}
+    \item ✅ How many systems affected?
+    \item ✅ Are backups accessible and clean?
+    \item ✅ Is ransomware still spreading?
+    \item ✅ Critical systems impacted?
+    \item ✅ Activate containment procedures
+\end{enumerate}
+
+\section{Phase 2: Containment (15-60 Minutes)}
+
+\subsection{Network Isolation}
+
+\textbf{CRITICAL - Perform in this order:}
+
+\textbf{Step 1: Isolate Infected Systems (15-20 min)}
+\begin{enumerate}
+    \item \textbf{DO NOT POWER OFF} - Disconnect network cables
+    \item For wireless: Disable Wi-Fi adapter (don't shut down)
+    \item For VMs: Disconnect network adapter in hypervisor
+    \item Document MAC addresses and IP addresses
+    \item Tag systems with incident stickers
+\end{enumerate}
+
+\textbf{Step 2: Protect Backup Infrastructure (20-25 min)}
+\begin{enumerate}
+    \item \textbf{PRIORITY 1:} Isolate backup servers immediately
+    \item Disconnect backup storage from network
+    \item Verify backup integrity (scan for ransomware)
+    \item Make forensic copies of recent backups
+    \item Enable immutable/air-gapped backups
+\end{enumerate}
+
+\textbf{Step 3: Network Segmentation (25-40 min)}
+\begin{enumerate}
+    \item Block affected network segments at firewall
+    \item Disable VPN access (temporary)
+    \item Block identified malicious IPs/domains
+    \item Enable enhanced IDS/IPS rules
+    \item Isolate critical systems (even if not infected)
+\end{enumerate}
+
+\textbf{Step 4: Account Security (40-60 min)}
+\begin{enumerate}
+    \item Disable compromised accounts
+    \item Force password reset for privileged accounts
+    \item Enable MFA if not already active
+    \item Review recent account activity
+    \item Disable service accounts if compromised
+\end{enumerate}
+
+\subsection{Evidence Preservation}
+
+\textbf{Critical Evidence Collection:}
+\begin{itemize}
+    \item Memory dumps from affected systems (before reboot)
+    \item Copy of ransom note (text + screenshot)
+    \item Sample encrypted files (original + encrypted versions)
+    \item Network traffic captures
+    \item System and security logs
+    \item Email phishing lure (if applicable)
+\end{itemize}
+
+\textbf{Chain of Custody:}
+\begin{itemize}
+    \item Label all evidence with incident ID
+    \item Document who collected, when, and from where
+    \item Store in secure, access-controlled location
+    \item Maintain chain of custody log
+\end{itemize}
+
+\section{Phase 3: Assessment and Analysis (1-4 Hours)}
+
+\subsection{Scope Determination}
+
+\textbf{Systems Inventory:}
+\begin{enumerate}
+    \item Identify all affected systems
+    \item Classify by criticality (P1/P2/P3)
+    \item Determine encryption status (partial/full)
+    \item Map dependencies
+    \item Prioritize recovery order
+\end{enumerate}
+
+\textbf{Data Impact Assessment:}
+\begin{itemize}
+    \item What data was encrypted?
+    \item Was data exfiltrated? (Check for data theft indicators)
+    \item Can we recover from backups?
+    \item Last good backup timestamp?
+    \item Data loss window (RPO gap)?
+\end{itemize}
+
+\subsection{Ransomware Identification}
+
+\textbf{Variant Identification:}
+\begin{enumerate}
+    \item File extension analysis (.lock, .crypt, specific variant)
+    \item Ransom note analysis (language, payment method)
+    \item Check ID Ransomware: https://id-ransomware.malwarehunterteam.com/
+    \item Search for decryption tools (No More Ransom Project)
+    \item Identify ransomware family (BlackCat, Lockbit, Ryuk, etc.)
+\end{enumerate}
+
+\textbf{Attack Vector Analysis:}
+\begin{itemize}
+    \item Initial access method (phishing, RDP, exploit, supply chain)
+    \item Lateral movement techniques
+    \item Privilege escalation methods
+    \item Persistence mechanisms
+    \item Dwell time (how long attacker had access)
+\end{itemize}
+
+\subsection{Business Impact Assessment}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{Impact Area} & \textbf{Assessment} \\
+\hline
+Service Availability & Which services are down? How long? \\
+\hline
+Customer Impact & How many customers affected? Revenue impact? \\
+\hline
+Regulatory Impact & Is this a NIS2 significant incident? GDPR breach? \\
+\hline
+Financial Impact & Direct costs + revenue loss + ransom amount \\
+\hline
+Reputational & Media coverage potential? Customer trust impact? \\
+\hline
+\end{tabular}
+\caption{Business Impact Assessment}
+\end{table}
+
+\section{Phase 4: Decision Point - To Pay or Not to Pay}
+
+\subsection{Ransom Payment Decision Matrix}
+
+\textbf{Organization Policy:} \underline{\hspace{10cm}}
+
+\textbf{DO NOT PAY if:}
+\begin{itemize}
+    \item Clean, verified backups available
+    \item Free decryption tool exists
+    \item Legal/regulatory prohibition
+    \item Critical data not impacted
+\end{itemize}
+
+\textbf{CONSIDER PAYMENT (with extreme caution) if:}
+\begin{itemize}
+    \item No viable backup or recovery option
+    \item Existential threat to organization
+    \item Data exfiltration and threat of publication
+    \item All other options exhausted
+\end{itemize}
+
+\textbf{Decision Authority:}
+\begin{itemize}
+    \item CEO approval required
+    \item Legal counsel consulted
+    \item Law enforcement notified
+    \item Insurance company involved
+    \item Board of Directors informed
+\end{itemize}
+
+\textbf{⚠️ WARNING: Paying Ransom:}
+\begin{itemize}
+    \item Does not guarantee decryption
+    \item Funds criminal enterprises
+    \item May violate sanctions (OFAC)
+    \item Marks organization as willing to pay
+    \item No recourse if attackers don't provide decryption key
+\end{itemize}
+
+\subsection{Alternative: Negotiation Considerations}
+
+If payment being considered:
+\begin{itemize}
+    \item Engage professional ransomware negotiators
+    \item Request proof of decryption capability
+    \item Negotiate down from initial demand (often 50-70\% reduction)
+    \item Request assurance of data deletion
+    \item Request IOCs and attack details
+    \item Document all communications
+\end{itemize}
+
+\section{Phase 5: Eradication (4-24 Hours)}
+
+\subsection{Malware Removal}
+
+\textbf{DO NOT attempt recovery until eradication complete!}
+
+\textbf{Eradication Steps:}
+\begin{enumerate}
+    \item Identify all compromised systems (use IOCs)
+    \item Remove persistence mechanisms
+        \begin{itemize}
+            \item Scheduled tasks
+            \item Registry keys
+            \item Startup folders
+            \item Services
+        \end{itemize}
+    \item Delete malware executables and scripts
+    \item Remove unauthorized accounts
+    \item Close exploited vulnerabilities
+    \item Apply security patches
+    \item Rebuild critical systems from clean images (preferred)
+\end{enumerate}
+
+\subsection{System Rebuilding}
+
+\textbf{Recommended Approach: Complete Rebuild}
+
+\textbf{Rebuild Process:}
+\begin{enumerate}
+    \item Backup encrypted data (for future decryption attempts)
+    \item Wipe affected systems completely
+    \item Reinstall OS from clean, verified images
+    \item Apply all security patches
+    \item Install and configure security agents
+    \item Harden configurations
+    \item Join to domain (with new machine account)
+    \item Verify no malware present before data restoration
+\end{enumerate}
+
+\section{Phase 6: Recovery (1-3 Days)}
+
+\subsection{Recovery Priority}
+
+\textbf{Tier 1 - Critical Systems (0-24 hours):}
+\begin{itemize}
+    \item Active Directory / Authentication
+    \item Email systems
+    \item Core business applications
+    \item Customer-facing services
+\end{itemize}
+
+\textbf{Tier 2 - Important Systems (24-48 hours):}
+\begin{itemize}
+    \item Internal business systems
+    \item Collaboration tools
+    \item Monitoring and management
+\end{itemize}
+
+\textbf{Tier 3 - Standard Systems (48-72 hours):}
+\begin{itemize}
+    \item Development environments
+    \item Non-critical applications
+\end{itemize}
+
+\subsection{Data Restoration}
+
+\textbf{Restoration Procedure:}
+\begin{enumerate}
+    \item Identify last known good backup
+    \item Verify backup integrity
+    \item Scan backup for malware
+    \item Restore to clean, rebuilt systems
+    \item Verify data completeness
+    \item Test functionality
+    \item Document any data loss
+\end{enumerate}
+
+\textbf{Validation Checklist:}
+\begin{itemize}
+    \item ✅ All business-critical data restored
+    \item ✅ Applications functioning properly
+    \item ✅ Integrations working
+    \item ✅ No malware detected
+    \item ✅ Performance acceptable
+    \item ✅ Users can access required resources
+\end{itemize}
+
+\section{Phase 7: NIS2 Reporting}
+
+\subsection{Reporting Timeline}
+
+\textbf{Early Warning (24 hours):}
+\begin{itemize}
+    \item Notify competent authority
+    \item Basic information: ransomware incident detected
+    \item Systems affected (general description)
+    \item Containment actions taken
+\end{itemize}
+
+\textbf{Incident Notification (72 hours):}
+\begin{itemize}
+    \item Ransomware variant identified
+    \item Number of systems affected
+    \item Services impacted
+    \item User/customer impact
+    \item IOCs (file hashes, IPs, domains)
+    \item Attack vector
+    \item Current status
+\end{itemize}
+
+\textbf{Final Report (1 month):}
+\begin{itemize}
+    \item Complete incident timeline
+    \item Root cause analysis
+    \item Total impact assessment
+    \item Recovery actions
+    \item Lessons learned
+    \item Preventive measures implemented
+\end{itemize}
+
+\section{Post-Incident Activities}
+
+\subsection{Lessons Learned Session}
+
+\textbf{Conduct within 2 weeks of incident closure}
+
+\textbf{Participants:}
+\begin{itemize}
+    \item IR Team
+    \item IT Operations
+    \item Security Team
+    \item Management
+    \item Affected business units
+\end{itemize}
+
+\textbf{Discussion Points:}
+\begin{itemize}
+    \item What worked well?
+    \item What could be improved?
+    \item Were procedures followed?
+    \item Communication effectiveness
+    \item Tools and capabilities gaps
+    \item Training needs identified
+\end{itemize}
+
+\subsection{Preventive Measures}
+
+\textbf{Immediate Actions (0-30 days):}
+\begin{itemize}
+    \item Block identified IOCs
+    \item Patch exploited vulnerabilities
+    \item Enforce MFA organization-wide
+    \item Implement application whitelisting
+    \item Enhanced email filtering
+    \item Disable unnecessary services/ports
+\end{itemize}
+
+\textbf{Short-term Actions (30-90 days):}
+\begin{itemize}
+    \item Network segmentation improvements
+    \item Privileged access management
+    \item Enhanced monitoring and alerting
+    \item Backup strategy improvement
+    \item Security awareness training
+\end{itemize}
+
+\textbf{Long-term Actions (90+ days):}
+\begin{itemize}
+    \item Zero Trust architecture implementation
+    \item EDR expansion to all endpoints
+    \item Regular penetration testing
+    \item Incident response plan update
+    \item Disaster recovery plan testing
+\end{itemize}
+
+\section{Contact Information}
+
+\subsection{Internal Contacts}
+
+\begin{longtable}{|p{4cm}|p{3.5cm}|p{5.5cm}|}
+\hline
+\textbf{Role} & \textbf{Name} & \textbf{Contact} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Role} & \textbf{Name} & \textbf{Contact} \\
+\hline
+\endhead
+IR Team Leader & [NAME] & [PHONE] | [EMAIL] \\
+\hline
+CISO & [NAME] & [PHONE] | [EMAIL] \\
+\hline
+CIO & [NAME] & [PHONE] | [EMAIL] \\
+\hline
+Legal Counsel & [NAME] & [PHONE] | [EMAIL] \\
+\hline
+Communications Lead & [NAME] & [PHONE] | [EMAIL] \\
+\hline
+\caption{Internal Emergency Contacts}
+\end{longtable}
+
+\subsection{External Resources}
+
+\begin{itemize}
+    \item \textbf{Law Enforcement:} [LOCAL CYBERCRIME UNIT]
+    \item \textbf{Cyber Insurance:} [INSURANCE COMPANY] - Policy \#: [NUMBER]
+    \item \textbf{Forensics Firm:} [COMPANY] - [24/7 HOTLINE]
+    \item \textbf{Ransomware Negotiators:} [COMPANY] - [CONTACT]
+    \item \textbf{NIS2 Authority:} [COMPETENT AUTHORITY] - [CONTACT]
+\end{itemize}
+
+\subsection{Useful Resources}
+
+\begin{itemize}
+    \item No More Ransom Project: https://www.nomoreransom.org/
+    \item ID Ransomware: https://id-ransomware.malwarehunterteam.com/
+    \item CISA Ransomware Guide: https://www.cisa.gov/stopransomware
+    \item Have I Been Pwned: https://haveibeenpwned.com/
+\end{itemize}
+
+\section{Appendices}
+
+\subsection{Appendix A: Common Ransomware Families}
+
+\begin{longtable}{|p{3cm}|p{10cm}|}
+\hline
+\textbf{Ransomware} & \textbf{Characteristics} \\
+\hline
+BlackCat (ALPHV) & Rust-based, double extortion, RaaS, targets enterprises \\
+\hline
+LockBit & Fast encryption, RaaS, affiliates, data exfiltration \\
+\hline
+Ryuk & Targeted attacks, high ransom demands, often follows TrickBot \\
+\hline
+Conti & RaaS, targeted attacks, double extortion, associated with Russia \\
+\hline
+REvil (Sodinokibi) & RaaS, supply chain attacks, high-profile victims \\
+\hline
+\caption{Common Ransomware Families}
+\end{longtable}
+
+\subsection{Appendix B: Ransomware Prevention Checklist}
+
+\begin{itemize}
+    \item ✅ Regular, tested backups (3-2-1 rule)
+    \item ✅ MFA enforced organization-wide
+    \item ✅ Email filtering and link protection
+    \item ✅ Security awareness training
+    \item ✅ Patch management (critical patches within 72h)
+    \item ✅ Application whitelisting
+    \item ✅ Network segmentation
+    \item ✅ Privileged access management
+    \item ✅ EDR on all endpoints
+    \item ✅ Disable RDP from internet
+    \item ✅ Regular vulnerability scanning
+    \item ✅ Incident response plan tested
+\end{itemize}
+
+\end{document}
