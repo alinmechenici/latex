@@ -1,0 +1,431 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{lastpage}
+
+\geometry{margin=1in}
+
+\definecolor{nis2blue}{RGB}{0,51,153}
+\definecolor{nis2gray}{RGB}{100,100,100}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{nis2blue}{\textbf{Security Awareness Program}}}
+\fancyhead[R]{\includegraphics[height=0.8cm]{logo.png}}
+\fancyfoot[L]{\textcolor{nis2gray}{\small \jobname}}
+\fancyfoot[C]{\textcolor{nis2gray}{\small Internal Use Only}}
+\fancyfoot[R]{\textcolor{nis2gray}{\small Page \thepage\ of \pageref{LastPage}}}
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=nis2blue,
+    filecolor=nis2blue,
+    urlcolor=nis2blue,
+}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\Huge\bfseries\textcolor{nis2blue}{Security Awareness Program}\par}
+    \vspace{0.5cm}
+    {\Large NIS2 Directive Compliance\par}
+    \vspace{2cm}
+    {\Large\textbf{Organization:} [ORGANIZATION]\par}
+    \vspace{0.5cm}
+    {\Large\textbf{Version:} 1.0\par}
+    \vspace{0.5cm}
+    {\Large\textbf{Date:} \today\par}
+    \vfill
+    {\small NIS2 Article 21 - Cybersecurity Training and Cyber Hygiene\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Program Overview}
+
+\subsection{Purpose}
+Establish a comprehensive security awareness and training program to ensure all personnel understand their cybersecurity responsibilities in compliance with NIS2 requirements.
+
+\subsection{Objectives}
+\begin{itemize}
+    \item Build a security-conscious culture
+    \item Reduce human-related security incidents
+    \item Ensure NIS2 compliance
+    \item Protect organizational assets
+    \item Empower employees as the first line of defense
+\end{itemize}
+
+\section{Training Requirements}
+
+\subsection{General Security Awareness (All Employees)}
+\textbf{Frequency:} Annual (mandatory)
+
+\textbf{Topics:}
+\begin{itemize}
+    \item Basic cyber hygiene practices
+    \item Password security
+    \item Phishing and social engineering
+    \item Physical security
+    \item Mobile device security
+    \item Clean desk policy
+    \item Acceptable use of IT resources
+    \item Incident reporting procedures
+\end{itemize}
+
+\textbf{Duration:} 60 minutes
+
+\textbf{Delivery:} Online learning platform
+
+\subsection{Role-Based Training}
+
+\subsubsection{IT Staff}
+\textbf{Topics:}
+\begin{itemize}
+    \item Secure system administration
+    \item Vulnerability management
+    \item Log monitoring and analysis
+    \item Secure coding practices
+    \item Incident response procedures
+\end{itemize}
+
+\subsubsection{Management}
+\textbf{Topics:}
+\begin{itemize}
+    \item Cybersecurity governance
+    \item Risk management
+    \item NIS2 compliance obligations
+    \item Crisis management
+    \item Decision-making during incidents
+\end{itemize}
+
+\subsubsection{Developers}
+\textbf{Topics:}
+\begin{itemize}
+    \item Secure coding practices
+    \item OWASP Top 10
+    \item Security testing
+    \item DevSecOps principles
+\end{itemize}
+
+\subsection{Specialized Training}
+
+\subsubsection{Incident Response Team}
+\textbf{Frequency:} Quarterly
+
+\textbf{Topics:}
+\begin{itemize}
+    \item Incident handling procedures
+    \item Forensics fundamentals
+    \item Evidence collection
+    \item NIS2 reporting requirements
+    \item Crisis communication
+\end{itemize}
+
+\subsubsection{Data Protection Officers}
+\textbf{Topics:}
+\begin{itemize}
+    \item GDPR and NIS2 compliance
+    \item Data protection by design
+    \item Privacy impact assessments
+    \item Breach notification procedures
+\end{itemize}
+
+\section{Basic Cyber Hygiene Practices}
+
+\subsection{Password Management}
+\begin{itemize}
+    \item Use strong, unique passwords (minimum 12 characters)
+    \item Enable multi-factor authentication (MFA)
+    \item Use password manager
+    \item Never share passwords
+    \item Change default passwords immediately
+\end{itemize}
+
+\subsection{Email Security}
+\begin{itemize}
+    \item Verify sender before opening attachments
+    \item Be cautious of unexpected emails
+    \item Look for phishing indicators
+    \item Report suspicious emails
+    \item Never click unknown links
+\end{itemize}
+
+\subsection{Device Security}
+\begin{itemize}
+    \item Lock screen when away (mandatory)
+    \item Keep software updated
+    \item Enable device encryption
+    \item Report lost/stolen devices immediately
+    \item Use only approved devices and software
+\end{itemize}
+
+\subsection{Data Handling}
+\begin{itemize}
+    \item Classify data appropriately
+    \item Encrypt sensitive data
+    \item Use secure file sharing methods
+    \item Follow clean desk policy
+    \item Proper disposal of documents (shredding)
+\end{itemize}
+
+\subsection{Remote Work Security}
+\begin{itemize}
+    \item Use VPN for remote access
+    \item Secure home Wi-Fi networks
+    \item Privacy when working in public
+    \item Physical security of work devices
+    \item Separate personal and work activities
+\end{itemize}
+
+\section{Phishing Awareness}
+
+\subsection{Phishing Indicators}
+\begin{itemize}
+    \item Urgent or threatening language
+    \item Requests for credentials or sensitive data
+    \item Suspicious sender addresses
+    \item Poor grammar or spelling
+    \item Unexpected attachments
+    \item Mismatched URLs
+\end{itemize}
+
+\subsection{Phishing Simulation Program}
+\textbf{Frequency:} Monthly
+
+\textbf{Process:}
+\begin{enumerate}
+    \item Send simulated phishing emails
+    \item Track click rates and reporting
+    \item Provide immediate education for clickers
+    \item Analyze results and trends
+    \item Adjust difficulty based on performance
+\end{enumerate}
+
+\textbf{Metrics:}
+\begin{itemize}
+    \item Click rate (target: <5\%)
+    \item Reporting rate (target: >50\%)
+    \item Time to report (target: <1 hour)
+\end{itemize}
+
+\section{Communication and Awareness Campaigns}
+
+\subsection{Monthly Security Tips}
+\begin{itemize}
+    \item Email newsletters
+    \item Intranet articles
+    \item Posters in common areas
+    \item Screensaver messages
+\end{itemize}
+
+\subsection{Annual Events}
+\begin{itemize}
+    \item \textbf{Cybersecurity Awareness Month (October)}
+    \item Lunch and learn sessions
+    \item Security challenges and contests
+    \item Executive security briefings
+\end{itemize}
+
+\subsection{Communication Channels}
+\begin{itemize}
+    \item Email notifications
+    \item Intranet portal
+    \item Team meetings
+    \item Digital signage
+    \item Mobile app notifications
+\end{itemize}
+
+\section{New Employee Onboarding}
+
+\subsection{Day 1 Security Briefing}
+\begin{itemize}
+    \item Security policies overview
+    \item Acceptable use policy acknowledgment
+    \item Account setup and MFA enrollment
+    \item Device security requirements
+    \item Incident reporting procedures
+\end{itemize}
+
+\subsection{First Week}
+\begin{itemize}
+    \item Complete general security awareness training
+    \item Role-specific security training assignment
+    \item Meeting with security team (for IT roles)
+\end{itemize}
+
+\section{Continuous Education}
+
+\subsection{Quarterly Security Updates}
+\begin{itemize}
+    \item Emerging threats briefing
+    \item Recent incident lessons learned
+    \item Policy updates
+    \item Regulatory changes
+\end{itemize}
+
+\subsection{Microlearning}
+\begin{itemize}
+    \item 5-minute security tips
+    \item Short videos
+    \item Interactive quizzes
+    \item Just-in-time training
+\end{itemize}
+
+\section{Measurement and Metrics}
+
+\subsection{Training Metrics}
+\begin{itemize}
+    \item Completion rates (target: 100\%)
+    \item Assessment scores (target: >80\%)
+    \item Time to complete
+    \item Overdue training
+\end{itemize}
+
+\subsection{Awareness Metrics}
+\begin{itemize}
+    \item Phishing simulation click rates
+    \item Incident reporting rates
+    \item Security incidents by cause
+    \item Employee feedback scores
+\end{itemize}
+
+\subsection{Program Effectiveness}
+\begin{itemize}
+    \item Reduction in security incidents
+    \item Improved reporting rates
+    \item Faster incident detection
+    \item Culture assessment surveys
+\end{itemize}
+
+\section{Roles and Responsibilities}
+
+\subsection{Security Awareness Manager}
+\begin{itemize}
+    \item Program development and management
+    \item Content creation and delivery
+    \item Tracking and reporting metrics
+    \item Continuous improvement
+\end{itemize}
+
+\subsection{HR Department}
+\begin{itemize}
+    \item Onboarding integration
+    \item Training record maintenance
+    \item Compliance tracking
+    \item Policy acknowledgments
+\end{itemize}
+
+\subsection{Managers}
+\begin{itemize}
+    \item Ensure team compliance
+    \item Reinforce security messages
+    \item Report training gaps
+    \item Lead by example
+\end{itemize}
+
+\subsection{All Employees}
+\begin{itemize}
+    \item Complete required training
+    \item Apply learned practices
+    \item Report security concerns
+    \item Participate in awareness activities
+\end{itemize}
+
+\section{Program Maintenance}
+
+\subsection{Annual Review}
+\begin{itemize}
+    \item Assess program effectiveness
+    \item Update content for current threats
+    \item Review and update metrics
+    \item Budget planning
+\end{itemize}
+
+\subsection{Content Updates}
+\begin{itemize}
+    \item Quarterly content review
+    \item Incorporate lessons learned
+    \item Address emerging threats
+    \item Update for regulatory changes
+\end{itemize}
+
+\section{Budget and Resources}
+
+\subsection{Required Resources}
+\begin{itemize}
+    \item Learning management system (LMS)
+    \item Phishing simulation platform
+    \item Content creation tools
+    \item Communication platforms
+\end{itemize}
+
+\subsection{Annual Budget}
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|r|}
+\hline
+\textbf{Item} & \textbf{Cost} \\
+\hline
+LMS subscription & [AMOUNT] \\
+\hline
+Phishing platform & [AMOUNT] \\
+\hline
+Training content & [AMOUNT] \\
+\hline
+Events and materials & [AMOUNT] \\
+\hline
+\textbf{Total} & \textbf{[TOTAL]} \\
+\hline
+\end{tabular}
+\caption{Annual Program Budget}
+\end{table}
+
+\section{Compliance}
+
+\subsection{NIS2 Requirements}
+This program addresses NIS2 Article 21 requirements for:
+\begin{itemize}
+    \item Basic cyber hygiene practices
+    \item Cybersecurity training
+    \item Policies and procedures for employees with access to sensitive data
+\end{itemize}
+
+\subsection{Documentation}
+\begin{itemize}
+    \item Training records maintained for 3 years
+    \item Completion certificates issued
+    \item Annual compliance reporting
+    \item Audit trail of all activities
+\end{itemize}
+
+\section{Approval}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Role} & \textbf{Name} & \textbf{Date} \\
+\hline
+CISO & & \\
+\hline
+HR Director & & \\
+\hline
+CEO & & \\
+\hline
+\end{tabular}
+\end{table}
+
+\end{document}

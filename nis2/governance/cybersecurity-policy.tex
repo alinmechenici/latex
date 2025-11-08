@@ -1,0 +1,364 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{lastpage}
+\usepackage{enumitem}
+
+\geometry{margin=1in}
+
+\definecolor{nis2blue}{RGB}{0,51,153}
+\definecolor{nis2gray}{RGB}{100,100,100}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{nis2blue}{\textbf{Cybersecurity Policy}}}
+\fancyhead[R]{\includegraphics[height=0.8cm]{logo.png}}
+\fancyfoot[L]{\textcolor{nis2gray}{\small \jobname}}
+\fancyfoot[C]{\textcolor{nis2gray}{\small Internal Use Only}}
+\fancyfoot[R]{\textcolor{nis2gray}{\small Page \thepage\ of \pageref{LastPage}}}
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=nis2blue,
+    filecolor=nis2blue,
+    urlcolor=nis2blue,
+}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+
+    {\Huge\bfseries\textcolor{nis2blue}{Cybersecurity Policy}\par}
+    \vspace{0.5cm}
+    {\Large NIS2 Directive Compliance\par}
+    \vspace{2cm}
+
+    {\Large\textbf{Organization:} [ORGANIZATION]\par}
+    \vspace{0.5cm}
+    {\Large\textbf{Effective Date:} \today\par}
+    \vspace{0.5cm}
+    {\Large\textbf{Version:} 1.0\par}
+    \vspace{0.5cm}
+    {\Large\textbf{Review Date:} [REVIEW DATE]\par}
+    \vspace{2cm}
+
+    {\large\textbf{Classification:} Internal Use Only\par}
+    \vfill
+
+    {\large Owner: Chief Information Security Officer (CISO)\par}
+    {\large Approved by: [MANAGEMENT BOARD]\par}
+    \vspace{1cm}
+
+    {\small This policy complies with NIS2 Directive (EU) 2022/2555 Article 21\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Document Control}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Document Title} & Cybersecurity Policy \\
+\hline
+\textbf{Document Owner} & Chief Information Security Officer \\
+\hline
+\textbf{Version} & 1.0 \\
+\hline
+\textbf{Effective Date} & \today \\
+\hline
+\textbf{Review Frequency} & Annual \\
+\hline
+\textbf{Next Review Date} & [DATE] \\
+\hline
+\end{tabular}
+\caption{Document Control Information}
+\end{table}
+
+\subsection{Version History}
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Version} & \textbf{Date} & \textbf{Author} & \textbf{Changes} \\
+\hline
+1.0 & \today & [Author] & Initial version \\
+\hline
+\end{tabular}
+\caption{Version History}
+\end{table}
+
+\section{Purpose and Scope}
+
+\subsection{Purpose}
+This Cybersecurity Policy establishes the framework for protecting [ORGANIZATION]'s information assets, network infrastructure, and information systems in compliance with the NIS2 Directive (EU) 2022/2555.
+
+The policy aims to:
+\begin{itemize}
+    \item Ensure confidentiality, integrity, and availability of information systems
+    \item Protect against cybersecurity threats and incidents
+    \item Establish clear roles and responsibilities for cybersecurity
+    \item Ensure compliance with NIS2 requirements
+    \item Minimize cybersecurity risks to the organization
+\end{itemize}
+
+\subsection{Scope}
+This policy applies to:
+\begin{itemize}
+    \item All employees, contractors, and third parties with access to organizational systems
+    \item All information systems, networks, and data assets
+    \item All locations and facilities operated by [ORGANIZATION]
+    \item Cloud services and external service providers
+\end{itemize}
+
+\section{Regulatory Context}
+
+\subsection{NIS2 Directive Compliance}
+This policy implements the cybersecurity risk management measures required by Article 21 of the NIS2 Directive, including:
+
+\begin{enumerate}
+    \item Risk analysis and information system security policies
+    \item Incident handling procedures
+    \item Business continuity and crisis management
+    \item Supply chain security
+    \item Security in network and information systems acquisition, development, and maintenance
+    \item Policies and procedures to assess the effectiveness of cybersecurity measures
+    \item Basic cyber hygiene practices and cybersecurity training
+    \item Policies and procedures regarding cryptography and encryption
+    \item Human resources security, access control policies, and asset management
+    \item Multi-factor authentication or continuous authentication solutions
+\end{enumerate}
+
+\section{Governance Structure}
+
+\subsection{Roles and Responsibilities}
+
+\subsubsection{Management Body}
+\begin{itemize}
+    \item Ultimate responsibility for cybersecurity risk management
+    \item Approval of cybersecurity policies and strategies
+    \item Oversight of cybersecurity measures implementation
+    \item Approval of budget and resources for cybersecurity
+\end{itemize}
+
+\subsubsection{Chief Information Security Officer (CISO)}
+\begin{itemize}
+    \item Development and maintenance of cybersecurity policies
+    \item Implementation of cybersecurity risk management framework
+    \item Coordination of incident response activities
+    \item Reporting to management on cybersecurity posture
+    \item Liaison with regulatory authorities
+\end{itemize}
+
+\subsubsection{IT Department}
+\begin{itemize}
+    \item Implementation of technical security controls
+    \item System and network security management
+    \item Security monitoring and vulnerability management
+    \item Support for incident response
+\end{itemize}
+
+\subsubsection{All Employees}
+\begin{itemize}
+    \item Compliance with cybersecurity policies and procedures
+    \item Reporting of security incidents and suspicious activities
+    \item Participation in mandatory security awareness training
+    \item Protection of access credentials and sensitive information
+\end{itemize}
+
+\section{Cybersecurity Risk Management}
+
+\subsection{Risk Assessment}
+\begin{itemize}
+    \item Annual comprehensive risk assessments shall be conducted
+    \item Ad-hoc assessments for significant system changes
+    \item Risk assessments follow ISO 27005 methodology
+    \item Results documented in Risk Assessment Reports
+\end{itemize}
+
+\subsection{Risk Treatment}
+All identified risks shall be treated through one of the following approaches:
+\begin{itemize}
+    \item \textbf{Mitigate:} Implement controls to reduce risk
+    \item \textbf{Accept:} Formally accept residual risk (management approval required)
+    \item \textbf{Transfer:} Transfer risk through insurance or contracts
+    \item \textbf{Avoid:} Eliminate the risk-causing activity
+\end{itemize}
+
+\section{Security Measures}
+
+\subsection{Access Control}
+\begin{itemize}
+    \item Principle of least privilege enforced
+    \item Multi-factor authentication (MFA) required for all users
+    \item Regular access reviews conducted quarterly
+    \item Immediate revocation of access upon termination
+\end{itemize}
+
+\subsection{Cryptography and Encryption}
+\begin{itemize}
+    \item Data at rest encrypted using AES-256 or equivalent
+    \item Data in transit protected using TLS 1.3 or higher
+    \item Key management procedures in place
+    \item Encryption standards reviewed annually
+\end{itemize}
+
+\subsection{Network Security}
+\begin{itemize}
+    \item Network segmentation implemented
+    \item Firewalls and intrusion detection/prevention systems deployed
+    \item Regular network security assessments
+    \item Secure remote access via VPN
+\end{itemize}
+
+\subsection{Vulnerability Management}
+\begin{itemize}
+    \item Monthly vulnerability scanning
+    \item Critical patches applied within 72 hours
+    \item High-priority patches applied within 7 days
+    \item Annual penetration testing
+\end{itemize}
+
+\subsection{Malware Protection}
+\begin{itemize}
+    \item Anti-malware solutions deployed on all endpoints
+    \item Real-time scanning enabled
+    \item Definitions updated automatically
+    \item Regular security awareness training on malware threats
+\end{itemize}
+
+\section{Incident Management}
+
+\subsection{Incident Detection and Reporting}
+\begin{itemize}
+    \item 24/7 security monitoring capability
+    \item All incidents reported immediately to CISO
+    \item Incident reporting hotline available
+    \item Automated alerting for critical events
+\end{itemize}
+
+\subsection{NIS2 Incident Reporting Requirements}
+Significant incidents must be reported to competent authorities:
+\begin{itemize}
+    \item \textbf{Early warning:} Within 24 hours of awareness
+    \item \textbf{Incident notification:} Within 72 hours with initial assessment
+    \item \textbf{Final report:} Within 1 month with detailed analysis
+\end{itemize}
+
+\section{Business Continuity and Resilience}
+
+\subsection{Business Continuity Planning}
+\begin{itemize}
+    \item Business impact analysis conducted annually
+    \item Recovery time objectives (RTO) defined for critical systems
+    \item Recovery point objectives (RPO) established
+    \item Business continuity plans tested annually
+\end{itemize}
+
+\subsection{Backup and Recovery}
+\begin{itemize}
+    \item Daily backups of critical systems
+    \item Backup integrity tested monthly
+    \item Off-site backup storage maintained
+    \item Documented recovery procedures
+\end{itemize}
+
+\section{Supply Chain Security}
+
+\subsection{Third-Party Risk Management}
+\begin{itemize}
+    \item Security assessments of suppliers and service providers
+    \item Contractual security requirements in agreements
+    \item Regular vendor security reviews
+    \item Incident notification requirements for suppliers
+\end{itemize}
+
+\section{Training and Awareness}
+
+\subsection{Security Awareness Program}
+\begin{itemize}
+    \item Mandatory annual security awareness training
+    \item Role-based security training
+    \item Phishing simulation exercises
+    \item Regular security communications
+\end{itemize}
+
+\subsection{Basic Cyber Hygiene}
+Training covers:
+\begin{itemize}
+    \item Password security and management
+    \item Phishing and social engineering awareness
+    \item Safe internet and email usage
+    \item Physical security awareness
+    \item Mobile device security
+\end{itemize}
+
+\section{Compliance and Monitoring}
+
+\subsection{Policy Compliance}
+\begin{itemize}
+    \item Regular compliance audits conducted
+    \item Non-compliance investigated and addressed
+    \item Disciplinary action for policy violations
+\end{itemize}
+
+\subsection{Effectiveness Evaluation}
+\begin{itemize}
+    \item Annual review of security measure effectiveness
+    \item Key performance indicators (KPIs) tracked
+    \item Continuous improvement process
+\end{itemize}
+
+\section{Policy Review and Updates}
+
+This policy shall be reviewed:
+\begin{itemize}
+    \item Annually at minimum
+    \item Following significant security incidents
+    \item When regulatory requirements change
+    \item When organizational changes affect security
+\end{itemize}
+
+\section{Related Documents}
+\begin{itemize}
+    \item Incident Response Plan
+    \item Risk Assessment Report
+    \item Business Continuity Plan
+    \item Access Control Policy
+    \item Encryption Policy
+    \item Acceptable Use Policy
+\end{itemize}
+
+\section{Approval}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Role} & \textbf{Name} & \textbf{Signature \& Date} \\
+\hline
+CISO & & \\
+\hline
+CEO & & \\
+\hline
+Management Board & & \\
+\hline
+\end{tabular}
+\caption{Policy Approval}
+\end{table}
+
+\end{document}

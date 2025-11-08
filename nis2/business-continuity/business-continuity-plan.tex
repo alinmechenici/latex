@@ -1,0 +1,173 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{lastpage}
+
+\geometry{margin=1in}
+
+\definecolor{nis2blue}{RGB}{0,51,153}
+\definecolor{nis2gray}{RGB}{100,100,100}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{nis2blue}{\textbf{Business Continuity Plan}}}
+\fancyhead[R]{\includegraphics[height=0.8cm]{logo.png}}
+\fancyfoot[L]{\textcolor{nis2gray}{\small \jobname}}
+\fancyfoot[C]{\textcolor{nis2gray}{\small CONFIDENTIAL}}
+\fancyfoot[R]{\textcolor{nis2gray}{\small Page \thepage\ of \pageref{LastPage}}}
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=nis2blue,
+    filecolor=nis2blue,
+    urlcolor=nis2blue,
+}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\Huge\bfseries\textcolor{nis2blue}{Business Continuity Plan}\par}
+    \vspace{0.5cm}
+    {\Large NIS2 Directive Compliance\par}
+    \vspace{2cm}
+    {\Large\textbf{Organization:} [ORGANIZATION]\par}
+    \vspace{0.5cm}
+    {\Large\textbf{Version:} 1.0\par}
+    \vspace{0.5cm}
+    {\Large\textbf{Date:} \today\par}
+    \vfill
+    {\small NIS2 Article 21 - Business Continuity and Crisis Management\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Executive Summary}
+This Business Continuity Plan (BCP) ensures [ORGANIZATION] can continue critical operations during and after disruptive events, in compliance with NIS2 Directive requirements.
+
+\section{Business Impact Analysis}
+
+\subsection{Critical Business Functions}
+\begin{longtable}{|p{3cm}|p{3cm}|p{2cm}|p{2cm}|p{3cm}|}
+\hline
+\textbf{Function} & \textbf{Description} & \textbf{RTO} & \textbf{RPO} & \textbf{Impact} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Function} & \textbf{Description} & \textbf{RTO} & \textbf{RPO} & \textbf{Impact} \\
+\hline
+\endhead
+[Function 1] & [Description] & 4 hours & 1 hour & Critical \\
+\hline
+[Function 2] & [Description] & 24 hours & 4 hours & High \\
+\hline
+\caption{Critical Business Functions}
+\end{longtable}
+
+\section{Recovery Strategies}
+
+\subsection{IT Recovery}
+\begin{itemize}
+    \item Hot site available for critical systems
+    \item Cloud-based failover for key applications
+    \item Daily backups with off-site storage
+    \item Disaster recovery site located in [LOCATION]
+\end{itemize}
+
+\subsection{Personnel}
+\begin{itemize}
+    \item Work-from-home capabilities
+    \item Cross-training for critical roles
+    \item Succession planning documented
+    \item Emergency contact procedures
+\end{itemize}
+
+\subsection{Facilities}
+\begin{itemize}
+    \item Alternate work location: [ADDRESS]
+    \item Emergency power generation
+    \item Physical security measures
+\end{itemize}
+
+\section{Recovery Procedures}
+
+\subsection{Activation}
+BCP activated by:
+\begin{itemize}
+    \item Crisis Management Team
+    \item CISO for cyber incidents
+    \item CEO for major disruptions
+\end{itemize}
+
+\subsection{Critical System Recovery Steps}
+\begin{enumerate}
+    \item Assess incident impact
+    \item Notify Crisis Management Team
+    \item Activate recovery site if needed
+    \item Restore systems per priority
+    \item Verify functionality
+    \item Resume business operations
+    \item Document actions taken
+\end{enumerate}
+
+\section{Communication Plan}
+
+\subsection{Internal Communications}
+\begin{itemize}
+    \item Emergency notification system
+    \item Regular status updates
+    \item Employee hotline: [PHONE]
+\end{itemize}
+
+\subsection{External Communications}
+\begin{itemize}
+    \item Customer notification procedures
+    \item Regulatory reporting (NIS2 requirements)
+    \item Media relations protocol
+\end{itemize}
+
+\section{Testing and Maintenance}
+
+\subsection{Testing Schedule}
+\begin{itemize}
+    \item Annual full BCP test
+    \item Semi-annual tabletop exercises
+    \item Quarterly backup restoration tests
+\end{itemize}
+
+\subsection{Plan Updates}
+Review and update:
+\begin{itemize}
+    \item Annually at minimum
+    \item After significant organizational changes
+    \item After test exercises
+    \item After actual incidents
+\end{itemize}
+
+\section{Approval}
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Role} & \textbf{Name} & \textbf{Date} \\
+\hline
+CEO & & \\
+\hline
+CISO & & \\
+\hline
+\end{tabular}
+\end{table}
+
+\end{document}

@@ -1,0 +1,149 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{lastpage}
+\usepackage{enumitem}
+
+\geometry{margin=1in}
+
+\definecolor{nis2blue}{RGB}{0,51,153}
+\definecolor{nis2gray}{RGB}{100,100,100}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{nis2blue}{\textbf{Access Control Policy}}}
+\fancyhead[R]{\includegraphics[height=0.8cm]{logo.png}}
+\fancyfoot[L]{\textcolor{nis2gray}{\small \jobname}}
+\fancyfoot[C]{\textcolor{nis2gray}{\small Internal Use Only}}
+\fancyfoot[R]{\textcolor{nis2gray}{\small Page \thepage\ of \pageref{LastPage}}}
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=nis2blue,
+    filecolor=nis2blue,
+    urlcolor=nis2blue,
+}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\Huge\bfseries\textcolor{nis2blue}{Access Control Policy}\par}
+    \vspace{0.5cm}
+    {\Large NIS2 Directive Compliance\par}
+    \vspace{2cm}
+    {\Large\textbf{Organization:} [ORGANIZATION]\par}
+    \vspace{0.5cm}
+    {\Large\textbf{Version:} 1.0\par}
+    \vspace{0.5cm}
+    {\Large\textbf{Effective Date:} \today\par}
+    \vfill
+    {\small NIS2 Article 21 - Access Control and Asset Management\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Purpose}
+This Access Control Policy establishes requirements for managing access to information systems, networks, and data in compliance with NIS2 Directive requirements.
+
+\section{Scope}
+Applies to all systems, applications, networks, and data assets, covering all employees, contractors, and third parties.
+
+\section{Policy Statements}
+
+\subsection{Principle of Least Privilege}
+Users shall be granted minimum access rights necessary to perform their job functions.
+
+\subsection{Multi-Factor Authentication (MFA)}
+\begin{itemize}
+    \item MFA required for all user accounts
+    \item MFA required for remote access
+    \item MFA required for privileged accounts
+    \item MFA required for access to sensitive data
+\end{itemize}
+
+\subsection{User Account Management}
+\begin{itemize}
+    \item Unique user IDs for all users
+    \item No shared accounts except where documented
+    \item Account approval process required
+    \item Regular account reviews (quarterly)
+    \item Immediate deactivation upon termination
+\end{itemize}
+
+\subsection{Password Requirements}
+\begin{itemize}
+    \item Minimum 12 characters
+    \item Complexity requirements enforced
+    \item 90-day maximum age
+    \item Password history: 12 passwords
+    \item Account lockout after 5 failed attempts
+\end{itemize}
+
+\subsection{Privileged Access Management}
+\begin{itemize}
+    \item Separate accounts for administrative functions
+    \item Just-in-time privileged access
+    \item All privileged actions logged
+    \item Monthly privileged account reviews
+\end{itemize}
+
+\subsection{Access Reviews}
+\begin{itemize}
+    \item Quarterly access reviews for all users
+    \item Annual certification by data owners
+    \item Remove unnecessary access rights
+    \item Document review results
+\end{itemize}
+
+\section{Roles and Responsibilities}
+
+\subsection{Access Control Administrator}
+\begin{itemize}
+    \item Provisioning and deprovisioning access
+    \item Maintaining access control systems
+    \item Conducting access reviews
+    \item Reporting access control metrics
+\end{itemize}
+
+\subsection{Data Owners}
+\begin{itemize}
+    \item Approving access requests
+    \item Defining access requirements
+    \item Certifying user access annually
+    \item Reviewing access logs
+\end{itemize}
+
+\subsection{Users}
+\begin{itemize}
+    \item Protecting credentials
+    \item Reporting suspicious access
+    \item Complying with access policies
+    \item Logging out when leaving workstations
+\end{itemize}
+
+\section{Approval}
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Role} & \textbf{Name} & \textbf{Date} \\
+\hline
+CISO & & \\
+\hline
+\end{tabular}
+\end{table}
+
+\end{document}
