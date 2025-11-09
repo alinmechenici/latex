@@ -8,9 +8,9 @@ This repository contains professional templates for all major document types req
 
 **Format Support:**
 - **LaTeX (.tex)** - Industry-standard document preparation system (all 30 templates)
-- **Typst (.typ)** - Modern, fast alternative with simpler syntax (select templates, growing coverage)
+- **Typst (.typ)** - Modern, fast alternative with simpler syntax (**all 30 templates!**)
 
-Choose the format that best suits your workflow! See [TYPST-SUPPORT.md](TYPST-SUPPORT.md) for details.
+**Full dual-format coverage!** Every template is available in both LaTeX and Typst. Choose the format that best suits your workflow! See [TYPST-SUPPORT.md](TYPST-SUPPORT.md) for details.
 
 ## What is NIS2?
 
@@ -490,11 +490,13 @@ A "significant incident" under NIS2 has caused or is capable of causing:
 - Well-commented code (LaTeX and Typst)
 - Example content for guidance
 
-### Multiple Format Support
-- **LaTeX (.tex)** - Industry-standard, all 30 templates
-- **Typst (.typ)** - Modern alternative, 10-100x faster compilation
+### Multiple Format Support - Complete Coverage!
+- **LaTeX (.tex)** - Industry-standard, all 30 templates ✅
+- **Typst (.typ)** - Modern alternative, all 30 templates ✅
+- **10-100x faster** compilation with Typst
 - Choose the format that suits your workflow
 - Both generate identical professional PDFs
+- Conversion script included for customization
 - See [TYPST-SUPPORT.md](TYPST-SUPPORT.md) for details
 
 ## Penalties for Non-Compliance
@@ -601,12 +603,14 @@ For questions or issues:
 
 ## Version History
 
-- **v2.1** (2025-11-09): Typst format support added
-  - Added Typst (.typ) format support for modern, fast compilation
-  - 2 complete Typst templates (Risk Assessment, 24h Notification)
+- **v2.1** (2025-11-09): Full Typst format support - all templates!
+  - Added Typst (.typ) format for ALL 30 templates (100% coverage!)
+  - Automated conversion script (convert-to-typst.py) included
   - Enhanced build script supporting both LaTeX and Typst
   - Comprehensive Typst documentation (TYPST-SUPPORT.md)
-  - 10-100x faster PDF generation with Typst option
+  - 10-100x faster PDF generation with Typst
+  - Users can now choose LaTeX or Typst for every template
+  - Both formats maintained in parallel for maximum flexibility
 
 - **v2.0** (2025-11-08): Complete NIS2 compliance suite
   - 14 document categories
@@ -634,4 +638,5 @@ These templates are provided as open resources for NIS2 compliance. Organization
 
 **Prepared for NIS2 Directive Compliance**
 **Last Updated**: November 2025
-**Template Version**: 2.1 (30 Templates, LaTeX + Typst support)
+**Template Version**: 2.1 (30 Templates × 2 Formats = 60 Files!)
+**Formats**: LaTeX (.tex) + Typst (.typ) - Complete dual-format coverage

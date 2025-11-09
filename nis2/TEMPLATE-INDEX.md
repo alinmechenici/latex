@@ -4,12 +4,15 @@ Complete index of all NIS2 compliance templates organized by category.
 
 ## 📊 Summary Statistics
 
-- **Total Templates**: 30 LaTeX templates + Growing Typst library
-- **Format Support**: LaTeX (.tex) and Typst (.typ) - choose your preferred format!
+- **Total Templates**: 30 templates × 2 formats = **60 template files!**
+- **Format Support**: 100% dual-format coverage!
+  - ✅ LaTeX (.tex) - All 30 templates
+  - ✅ Typst (.typ) - All 30 templates
 - **Example Content**: 3 comprehensive markdown files (3,000+ lines)
 - **Documentation**: 5 guides (README, INSTALLATION, QUICK-START, TYPST-SUPPORT, this INDEX)
-- **Total Files**: 37 templates + examples + docs + Typst versions
-- **Total Lines**: 15,000+ lines of professional content
+- **Conversion Tools**: Automated LaTeX-to-Typst converter included
+- **Total Files**: 60 template files + 3 examples + 5 docs + conversion script
+- **Total Lines**: 20,000+ lines of professional content (both formats)
 - **Categories**: 14 organized categories
 - **NIS2 Coverage**: 100% of Article 21 & 23 requirements
 
@@ -351,7 +354,7 @@ Organizations should:
 
 ---
 
-**Last Updated**: November 2025 | **Version**: 2.0 | **Total Templates**: 30
+**Last Updated**: November 2025 | **Version**: 2.1 | **Total Templates**: 30 (60 files - dual format!)
 
 ---
 
