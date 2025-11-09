@@ -10,7 +10,12 @@ This repository contains professional templates for all major document types req
 - **LaTeX (.tex)** - Industry-standard document preparation system (all 30 templates)
 - **Typst (.typ)** - Modern, fast alternative with simpler syntax (**all 30 templates!**)
 
-**Full dual-format coverage!** Every template is available in both LaTeX and Typst. Choose the format that best suits your workflow! See [TYPST-SUPPORT.md](TYPST-SUPPORT.md) for details.
+**Full dual-format coverage!** Every template is available in both LaTeX and Typst. Choose the format that best suits your workflow!
+
+**Quick Links:**
+- 📖 [DUAL-FORMAT-GUIDE.md](DUAL-FORMAT-GUIDE.md) - Complete dual-format guide with workflows
+- 🚀 [TYPST-SUPPORT.md](TYPST-SUPPORT.md) - Typst installation and usage details
+- 📋 [TEMPLATE-INDEX.md](TEMPLATE-INDEX.md) - Complete template catalog
 
 ## What is NIS2?
 
