@@ -1,0 +1,274 @@
+---
+title: "Risk Assessment Report"
+subtitle: "NIS2 Directive Compliance"
+author: "[ORGANIZATION]"
+date: today
+format:
+  pdf:
+    documentclass: article
+    papersize: a4
+    geometry:
+      - margin=2.5cm
+    number-sections: true
+    colorlinks: true
+    toc: true
+    toc-depth: 3
+    header-includes: |
+      \usepackage{fancyhdr}
+      \pagestyle{fancy}
+      \fancyhead[L]{\textbf{[ORGANIZATION]}}
+      \fancyhead[R]{Risk Assessment Report}
+      \fancyfoot[L]{CONFIDENTIAL}
+      \fancyfoot[R]{\thepage}
+      \definecolor{nis2blue}{RGB}{0,51,102}
+      \definecolor{nis2red}{RGB}{204,0,0}
+---
+
+\documentclass[11pt,a4paper]{article}
+
+\geometry{margin=1in}
+
+% Define NIS2 colors
+\definecolor{nis2blue}{RGB}{0,51,153}
+\definecolor{nis2gray}{RGB}{100,100,100}
+
+% Header and footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{nis2blue}{**NIS2 Risk Assessment Report**}}
+\fancyhead[R]{\includegraphics[height=0.8cm]{logo.png}}
+\fancyfoot[L]{\textcolor{nis2gray}{\small \jobname}}
+\fancyfoot[C]{\textcolor{nis2gray}{\small Confidential}}
+\fancyfoot[R]{\textcolor{nis2gray}{\small Page \thepage\ of \pageref{LastPage}}}
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+% Hyperref setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=nis2blue,
+    filecolor=nis2blue,
+    urlcolor=nis2blue,
+}
+
+% Title Page
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+
+    {\Huge\bfseries\textcolor{nis2blue}{Risk Assessment Report}\par}
+    
+
+    {\Large NIS2 Directive Compliance\par}
+    
+
+    {\Large**Organization Name:** [ORGANIZATION]\par}
+    
+
+    {\Large**Assessment Date:** \today\par}
+    
+
+    {\Large**Version:** 1.0\par}
+    
+
+    {\large**Classification:** ::: {.callout-warning}
+CONFIDENTIAL
+:::\par}
+    \vfill
+
+    {\large Prepared by: [ASSESSOR NAME]\par}
+    {\large Approved by: [APPROVER NAME]\par}
+    
+
+    {\small This document is prepared in compliance with the NIS2 Directive (EU) 2022/2555\par}
+\end{titlepage}
+
+{{< pagebreak >}}
+
+# Executive Summary
+
+This risk assessment report has been prepared in accordance with Article 21 of the NIS2 Directive (EU) 2022/2555 to identify, analyze, and evaluate cybersecurity risks to the organization's network and information systems.
+
+## Purpose
+- Identify critical assets and information systems
+- Assess current cybersecurity risks and threats
+- Evaluate existing security controls
+- Provide recommendations for risk mitigation
+
+## Scope
+[Define the scope of the risk assessment, including systems, networks, and business processes covered]
+
+## Key Findings
+[Summarize the most critical findings and risk ratings]
+
+# Assessment Methodology
+
+## Risk Assessment Framework
+This assessment follows the methodology outlined in:
+- NIS2 Directive (EU) 2022/2555
+- ISO/IEC 27005:2022 - Information security risk management
+- NIST Cybersecurity Framework
+
+## Risk Calculation
+Risk is calculated using the formula:
+\begin{center}
+**Risk = Likelihood × Impact**
+\end{center}
+
+## Risk Rating Scale
+\centering
+
+**Rating** & **Score** & **Description** \\
+
+Critical & 16-25 & Immediate action required \\
+High & 11-15 & Action required within 30 days \\
+Medium & 6-10 & Action required within 90 days \\
+Low & 1-5 & Monitor and review \\
+
+\caption{Risk Rating Scale}
+
+# Asset Inventory
+
+## Critical Information Systems
+
+|p{4cm}|p{3cm}|p{4cm}|}
+
+**Asset ID** & **Asset Name** & **Owner** & **Criticality** \\
+
+\endfirsthead
+
+**Asset ID** & **Asset Name** & **Owner** & **Criticality** \\
+
+\endhead
+AS-001 & [Asset Name] & [Owner] & [High/Medium/Low] \\
+
+AS-002 & [Asset Name] & [Owner] & [High/Medium/Low] \\
+
+\caption{Critical Assets Inventory}
+
+# Threat Analysis
+
+## Identified Threats
+
+|p{4cm}|p{3cm}|p{4cm}|}
+
+**Threat ID** & **Threat Description** & **Category** & **Affected Assets** \\
+
+\endfirsthead
+
+**Threat ID** & **Threat Description** & **Category** & **Affected Assets** \\
+
+\endhead
+TH-001 & Ransomware attacks & Malware & [Assets] \\
+
+TH-002 & Phishing attacks & Social Engineering & [Assets] \\
+
+TH-003 & Unauthorized access & Access Control & [Assets] \\
+
+TH-004 & DDoS attacks & Availability & [Assets] \\
+
+TH-005 & Data breaches & Confidentiality & [Assets] \\
+
+\caption{Threat Analysis}
+
+# Vulnerability Assessment
+
+## Identified Vulnerabilities
+
+|p{5cm}|p{2cm}|p{4cm}|}
+
+**Vuln ID** & **Vulnerability** & **Severity** & **Affected Systems** \\
+
+\endfirsthead
+
+**Vuln ID** & **Vulnerability** & **Severity** & **Affected Systems** \\
+
+\endhead
+VL-001 & [Description] & [Critical/High/Medium/Low] & [Systems] \\
+
+\caption{Vulnerability Assessment}
+
+# Risk Register
+
+|p{3.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{3cm}|}
+
+**Risk ID** & **Risk Description** & **Like-lihood** & **Impact** & **Risk Score** & **Owner** \\
+
+\endfirsthead
+
+**Risk ID** & **Risk Description** & **Like-lihood** & **Impact** & **Risk Score** & **Owner** \\
+
+\endhead
+R-001 & [Risk description] & [1-5] & [1-5] & [Score] & [Owner] \\
+
+\caption{Risk Register}
+
+# Control Assessment
+
+## Existing Security Controls
+[Evaluate the effectiveness of current security controls in mitigating identified risks]
+
+## Control Gaps
+[Identify gaps in current security controls]
+
+# Recommendations
+
+## Immediate Actions (Critical Risks)
+
+- [Recommendation 1]
+- [Recommendation 2]
+
+## Short-term Actions (High Risks)
+
+- [Recommendation 1]
+- [Recommendation 2]
+
+## Medium-term Actions (Medium Risks)
+
+- [Recommendation 1]
+- [Recommendation 2]
+
+# Risk Treatment Plan
+
+|p{3cm}|p{2.5cm}|p{2cm}|p{2cm}|p{2cm}|}
+
+**Risk ID** & **Treatment** & **Action** & **Owner** & **Deadline** & **Status** \\
+
+\endfirsthead
+
+**Risk ID** & **Treatment** & **Action** & **Owner** & **Deadline** & **Status** \\
+
+\endhead
+R-001 & Mitigate & [Action] & [Owner] & [Date] & [Status] \\
+
+\caption{Risk Treatment Plan}
+
+# Conclusion
+
+[Summarize the overall risk posture and next steps for maintaining NIS2 compliance]
+
+# Approval
+
+\centering
+
+**Role** & **Name** & **Signature & Date** \\
+
+Risk Manager & & \\
+
+CISO & & \\
+
+Management & & \\
+
+\caption{Document Approval}
+
+\appendix
+# Risk Assessment Questionnaire
+[Include detailed questionnaire used for the assessment]
+
+# References
+- NIS2 Directive (EU) 2022/2555
+- ISO/IEC 27001:2022
+- ISO/IEC 27005:2022
+- NIST Cybersecurity Framework v1.1
+

@@ -1,0 +1,167 @@
+---
+title: "Business Continuity Plan"
+subtitle: "NIS2 Directive Compliance"
+author: "[ORGANIZATION]"
+date: today
+format:
+  pdf:
+    documentclass: article
+    papersize: a4
+    geometry:
+      - margin=2.5cm
+    number-sections: true
+    colorlinks: true
+    toc: true
+    toc-depth: 3
+    header-includes: |
+      \usepackage{fancyhdr}
+      \pagestyle{fancy}
+      \fancyhead[L]{\textbf{[ORGANIZATION]}}
+      \fancyhead[R]{Business Continuity Plan}
+      \fancyfoot[L]{CONFIDENTIAL}
+      \fancyfoot[R]{\thepage}
+      \definecolor{nis2blue}{RGB}{0,51,102}
+      \definecolor{nis2red}{RGB}{204,0,0}
+---
+
+\documentclass[11pt,a4paper]{article}
+
+\geometry{margin=1in}
+
+\definecolor{nis2blue}{RGB}{0,51,153}
+\definecolor{nis2gray}{RGB}{100,100,100}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{nis2blue}{**Business Continuity Plan**}}
+\fancyhead[R]{\includegraphics[height=0.8cm]{logo.png}}
+\fancyfoot[L]{\textcolor{nis2gray}{\small \jobname}}
+\fancyfoot[C]{\textcolor{nis2gray}{\small CONFIDENTIAL}}
+\fancyfoot[R]{\textcolor{nis2gray}{\small Page \thepage\ of \pageref{LastPage}}}
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=nis2blue,
+    filecolor=nis2blue,
+    urlcolor=nis2blue,
+}
+
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\Huge\bfseries\textcolor{nis2blue}{Business Continuity Plan}\par}
+    
+
+    {\Large NIS2 Directive Compliance\par}
+    
+
+    {\Large**Organization:** [ORGANIZATION]\par}
+    
+
+    {\Large**Version:** 1.0\par}
+    
+
+    {\Large**Date:** \today\par}
+    \vfill
+    {\small NIS2 Article 21 - Business Continuity and Crisis Management\par}
+\end{titlepage}
+
+{{< pagebreak >}}
+
+# Executive Summary
+This Business Continuity Plan (BCP) ensures [ORGANIZATION] can continue critical operations during and after disruptive events, in compliance with NIS2 Directive requirements.
+
+# Business Impact Analysis
+
+## Critical Business Functions
+
+|p{3cm}|p{2cm}|p{2cm}|p{3cm}|}
+
+**Function** & **Description** & **RTO** & **RPO** & **Impact** \\
+
+\endfirsthead
+
+**Function** & **Description** & **RTO** & **RPO** & **Impact** \\
+
+\endhead
+[Function 1] & [Description] & 4 hours & 1 hour & Critical \\
+
+[Function 2] & [Description] & 24 hours & 4 hours & High \\
+
+\caption{Critical Business Functions}
+
+# Recovery Strategies
+
+## IT Recovery
+- Hot site available for critical systems
+- Cloud-based failover for key applications
+- Daily backups with off-site storage
+- Disaster recovery site located in [LOCATION]
+
+## Personnel
+- Work-from-home capabilities
+- Cross-training for critical roles
+- Succession planning documented
+- Emergency contact procedures
+
+## Facilities
+- Alternate work location: [ADDRESS]
+- Emergency power generation
+- Physical security measures
+
+# Recovery Procedures
+
+## Activation
+BCP activated by:
+- Crisis Management Team
+- CISO for cyber incidents
+- CEO for major disruptions
+
+## Critical System Recovery Steps
+
+- Assess incident impact
+- Notify Crisis Management Team
+- Activate recovery site if needed
+- Restore systems per priority
+- Verify functionality
+- Resume business operations
+- Document actions taken
+
+# Communication Plan
+
+## Internal Communications
+- Emergency notification system
+- Regular status updates
+- Employee hotline: [PHONE]
+
+## External Communications
+- Customer notification procedures
+- Regulatory reporting (NIS2 requirements)
+- Media relations protocol
+
+# Testing and Maintenance
+
+## Testing Schedule
+- Annual full BCP test
+- Semi-annual tabletop exercises
+- Quarterly backup restoration tests
+
+## Plan Updates
+Review and update:
+- Annually at minimum
+- After significant organizational changes
+- After test exercises
+- After actual incidents
+
+# Approval
+\centering
+
+**Role** & **Name** & **Date** \\
+
+CEO & & \\
+
+CISO & & \\
+

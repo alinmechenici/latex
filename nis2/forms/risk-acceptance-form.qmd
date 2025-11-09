@@ -1,0 +1,166 @@
+---
+title: "Risk Acceptance Form"
+subtitle: "NIS2 Directive Compliance"
+author: "[ORGANIZATION]"
+date: today
+format:
+  pdf:
+    documentclass: article
+    papersize: a4
+    geometry:
+      - margin=2.5cm
+    number-sections: true
+    colorlinks: true
+    toc: true
+    toc-depth: 3
+    header-includes: |
+      \usepackage{fancyhdr}
+      \pagestyle{fancy}
+      \fancyhead[L]{\textbf{[ORGANIZATION]}}
+      \fancyhead[R]{Risk Acceptance Form}
+      \fancyfoot[L]{CONFIDENTIAL}
+      \fancyfoot[R]{\thepage}
+      \definecolor{nis2blue}{RGB}{0,51,102}
+      \definecolor{nis2red}{RGB}{204,0,0}
+---
+
+\documentclass[11pt,a4paper]{article}
+
+\geometry{margin=1in}
+\definecolor{nis2blue}{RGB}{0,51,153}
+\definecolor{nis2red}{RGB}{204,0,0}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{nis2blue}{**Risk Acceptance Form**}}
+\fancyfoot[C]{\small Page \thepage}
+
+\begin{center}
+{\Huge\bfseries\textcolor{nis2blue}{Risk Acceptance Form}}\\
+
+{\Large Formal Risk Acceptance Documentation}
+\end{center}
+
+\section*{Form Information}
+
+|p{9cm}|}
+
+**Risk ID** & RISK-[YEAR]-[NUMBER] \\
+
+**Submission Date** & [DATE] \\
+
+**Submitted By** & [NAME] - [TITLE] \\
+
+**Department** & [DEPARTMENT] \\
+
+\section*{Risk Description}
+
+\subsection*{Risk Summary}
+Briefly describe the risk being accepted:
+
+\subsection*{Risk Details}
+
+|p{9cm}|}
+
+**Risk Category** & $\square$ Technical \quad $\square$ Operational \quad $\square$ Compliance \\
+& $\square$ Financial \quad $\square$ Reputational \quad $\square$ Other \\
+
+**Affected Systems** & [LIST SYSTEMS/APPLICATIONS] \\
+& \\
+
+**Affected Data** & [DATA TYPES AND CLASSIFICATION] \\
+& \\
+
+\section*{Risk Assessment}
+
+|p{9cm}|}
+
+**Likelihood** & $\square$ Very High (5) \quad $\square$ High (4) \quad $\square$ Medium (3) \\
+& $\square$ Low (2) \quad $\square$ Very Low (1) \\
+
+**Impact** & $\square$ Critical (5) \quad $\square$ High (4) \quad $\square$ Medium (3) \\
+& $\square$ Low (2) \quad $\square$ Minimal (1) \\
+
+**Risk Score** & Likelihood × Impact = \underline{\hspace{2cm}} \\
+
+**Risk Level** & $\square$ Critical (16-25) \quad $\square$ High (11-15) \\
+& $\square$ Medium (6-10) \quad $\square$ Low (1-5) \\
+
+\section*{Risk Treatment Options Considered}
+
+\subsection*{Why Not Mitigate?}
+
+Explain why risk mitigation is not feasible:
+
+\subsection*{Why Not Transfer?}
+
+Explain why risk transfer (insurance, outsourcing) is not chosen:
+
+\subsection*{Why Not Avoid?}
+
+Explain why avoiding the risk (discontinuing activity) is not an option:
+
+\section*{Business Justification}
+
+Explain the business reason for accepting this risk:
+
+\section*{Compensating Controls}
+
+List any compensating controls in place to reduce (but not eliminate) the risk:
+
+- [Control 1]
+
+- [Control 2]
+
+- [Control 3]
+
+\section*{Acceptance Terms}
+
+|p{9cm}|}
+
+**Acceptance Duration** & $\square$ Permanent \\
+& $\square$ Temporary until: [DATE] \\
+& $\square$ Until specific condition met: \underline{\hspace{4cm}} \\
+
+**Review Frequency** & $\square$ Quarterly \quad $\square$ Semi-annual \quad $\square$ Annual \\
+
+**Next Review Date** & [DATE] \\
+
+**Conditions for Review** & $\square$ Risk score increases \\
+& $\square$ New threats emerge \\
+& $\square$ Compensating controls fail \\
+& $\square$ Regulatory requirements change \\
+
+\section*{Approval}
+
+**\textcolor{nis2red**{Risk acceptance requires appropriate management approval based on risk level.}}
+
+**Approval Requirements:**
+- **Critical/High Risk:** CISO + CIO + CEO
+- **Medium Risk:** CISO + CIO or Risk Owner
+- **Low Risk:** CISO or Department Head
+
+|p{4cm}|p{4cm}|}
+
+**Role** & **Name** & **Signature & Date** \\
+
+Risk Owner & & \\
+& & \\
+
+CISO & & \\
+& & \\
+
+CIO (if req'd) & & \\
+& & \\
+
+CEO (if req'd) & & \\
+& & \\
+
+\hrule
+
+\footnotesize
+**Risk Acceptance Registry:** This form must be logged in the Risk Acceptance Registry
+
+**Retention:** Retain for duration of acceptance + 2 years
+
+**Review:** Re-assess on review date or when conditions change
+

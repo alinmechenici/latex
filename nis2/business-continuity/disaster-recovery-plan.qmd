@@ -1,0 +1,522 @@
+---
+title: "Disaster Recovery Plan"
+subtitle: "NIS2 Directive Compliance"
+author: "[ORGANIZATION]"
+date: today
+format:
+  pdf:
+    documentclass: article
+    papersize: a4
+    geometry:
+      - margin=2.5cm
+    number-sections: true
+    colorlinks: true
+    toc: true
+    toc-depth: 3
+    header-includes: |
+      \usepackage{fancyhdr}
+      \pagestyle{fancy}
+      \fancyhead[L]{\textbf{[ORGANIZATION]}}
+      \fancyhead[R]{Disaster Recovery Plan}
+      \fancyfoot[L]{CONFIDENTIAL}
+      \fancyfoot[R]{\thepage}
+      \definecolor{nis2blue}{RGB}{0,51,102}
+      \definecolor{nis2red}{RGB}{204,0,0}
+---
+
+\documentclass[11pt,a4paper]{article}
+
+\geometry{margin=1in}
+
+\definecolor{nis2blue}{RGB}{0,51,153}
+\definecolor{nis2gray}{RGB}{100,100,100}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{nis2blue}{**Disaster Recovery Plan**}}
+\fancyhead[R]{\includegraphics[height=0.8cm]{logo.png}}
+\fancyfoot[L]{\textcolor{nis2gray}{\small \jobname}}
+\fancyfoot[C]{\textcolor{nis2gray}{\small CONFIDENTIAL}}
+\fancyfoot[R]{\textcolor{nis2gray}{\small Page \thepage\ of \pageref{LastPage}}}
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=nis2blue,
+    filecolor=nis2blue,
+    urlcolor=nis2blue,
+}
+
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\Huge\bfseries\textcolor{nis2blue}{Disaster Recovery Plan}\par}
+    
+
+    {\Large NIS2 Directive Compliance\par}
+    
+
+    {\Large**Organization:** [ORGANIZATION]\par}
+    
+
+    {\Large**Version:** 1.0\par}
+    
+
+    {\Large**Date:** \today\par}
+    
+
+    {\Large**DR Site:** [LOCATION]\par}
+    \vfill
+    {\small NIS2 Article 21(2)(c) - Disaster Recovery\par}
+\end{titlepage}
+
+{{< pagebreak >}}
+
+# Document Control
+
+\centering
+
+**Document Title** & Disaster Recovery Plan \\
+
+**Document Owner** & Chief Information Officer \\
+
+**Version** & 1.0 \\
+
+**Last Updated** & \today \\
+
+**Review Frequency** & Semi-Annual \\
+
+**Next Review** & [DATE] \\
+
+**Classification** & CONFIDENTIAL \\
+
+\caption{Document Control}
+
+# Executive Summary
+
+This Disaster Recovery Plan (DRP) provides detailed procedures for recovering IT systems and infrastructure following a disaster, ensuring compliance with NIS2 requirements for business continuity and operational resilience.
+
+## Objectives
+- Minimize downtime of critical systems
+- Meet defined Recovery Time Objectives (RTO)
+- Prevent data loss beyond Recovery Point Objectives (RPO)
+- Maintain business operations during recovery
+- Ensure regulatory compliance
+
+## Scope
+This plan covers:
+- All critical IT systems and applications
+- Data centers and infrastructure
+- Network and communications
+- Cloud services and SaaS applications
+- Third-party IT services
+
+# Disaster Declaration
+
+## Disaster Definition
+A disaster is an event that causes:
+- Complete loss of primary data center
+- Prolonged unavailability of critical systems (>4 hours for Tier 1)
+- Catastrophic data loss or corruption
+- Major infrastructure failure preventing normal operations
+
+## Authority to Declare Disaster
+Authorized personnel:
+- Chief Information Officer (CIO)
+- Chief Technology Officer (CTO)
+- Chief Information Security Officer (CISO)
+- Chief Executive Officer (CEO)
+
+## Declaration Process
+
+- Assess severity and scope of incident
+- Determine if recovery within normal timeframe is possible
+- Consult with Crisis Management Team
+- Formally declare disaster
+- Activate DR team and procedures
+- Notify all stakeholders
+
+# DR Team Structure
+
+## Disaster Recovery Team
+
+|p{3cm}|p{4cm}|p{3cm}|}
+
+**Role** & **Name** & **Responsibilities** & **Contact** \\
+
+\endfirsthead
+
+**Role** & **Name** & **Responsibilities** & **Contact** \\
+
+\endhead
+DR Manager & [Name] & Overall coordination, decision-making & [Phone/Email] \\
+
+Infrastructure Lead & [Name] & Server and storage recovery & [Phone/Email] \\
+
+Network Lead & [Name] & Network and connectivity & [Phone/Email] \\
+
+Application Lead & [Name] & Application restoration & [Phone/Email] \\
+
+Database Lead & [Name] & Database recovery & [Phone/Email] \\
+
+Security Lead & [Name] & Security controls verification & [Phone/Email] \\
+
+Communications Lead & [Name] & Stakeholder communications & [Phone/Email] \\
+
+\caption{Disaster Recovery Team}
+
+# Recovery Time Objectives
+
+|p{4cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
+
+**Tier** & **System/Application** & **RTO** & **RPO** & **Priority** & **Strategy** \\
+
+\endfirsthead
+
+**Tier** & **System/Application** & **RTO** & **RPO** & **Priority** & **Strategy** \\
+
+\endhead
+1 & [Critical System 1] & 4h & 15min & P1 & Hot Site \\
+
+1 & [Critical System 2] & 4h & 1h & P1 & Hot Site \\
+
+2 & [Important System 1] & 24h & 4h & P2 & Warm Site \\
+
+2 & [Important System 2] & 24h & 8h & P2 & Warm Site \\
+
+3 & [Standard System 1] & 72h & 24h & P3 & Cold Site \\
+
+\caption{Recovery Time Objectives by System}
+
+# DR Infrastructure
+
+## Primary Data Center
+- **Location:** [ADDRESS]
+- **Provider:** [PROVIDER NAME]
+- **Capacity:** [SPECIFICATIONS]
+- **Connectivity:** [BANDWIDTH/REDUNDANCY]
+
+## Disaster Recovery Site
+- **Location:** [ADDRESS] (minimum 100km from primary)
+- **Type:** Hot Site for Tier 1, Warm Site for Tier 2
+- **Provider:** [PROVIDER NAME]
+- **Capacity:** [SPECIFICATIONS]
+- **Connectivity:** [BANDWIDTH/REDUNDANCY]
+- **Failover Method:** Automated for critical systems, manual for others
+
+## Cloud DR Resources
+- **Provider:** [AWS/Azure/GCP]
+- **Region:** [REGION]
+- **Services:** [EC2, RDS, S3, etc.]
+- **Failover:** Automated via [TOOL]
+
+# Backup Strategy
+
+## Backup Schedule
+
+\centering
+
+**System/Data** & **Frequency** & **Method** & **Retention** \\
+
+Critical Databases & Hourly incremental & Snapshots & 30 days \\
+
+Critical Databases & Daily full & Backup software & 90 days \\
+
+File Servers & Daily full & Backup software & 60 days \\
+
+Virtual Machines & Daily snapshots & Hypervisor & 14 days \\
+
+Configuration Data & Weekly & Version control & 365 days \\
+
+\caption{Backup Schedule}
+
+## Backup Locations
+
+- **Primary Backup:** On-site backup storage (7-day retention)
+- **Secondary Backup:** DR site (30-day retention)
+- **Tertiary Backup:** Cloud storage (90-day retention)
+- **Archive:** Tape storage off-site (7-year retention)
+
+## Backup Verification
+- Daily: Automated backup success monitoring
+- Weekly: Random restoration test of 5 files/databases
+- Monthly: Full restoration test of one critical system
+- Quarterly: Complete DR site restoration test
+
+# Recovery Procedures
+
+## Phase 1: Assessment (0-1 hour)
+
+### Actions
+
+- Assess disaster scope and impact
+- Identify affected systems and services
+- Determine estimated recovery time with primary site
+- Decide on DR site activation
+- Notify DR team members
+- Assemble at Emergency Operations Center (EOC)
+
+### Decision Criteria
+Activate DR site if:
+- Primary site unavailable for >4 hours (estimated)
+- Physical damage to data center
+- Complete power or cooling failure
+- Natural disaster affecting region
+- Security breach requiring infrastructure rebuild
+
+## Phase 2: Activation (1-4 hours)
+
+### Infrastructure Activation
+
+- Notify DR site provider
+- Verify DR site availability and readiness
+- Establish network connectivity to DR site
+- Activate compute and storage resources
+- Configure network routing and firewalls
+- Test connectivity and accessibility
+
+### Data Replication
+
+- Verify last successful replication timestamp
+- Assess data currency (how recent)
+- Break replication from primary (if accessible)
+- Prepare data for recovery
+- Document data loss window (if any)
+
+## Phase 3: Recovery (4-24 hours)
+
+### System Recovery Order
+
+**Priority 1 (0-4 hours):**
+
+- Network infrastructure and firewalls
+- Active Directory and authentication services
+- Email and communication systems
+- [Critical Application 1]
+- [Critical Application 2]
+
+**Priority 2 (4-24 hours):**
+
+- [Important Application 1]
+- [Important Application 2]
+- File and collaboration services
+- Monitoring and management tools
+
+**Priority 3 (24-72 hours):**
+
+- [Standard Application 1]
+- [Standard Application 2]
+- Development and test environments
+- Reporting and analytics systems
+
+### Recovery Procedures by System
+
+**[Critical System 1] Recovery:**
+
+- Power on DR site servers
+- Verify latest backup/replication data
+- Restore database from most recent backup
+- Apply transaction logs (if available)
+- Start application services
+- Verify application functionality
+- Update DNS to point to DR site
+- Test user access and key functions
+- Monitor for errors
+- Declare system operational
+
+*Estimated Time: 2 hours*
+*Team: Infrastructure Lead, Database Lead, Application Lead*
+
+## Phase 4: Verification (Ongoing)
+
+### System Validation
+- Functionality testing of all recovered systems
+- Performance benchmarking
+- Security controls verification
+- Data integrity checks
+- Integration testing between systems
+- User acceptance testing
+
+### Monitoring
+- Enhanced monitoring of recovered systems
+- Capacity and performance tracking
+- Error and exception logging
+- User issue tracking
+- Daily status reports to management
+
+# Failback Procedures
+
+## Failback Planning
+Once primary site is restored:
+
+- Assess primary site readiness
+- Plan failback window (minimize business impact)
+- Communicate planned downtime to users
+- Prepare data synchronization strategy
+- Test failback procedures in isolated environment
+
+## Failback Execution
+
+- Synchronize data from DR to primary site
+- Verify data consistency
+- Plan cutover timing
+- Perform gradual failback (by tier)
+- Test each system after failback
+- Update DNS and routing
+- Monitor primary site stability
+- Maintain DR site active for 48 hours (rollback capability)
+- Decommission DR resources after confirmation
+
+## Post-Failback
+- Verify all systems operational on primary
+- Document lessons learned
+- Update DR procedures based on experience
+- Restore normal backup schedules
+- Conduct post-incident review
+
+# Communication Plan
+
+## Internal Communications
+
+\centering
+
+**Stakeholder** & **Information** & **Frequency** & **Method** \\
+
+Executive Team & Status, impact, ETA & Hourly & Phone/Email \\
+
+IT Staff & Technical updates & Every 2 hours & Slack/Teams \\
+
+Employees & Service status & Every 4 hours & Email/Intranet \\
+
+Customers & Service impact & Initial + updates & Email/Portal \\
+
+\caption{Communication Matrix}
+
+## External Communications
+- **Customers:** Service status updates via email and status page
+- **Partners:** Direct notification if integration affected
+- **Regulators:** NIS2 incident reporting if applicable
+- **Media:** Only through designated spokesperson
+- **Vendors:** DR site provider, cloud providers as needed
+
+# Testing and Exercises
+
+## DR Test Schedule
+
+|p{3.5cm}|p{3cm}|p{4cm}|}
+
+**Test Type** & **Frequency** & **Duration** & **Scope** \\
+
+\endfirsthead
+
+**Test Type** & **Frequency** & **Duration** & **Scope** \\
+
+\endhead
+Backup Restore & Weekly & 2 hours & Random files/databases \\
+
+Single System DR & Monthly & 4 hours & One Tier 2 system \\
+
+Partial Failover & Quarterly & 8 hours & All Tier 1 systems \\
+
+Full DR Exercise & Annual & 24-48 hours & Complete failover \\
+
+Tabletop Exercise & Semi-annual & 4 hours & Scenario walkthrough \\
+
+\caption{DR Testing Schedule}
+
+## Test Documentation
+Each test must document:
+- Date and time of test
+- Participants and roles
+- Systems tested
+- Success criteria
+- Issues encountered
+- Resolution steps
+- Lessons learned
+- Action items for improvement
+
+# Dependencies and Contacts
+
+## Critical Vendors
+
+|p{3.5cm}|p{3cm}|p{3cm}|}
+
+**Vendor** & **Service** & **Contact** & **SLA** \\
+
+\endfirsthead
+
+**Vendor** & **Service** & **Contact** & **SLA** \\
+
+\endhead
+[DR Site Provider] & DR facility & [Phone/Email] & 4h response \\
+
+[Cloud Provider] & Cloud DR & [Phone/Email] & 24/7 support \\
+
+[ISP Primary] & Network connectivity & [Phone/Email] & 4h restore \\
+
+[ISP Backup] & Backup connectivity & [Phone/Email] & 8h restore \\
+
+\caption{Critical Vendor Contacts}
+
+## Utilities and Services
+- **Power Company:** [Contact] - Generator on-site
+- **Cooling:** Redundant HVAC units
+- **Physical Security:** 24/7 security service
+- **Building Management:** [Contact]
+
+# Plan Maintenance
+
+## Update Requirements
+This plan must be updated when:
+- New critical systems deployed
+- Infrastructure changes
+- Contact information changes
+- After DR tests reveal issues
+- After actual disaster recovery
+- Regulatory requirements change
+- Organizational changes
+
+## Review Schedule
+- **Semi-Annual:** Complete plan review
+- **Quarterly:** Contact list verification
+- **Monthly:** System inventory update
+- **After Each Test:** Procedure updates
+
+# Appendices
+
+## Appendix A: System Recovery Procedures
+Detailed step-by-step recovery procedures for each critical system
+
+## Appendix B: Network Diagrams
+- Primary site network topology
+- DR site network topology
+- Failover routing configuration
+
+## Appendix C: Configuration Documentation
+- Server configurations
+- Network device configs
+- Application settings
+- Security configurations
+
+## Appendix D: Vendor Contracts
+- DR site agreement
+- Cloud services agreements
+- Support contracts
+
+## Appendix E: Historical Test Results
+Documentation of previous DR tests and outcomes
+
+# Approval
+
+\centering
+
+**Role** & **Name** & **Date** \\
+
+CIO & & \\
+
+CISO & & \\
+
+CEO & & \\
+

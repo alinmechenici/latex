@@ -1,0 +1,115 @@
+---
+title: "Penetration Test Report"
+subtitle: "NIS2 Directive Compliance"
+author: "[ORGANIZATION]"
+date: today
+format:
+  pdf:
+    documentclass: article
+    papersize: a4
+    geometry:
+      - margin=2.5cm
+    number-sections: true
+    colorlinks: true
+    toc: true
+    toc-depth: 3
+    header-includes: |
+      \usepackage{fancyhdr}
+      \pagestyle{fancy}
+      \fancyhead[L]{\textbf{[ORGANIZATION]}}
+      \fancyhead[R]{Penetration Test Report}
+      \fancyfoot[L]{CONFIDENTIAL}
+      \fancyfoot[R]{\thepage}
+      \definecolor{nis2blue}{RGB}{0,51,102}
+      \definecolor{nis2red}{RGB}{204,0,0}
+---
+
+\documentclass[11pt,a4paper]{article}
+
+\geometry{margin=1in}
+\definecolor{nis2blue}{RGB}{0,51,153}
+\definecolor{critical}{RGB}{204,0,0}
+\definecolor{high}{RGB}{255,102,0}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{nis2blue}{**Penetration Test Report**}}
+\fancyfoot[C]{\small Page \thepage}
+
+\begin{center}
+{\Huge\bfseries Penetration Test Report}\\
+{\Large Security Assessment}
+\end{center}
+
+\section*{Executive Summary}
+
+|p{9cm}|}
+
+**Test Date** & [DATE RANGE] \\
+
+**Tester** & [NAME/COMPANY] \\
+
+**Test Type** & $\square$ External \quad $\square$ Internal \quad $\square$ Web App \\
+
+**Scope** & [SYSTEMS/IP RANGES TESTED] \\
+
+\subsection*{Key Findings}
+
+**Critical** & [NUMBER] \\
+
+**High** & [NUMBER] \\
+
+**Medium** & [NUMBER] \\
+
+**Low** & [NUMBER] \\
+
+**Informational** & [NUMBER] \\
+
+# Methodology
+- **Reconnaissance:** Information gathering
+- **Scanning:** Vulnerability identification
+- **Exploitation:** Vulnerability validation
+- **Post-Exploitation:** Impact assessment
+- **Reporting:** Documentation
+
+# Findings
+
+|p{4cm}|p{2cm}|p{1.5cm}|p{4cm}|}
+
+**ID** & **Finding** & **Severity** & **CVSS** & **System** \\
+
+\endfirsthead
+
+**ID** & **Finding** & **Severity** & **CVSS** & **System** \\
+
+\endhead
+F-01 & [Vulnerability Name] & Critical & 9.8 & [System] \\
+
+F-02 & [Vulnerability Name] & High & 7.5 & [System] \\
+
+# Detailed Findings
+
+## F-01: [Vulnerability Name]
+
+**Severity:** \textcolor{critical}{CRITICAL} (CVSS 9.8)
+
+**Description:** [Detailed description]
+
+**Impact:** [What attacker could achieve]
+
+**Affected Systems:** [List]
+
+**Proof of Concept:** [Steps to reproduce]
+
+**Remediation:** [How to fix]
+
+**Timeline:** Remediate within 72 hours
+
+# Recommendations
+
+- [Recommendation 1]
+- [Recommendation 2]
+
+# Conclusion
+
+Overall security posture: [Assessment]
+

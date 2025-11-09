@@ -1,21 +1,26 @@
 # NIS2 Cybersecurity Templates
 
-Comprehensive LaTeX and Typst templates for NIS2 Directive (EU) 2022/2555 compliance documentation.
+Comprehensive LaTeX, Typst, and Quarto templates for NIS2 Directive (EU) 2022/2555 compliance documentation.
 
 ## Overview
 
 This repository contains professional templates for all major document types required for NIS2 compliance, organized by category. Each template includes example content in markdown format to help you get started quickly.
 
-**Format Support:**
-- **LaTeX (.tex)** - Industry-standard document preparation system (all 30 templates)
-- **Typst (.typ)** - Modern, fast alternative with simpler syntax (**all 30 templates!**)
+**Format Support - Triple Coverage:**
+- **LaTeX (.tex)** - Industry-standard document preparation (all 30 templates) ✅
+- **Typst (.typ)** - Modern, 10-100x faster alternative (all 30 templates) ✅
+- **Quarto (.qmd)** - Markdown-based, multi-format output (all 30 templates) ✅
 
-**Full dual-format coverage!** Every template is available in both LaTeX and Typst. Choose the format that best suits your workflow!
+**🎉 TRIPLE-FORMAT COVERAGE!** Every template is available in LaTeX, Typst, AND Quarto!
+
+**90 template files total** (30 templates × 3 formats) - Maximum flexibility for your workflow!
 
 **Quick Links:**
-- 📖 [DUAL-FORMAT-GUIDE.md](DUAL-FORMAT-GUIDE.md) - Complete dual-format guide with workflows
-- 🚀 [TYPST-SUPPORT.md](TYPST-SUPPORT.md) - Typst installation and usage details
+- 📖 [PROJECT-SUMMARY.md](PROJECT-SUMMARY.md) - Complete project overview
 - 📋 [TEMPLATE-INDEX.md](TEMPLATE-INDEX.md) - Complete template catalog
+- 🚀 [TYPST-SUPPORT.md](TYPST-SUPPORT.md) - Typst details (10-100x faster)
+- 📘 [QUARTO-SUPPORT.md](QUARTO-SUPPORT.md) - Quarto details (multi-format output)
+- 📊 [DUAL-FORMAT-GUIDE.md](DUAL-FORMAT-GUIDE.md) - Format comparison and workflows
 
 ## What is NIS2?
 
@@ -608,14 +613,23 @@ For questions or issues:
 
 ## Version History
 
+- **v2.2** (2025-11-09): TRIPLE-FORMAT COVERAGE - LaTeX + Typst + Quarto!
+  - Added Quarto (.qmd) format for ALL 30 templates (third format!)
+  - **90 total template files** (30 templates × 3 formats)
+  - Automated conversion script (convert-to-quarto.py) included
+  - Comprehensive Quarto documentation (QUARTO-SUPPORT.md)
+  - Multi-format output: Generate PDF, HTML, Word from same source!
+  - Markdown-based syntax for easy editing
+  - Perfect for web publishing and collaborative editing
+  - Maximum flexibility - choose LaTeX, Typst, or Quarto for any template
+
 - **v2.1** (2025-11-09): Full Typst format support - all templates!
   - Added Typst (.typ) format for ALL 30 templates (100% coverage!)
   - Automated conversion script (convert-to-typst.py) included
   - Enhanced build script supporting both LaTeX and Typst
   - Comprehensive Typst documentation (TYPST-SUPPORT.md)
   - 10-100x faster PDF generation with Typst
-  - Users can now choose LaTeX or Typst for every template
-  - Both formats maintained in parallel for maximum flexibility
+  - Dual-format flexibility
 
 - **v2.0** (2025-11-08): Complete NIS2 compliance suite
   - 14 document categories
@@ -643,5 +657,5 @@ These templates are provided as open resources for NIS2 compliance. Organization
 
 **Prepared for NIS2 Directive Compliance**
 **Last Updated**: November 2025
-**Template Version**: 2.1 (30 Templates × 2 Formats = 60 Files!)
-**Formats**: LaTeX (.tex) + Typst (.typ) - Complete dual-format coverage
+**Template Version**: 2.2 (30 Templates × 3 Formats = 90 Files!)
+**Formats**: LaTeX (.tex) + Typst (.typ) + Quarto (.qmd) - Complete triple-format coverage! 🎉

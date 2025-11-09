@@ -1,0 +1,175 @@
+---
+title: "Security Exception Request"
+subtitle: "NIS2 Directive Compliance"
+author: "[ORGANIZATION]"
+date: today
+format:
+  pdf:
+    documentclass: article
+    papersize: a4
+    geometry:
+      - margin=2.5cm
+    number-sections: true
+    colorlinks: true
+    toc: true
+    toc-depth: 3
+    header-includes: |
+      \usepackage{fancyhdr}
+      \pagestyle{fancy}
+      \fancyhead[L]{\textbf{[ORGANIZATION]}}
+      \fancyhead[R]{Security Exception Request}
+      \fancyfoot[L]{CONFIDENTIAL}
+      \fancyfoot[R]{\thepage}
+      \definecolor{nis2blue}{RGB}{0,51,102}
+      \definecolor{nis2red}{RGB}{204,0,0}
+---
+
+\documentclass[11pt,a4paper]{article}
+
+\geometry{margin=1in}
+\definecolor{nis2blue}{RGB}{0,51,153}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{nis2blue}{**Security Exception Request**}}
+\fancyfoot[C]{\small Page \thepage}
+
+\begin{center}
+{\Huge\bfseries Security Exception Request}\\
+{\Large Policy Exception Request Form}
+\end{center}
+
+\section*{Request Information}
+
+|p{9cm}|}
+
+**Request ID** & EXC-[YEAR]-[NUMBER] \\
+
+**Request Date** & [DATE] \\
+
+**Requestor** & [NAME] - [TITLE] \\
+
+**Department** & [DEPARTMENT] \\
+
+**Contact** & [EMAIL] - [PHONE] \\
+
+\section*{Exception Details}
+
+\subsection*{Policy/Standard Violated}
+
+|p{9cm}|}
+
+**Policy Name** & [POLICY NAME] \\
+
+**Specific Requirement** & [SECTION/REQUIREMENT] \\
+
+\subsection*{Requested Exception}
+
+Describe specifically what exception is being requested:
+
+\subsection*{Systems/Applications Affected}
+
+|p{9cm}|}
+
+**Systems** & [LIST ALL AFFECTED SYSTEMS] \\
+& \\
+
+**Data Involved** & [DATA TYPES AND CLASSIFICATION] \\
+& \\
+
+**Users Affected** & [NUMBER AND TYPE OF USERS] \\
+
+\section*{Business Justification}
+
+\subsection*{Business Need}
+
+Explain why this exception is necessary:
+
+\subsection*{Alternatives Considered}
+
+What alternatives were considered and why were they rejected?
+
+\section*{Duration}
+
+|p{9cm}|}
+
+**Exception Type** & $\square$ Temporary - Until: [DATE] \\
+& $\square$ Permanent (requires strong justification) \\
+
+**Maximum Duration** & [TIMEFRAME - e.g., 90 days] \\
+
+\section*{Risk Assessment}
+
+|p{9cm}|}
+
+**Risk Level** & $\square$ High \quad $\square$ Medium \quad $\square$ Low \\
+
+**Potential Impact** & [DESCRIBE SECURITY IMPACT] \\
+& \\
+& \\
+
+\section*{Compensating Controls}
+
+List all compensating controls that will be implemented:
+
+- [Compensating control 1]
+
+- [Compensating control 2]
+
+- [Compensating control 3]
+
+\section*{Security Review}
+
+**Security Team Assessment:**
+
+|p{9cm}|}
+
+**Recommendation** & $\square$ Approve \quad $\square$ Approve with conditions \\
+& $\square$ Deny \\
+
+**Conditions (if any)** & \\
+& \\
+& \\
+
+**Security Reviewer** & [NAME] - [DATE] \\
+
+\section*{Approval}
+
+**Approval Authority:**
+- **High Risk:** CISO + CIO/CTO
+- **Medium Risk:** CISO
+- **Low Risk:** Security Manager
+
+|p{4cm}|p{4cm}|}
+
+**Role** & **Name** & **Decision & Date** \\
+
+Security Manager & & $\square$ Approve $\square$ Deny \\
+& & \\
+
+CISO & & $\square$ Approve $\square$ Deny \\
+& & \\
+
+CIO/CTO (if req'd) & & $\square$ Approve $\square$ Deny \\
+& & \\
+
+\section*{Conditions and Monitoring}
+
+|p{9cm}|}
+
+**Review Date** & [DATE] \\
+
+**Monitoring Required** & $\square$ Enhanced logging \\
+& $\square$ Weekly status reports \\
+& $\square$ Monthly reviews \\
+& $\square$ Other: \underline{\hspace{5cm}} \\
+
+**Renewal Process** & $\square$ Automatic (if criteria met) \\
+& $\square$ Requires new request \\
+
+\hrule
+
+\footnotesize
+**Exception Registry:** Log all approved exceptions in Exception Registry
+
+**Audit Trail:** Maintain complete documentation for audit purposes
+

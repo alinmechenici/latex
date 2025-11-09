@@ -1,0 +1,507 @@
+---
+title: "Change Management Procedure"
+subtitle: "NIS2 Directive Compliance"
+author: "[ORGANIZATION]"
+date: today
+format:
+  pdf:
+    documentclass: article
+    papersize: a4
+    geometry:
+      - margin=2.5cm
+    number-sections: true
+    colorlinks: true
+    toc: true
+    toc-depth: 3
+    header-includes: |
+      \usepackage{fancyhdr}
+      \pagestyle{fancy}
+      \fancyhead[L]{\textbf{[ORGANIZATION]}}
+      \fancyhead[R]{Change Management Procedure}
+      \fancyfoot[L]{CONFIDENTIAL}
+      \fancyfoot[R]{\thepage}
+      \definecolor{nis2blue}{RGB}{0,51,102}
+      \definecolor{nis2red}{RGB}{204,0,0}
+---
+
+\documentclass[11pt,a4paper]{article}
+
+\usetikzlibrary{shapes,arrows,positioning}
+
+\geometry{margin=1in}
+
+\definecolor{nis2blue}{RGB}{0,51,153}
+\definecolor{nis2gray}{RGB}{100,100,100}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{nis2blue}{**Change Management Procedure**}}
+\fancyhead[R]{\includegraphics[height=0.8cm]{logo.png}}
+\fancyfoot[L]{\textcolor{nis2gray}{\small \jobname}}
+\fancyfoot[C]{\textcolor{nis2gray}{\small Internal Use Only}}
+\fancyfoot[R]{\textcolor{nis2gray}{\small Page \thepage\ of \pageref{LastPage}}}
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=nis2blue,
+    filecolor=nis2blue,
+    urlcolor=nis2blue,
+}
+
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\Huge\bfseries\textcolor{nis2blue}{Change Management Procedure}\par}
+    
+
+    {\Large NIS2 Directive Compliance\par}
+    
+
+    {\Large**Organization:** [ORGANIZATION]\par}
+    
+
+    {\Large**Version:** 1.0\par}
+    
+
+    {\Large**Effective Date:** \today\par}
+    \vfill
+    {\small NIS2 Article 21(2)(e) - Security in Acquisition, Development and Maintenance\par}
+\end{titlepage}
+
+{{< pagebreak >}}
+
+# Purpose
+This procedure establishes a standardized process for planning, approving, implementing, and reviewing changes to IT systems and infrastructure while maintaining security and minimizing risk.
+
+# Scope
+Applies to all changes affecting:
+- Production IT systems and applications
+- Network infrastructure
+- Security controls
+- Databases
+- Cloud infrastructure
+- Critical business services
+
+# Change Categories
+
+## Standard Change
+**Definition:** Pre-approved, low-risk, routine changes with documented procedures
+
+**Examples:**
+- Routine patch deployments (approved list)
+- User account provisioning
+- Standard software installations
+- Scheduled backup configuration updates
+
+**Approval:** Pre-authorized, no CAB review required
+
+## Normal Change
+**Definition:** Planned changes requiring CAB review and approval
+
+**Examples:**
+- Application upgrades
+- Infrastructure modifications
+- New system deployments
+- Configuration changes to critical systems
+
+**Approval:** Change Advisory Board (CAB)
+
+## Emergency Change
+**Definition:** Urgent changes required to resolve critical issues or security threats
+
+**Examples:**
+- Critical security patch deployment
+- Service restoration after outage
+- Zero-day vulnerability remediation
+- Critical bug fixes
+
+**Approval:** Emergency CAB (E-CAB) or designated authority
+
+# Change Management Process
+
+## Process Overview
+
+\begin{center}
+\begin{tikzpicture}[node distance=1.5cm, auto]
+    \tikzstyle{box} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=nis2blue, fill=nis2blue!20]
+    \tikzstyle{decision} = [diamond, minimum width=2cm, minimum height=1cm, text centered, draw=nis2blue, fill=nis2blue!20]
+    \tikzstyle{arrow} = [thick,->,>=stealth,nis2blue]
+
+    \node (request) [box] {1. Request};
+    \node (assess) [box, below of=request] {2. Assessment};
+    \node (approve) [box, below of=assess] {3. Approval};
+    \node (plan) [box, below of=approve] {4. Planning};
+    \node (implement) [box, below of=plan] {5. Implementation};
+    \node (verify) [box, below of=implement] {6. Verification};
+    \node (close) [box, below of=verify] {7. Closure};
+
+    \draw [arrow] (request) -- (assess);
+    \draw [arrow] (assess) -- (approve);
+    \draw [arrow] (approve) -- (plan);
+    \draw [arrow] (plan) -- (implement);
+    \draw [arrow] (implement) -- (verify);
+    \draw [arrow] (verify) -- (close);
+\end{tikzpicture}
+\end{center}
+
+## Phase 1: Change Request
+
+### Initiating a Change
+All changes must be submitted via:
+- Change management ticketing system
+- Change Request Form (see Appendix A)
+- Email to: changes@[ORGANIZATION].com (for emergencies)
+
+### Required Information
+- Change requestor name and contact
+- Change category (Standard/Normal/Emergency)
+- Business justification
+- Systems and services affected
+- Proposed implementation date/time
+- Estimated duration
+- Risk assessment
+- Rollback plan
+- Testing plan
+- Communication plan
+
+## Phase 2: Assessment
+
+### Change Manager Review
+
+- Validate completeness of request
+- Verify change category classification
+- Assess impact and risk
+- Identify dependencies
+- Check for conflicts with other changes
+- Determine approval path
+
+### Risk Assessment
+
+\centering
+
+|}
+
+**Risk Level** & **Criteria** \\
+
+**High** & Affects critical systems, customer-facing services, or has potential for significant business impact \\
+
+**Medium** & Affects important systems, requires coordination across teams, moderate business impact possible \\
+
+**Low** & Affects non-critical systems, minimal coordination needed, limited business impact \\
+
+\caption{Risk Assessment Criteria}
+
+## Phase 3: Approval
+
+### Change Advisory Board (CAB)
+
+**Composition:**
+- Change Manager (Chair)
+- IT Operations Manager
+- Application Development Manager
+- Information Security Manager
+- Business Representative(s)
+- Relevant Technical SMEs
+
+**Meeting Schedule:**
+- Regular CAB: Weekly (Tuesdays, 10:00 AM)
+- Emergency CAB: As needed (within 2 hours of request)
+
+**CAB Responsibilities:**
+- Review change requests
+- Assess risks and impacts
+- Approve, reject, or defer changes
+- Prioritize changes
+- Authorize implementation schedule
+
+### Approval Authority
+
+|p{3cm}|p{3cm}|p{4cm}|}
+
+**Change Type** & **Risk Level** & **Approver** & **Timeline** \\
+
+\endfirsthead
+
+**Change Type** & **Risk Level** & **Approver** & **Timeline** \\
+
+\endhead
+Standard & Low & Pre-approved & Immediate \\
+
+Normal & Low & Change Manager & 1 business day \\
+
+Normal & Medium & CAB & Next CAB meeting \\
+
+Normal & High & CAB + CIO & Next CAB + CIO approval \\
+
+Emergency & Any & E-CAB or CIO/CISO & Within 2 hours \\
+
+\caption{Approval Authority Matrix}
+
+## Phase 4: Planning
+
+### Implementation Planning
+- Detailed step-by-step procedure
+- Resource assignment (personnel, tools, time)
+- Communication plan
+- Testing and validation steps
+- Rollback procedure (mandatory)
+- Contingency plans
+
+### Change Window
+
+**Standard Change Windows:**
+- **Production Systems:** Saturdays 2:00 AM - 6:00 AM
+- **Non-critical Systems:** Weekdays 6:00 PM - 10:00 PM
+- **Emergency:** As required (business impact considered)
+
+**Blackout Periods:**
+- Month-end close: Last 3 days of month
+- Year-end close: December 26 - January 5
+- Major business events: [LIST SPECIFIC DATES]
+
+### Rollback Planning
+Every change must have a documented rollback plan:
+- Rollback triggers (when to initiate)
+- Rollback procedure (step-by-step)
+- Rollback time estimate
+- Rollback authorization
+- Data recovery procedures (if applicable)
+
+## Phase 5: Implementation
+
+### Pre-Implementation
+
+- Final approval confirmation
+- Stakeholder notification (24 hours advance)
+- Backup verification
+- Team readiness check
+- Communication to users (if needed)
+
+### During Implementation
+- Follow documented procedure exactly
+- Document all actions taken
+- Report progress at defined checkpoints
+- Maintain communication channel open
+- Monitor system status continuously
+- Be prepared to execute rollback if needed
+
+### Rollback Triggers
+Initiate rollback if:
+- Implementation exceeds allocated time window
+- Critical errors encountered
+- System instability observed
+- Security issues identified
+- Business impact exceeds acceptable threshold
+- Unable to complete all planned steps
+
+## Phase 6: Verification
+
+### Post-Implementation Validation
+- Functional testing (verify intended outcome achieved)
+- Performance testing (no degradation)
+- Security validation (controls still effective)
+- Integration testing (dependent systems working)
+- User acceptance (if applicable)
+- Monitoring review (no errors or alerts)
+
+### Success Criteria
+Change considered successful when:
+- All planned changes implemented
+- Testing confirms expected results
+- No new errors or issues introduced
+- System performance meets requirements
+- No rollback required
+- Stakeholders confirm acceptance
+
+## Phase 7: Closure
+
+### Documentation
+Complete and attach to change record:
+- Implementation results
+- Issues encountered and resolutions
+- Actual vs. planned timeline
+- Configuration updates
+- Lessons learned
+- Final sign-off
+
+### Post-Implementation Review (PIR)
+Required for:
+- All high-risk changes
+- Failed changes or rollbacks
+- Changes with significant impact
+
+**PIR Components:**
+- What went well
+- What could be improved
+- Issues and root causes
+- Action items for improvement
+- Knowledge base updates
+
+# Emergency Change Process
+
+## Emergency Change Criteria
+- Critical security vulnerability requiring immediate patching
+- Major service outage requiring urgent fix
+- Data integrity or confidentiality threat
+- Regulatory compliance issue
+- Customer-impacting critical defect
+
+## Emergency Change Procedure
+
+- **Initiation** (0-15 min)
+- Document emergency justification
+- Contact E-CAB members
+- Brief summary of change and risk
+- **Approval** (15-30 min)
+- E-CAB review (virtual meeting or email)
+- CIO or CISO approval
+- Document approval in ticket
+- **Implementation** (30 min - 4 hours)
+- Execute change per documented plan
+- Continuous communication
+- Rollback available
+- **Follow-up** (within 48 hours)
+- Present to full CAB (next meeting)
+- Complete documentation
+- Conduct PIR if needed
+    
+
+## Emergency Change Authority
+
+In order of preference:
+
+- Emergency CAB (if convened)
+- CIO or CISO jointly
+- On-call IT Manager + Security Manager
+
+# Metrics and Reporting
+
+## Key Performance Indicators
+
+|p{3cm}|p{4cm}|}
+
+**Metric** & **Target** & **Frequency** \\
+
+\endfirsthead
+
+**Metric** & **Target** & **Frequency** \\
+
+\endhead
+Change success rate & >95% & Monthly \\
+
+Emergency changes & <10% of total & Monthly \\
+
+Rollbacks & <5% of changes & Monthly \\
+
+Unauthorized changes detected & 0 & Monthly \\
+
+CAB attendance & >80% & Monthly \\
+
+Post-implementation review completion & 100% & Monthly \\
+
+\caption{Change Management KPIs}
+
+## Monthly Change Report
+- Total changes by category
+- Success vs. failure rate
+- Rollback statistics
+- Changes by system/application
+- Incident correlation (changes causing incidents)
+- Trends and analysis
+
+# Roles and Responsibilities
+
+## Change Manager
+- Overall change process ownership
+- CAB meeting facilitation
+- Change request review and triage
+- Conflict identification and resolution
+- Metrics and reporting
+- Process improvement
+
+## Change Advisory Board (CAB)
+- Review and approve/reject changes
+- Risk assessment
+- Priority setting
+- Schedule authorization
+
+## Change Requestor
+- Submit complete change request
+- Provide accurate information
+- Develop implementation and rollback plans
+- Execute approved changes
+- Document results
+
+## Technical Teams
+- Execute approved changes
+- Provide technical expertise
+- Test and validate changes
+- Support rollback if needed
+
+## Business Stakeholders
+- Define business requirements
+- Accept business risk
+- Participate in UAT
+- Approve business-impacting changes
+
+# Change Freeze
+
+## Freeze Periods
+Change freezes may be declared for:
+- Critical business periods
+- Major incidents or crises
+- System stability concerns
+- Regulatory audits
+
+## Freeze Exceptions
+During a freeze, only these changes permitted:
+- Critical security patches
+- Emergency fixes for service outages
+- Changes with CIO/CEO approval
+
+# Compliance and Audit
+
+## Record Retention
+- Change records: 3 years
+- CAB meeting minutes: 3 years
+- Post-implementation reviews: 2 years
+
+## Audit Requirements
+- Quarterly change management audit
+- Sample testing of change records
+- Authorization verification
+- Procedure compliance review
+- Unauthorized change detection
+
+# Related Documents
+- Cybersecurity Policy
+- Incident Response Plan
+- Vulnerability Management Procedure
+- Asset Management Policy
+- Configuration Management Database (CMDB)
+
+# Appendices
+
+## Appendix A: Change Request Form
+[Template for change request submission]
+
+## Appendix B: CAB Meeting Agenda Template
+[Standard agenda for CAB meetings]
+
+## Appendix C: Post-Implementation Review Template
+[Template for conducting PIR]
+
+# Approval
+\centering
+
+**Role** & **Name** & **Date** \\
+
+Change Manager & & \\
+
+CIO & & \\
+
+CISO & & \\
+
