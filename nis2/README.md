@@ -1,10 +1,16 @@
 # NIS2 Cybersecurity Templates
 
-Comprehensive LaTeX templates for NIS2 Directive (EU) 2022/2555 compliance documentation.
+Comprehensive LaTeX and Typst templates for NIS2 Directive (EU) 2022/2555 compliance documentation.
 
 ## Overview
 
-This repository contains professional LaTeX templates for all major document types required for NIS2 compliance, organized by category. Each template includes example content in markdown format to help you get started quickly.
+This repository contains professional templates for all major document types required for NIS2 compliance, organized by category. Each template includes example content in markdown format to help you get started quickly.
+
+**Format Support:**
+- **LaTeX (.tex)** - Industry-standard document preparation system (all 30 templates)
+- **Typst (.typ)** - Modern, fast alternative with simpler syntax (select templates, growing coverage)
+
+Choose the format that best suits your workflow! See [TYPST-SUPPORT.md](TYPST-SUPPORT.md) for details.
 
 ## What is NIS2?
 
@@ -333,7 +339,7 @@ nis2/
 
 ### Prerequisites
 
-Install LaTeX on your system:
+**Option 1: LaTeX** (all 30 templates supported)
 
 **Ubuntu/Debian**:
 ```bash
@@ -348,6 +354,21 @@ brew install --cask mactex
 **Windows**:
 Download and install MiKTeX from https://miktex.org/
 
+**Option 2: Typst** (modern alternative, select templates)
+
+**Linux/macOS**:
+```bash
+curl -fsSL https://typst.app/install.sh | sh
+# or: brew install typst (macOS)
+```
+
+**Windows**:
+```powershell
+winget install --id Typst.Typst
+```
+
+**Both**: You can install both systems and use whichever suits each template!
+
 ### Customizing Templates
 
 1. **Replace placeholders**: Search for `[ORGANIZATION]`, `[NAME]`, `[DATE]`, etc., and replace with your information
@@ -360,20 +381,29 @@ Download and install MiKTeX from https://miktex.org/
 
 ### Generating PDFs
 
-**Compile individual document**:
+**Option 1: LaTeX (individual document)**
 ```bash
 cd nis2/risk-management
 pdflatex risk-assessment-report.tex
 pdflatex risk-assessment-report.tex  # Run twice for TOC and references
 ```
+Note: Run `pdflatex` twice to generate correct table of contents and cross-references.
 
-**Note**: Run `pdflatex` twice to generate correct table of contents and cross-references.
+**Option 2: Typst (individual document)**
+```bash
+cd nis2/risk-management
+typst compile risk-assessment-report.typ
+# Much faster! Watch mode for live updates:
+typst watch risk-assessment-report.typ
+```
 
-**Generate all PDFs** (see instructions below):
+**Option 3: Generate ALL PDFs (both formats)**
 ```bash
 cd nis2
+chmod +x generate-all-pdfs.sh
 ./generate-all-pdfs.sh
 ```
+The script automatically detects available tools (pdflatex/typst) and generates PDFs from all templates.
 
 ### Example Content
 
@@ -457,8 +487,15 @@ A "significant incident" under NIS2 has caused or is capable of causing:
 ### Easy Customization
 - Clear placeholder marking ([ORGANIZATION], etc.)
 - Modular structure
-- Well-commented LaTeX code
+- Well-commented code (LaTeX and Typst)
 - Example content for guidance
+
+### Multiple Format Support
+- **LaTeX (.tex)** - Industry-standard, all 30 templates
+- **Typst (.typ)** - Modern alternative, 10-100x faster compilation
+- Choose the format that suits your workflow
+- Both generate identical professional PDFs
+- See [TYPST-SUPPORT.md](TYPST-SUPPORT.md) for details
 
 ## Penalties for Non-Compliance
 
@@ -564,6 +601,13 @@ For questions or issues:
 
 ## Version History
 
+- **v2.1** (2025-11-09): Typst format support added
+  - Added Typst (.typ) format support for modern, fast compilation
+  - 2 complete Typst templates (Risk Assessment, 24h Notification)
+  - Enhanced build script supporting both LaTeX and Typst
+  - Comprehensive Typst documentation (TYPST-SUPPORT.md)
+  - 10-100x faster PDF generation with Typst option
+
 - **v2.0** (2025-11-08): Complete NIS2 compliance suite
   - 14 document categories
   - 30 LaTeX templates
@@ -590,4 +634,4 @@ These templates are provided as open resources for NIS2 compliance. Organization
 
 **Prepared for NIS2 Directive Compliance**
 **Last Updated**: November 2025
-**Template Version**: 2.0 (30 Templates)
+**Template Version**: 2.1 (30 Templates, LaTeX + Typst support)
