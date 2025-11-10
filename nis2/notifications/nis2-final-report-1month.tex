@@ -1,0 +1,612 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{lastpage}
+
+\geometry{margin=1in}
+
+\definecolor{nis2blue}{RGB}{0,51,153}
+\definecolor{nis2gray}{RGB}{100,100,100}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{nis2blue}{\textbf{NIS2 Final Report (1 Month)}}}
+\fancyhead[R]{\includegraphics[height=0.8cm]{logo.png}}
+\fancyfoot[L]{\textcolor{nis2gray}{\small \jobname}}
+\fancyfoot[C]{\textcolor{nis2gray}{\small Regulatory Notification}}
+\fancyfoot[R]{\textcolor{nis2gray}{\small Page \thepage\ of \pageref{LastPage}}}
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=nis2blue,
+    filecolor=nis2blue,
+    urlcolor=nis2blue,
+}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\Huge\bfseries\textcolor{nis2blue}{NIS2 Final Incident Report}\par}
+    \vspace{0.5cm}
+    {\Large One-Month Comprehensive Report}\par}
+    \vspace{2cm}
+    {\large Directive (EU) 2022/2555 - Article 23(4)\par}
+    \vspace{2cm}
+    {\Large\textbf{Organization:} [ORGANIZATION]\par}
+    \vspace{0.5cm}
+    {\Large\textbf{Incident ID:} INC-[YEAR]-[NUMBER]\par}
+    \vspace{0.5cm}
+    {\Large\textbf{Report Date:} \today\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Executive Summary}
+
+\subsection{Incident Overview}
+
+Provide a concise executive summary (2-3 paragraphs) covering:
+\begin{itemize}
+    \item What happened
+    \item When it occurred
+    \item Impact to services and users
+    \item Current status (resolved/ongoing)
+    \item Key lessons learned
+\end{itemize}
+
+\vspace{4cm}
+
+\subsection{Key Statistics}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|p{9cm}|}
+\hline
+\textbf{Detection to Containment} & [TIME] \\
+\hline
+\textbf{Total Duration} & [DAYS/HOURS] \\
+\hline
+\textbf{Services Affected} & [NUMBER] \\
+\hline
+\textbf{Users Impacted} & [NUMBER] \\
+\hline
+\textbf{Financial Impact} & €[AMOUNT] \\
+\hline
+\textbf{Status} & $\square$ Resolved \quad $\square$ Ongoing \\
+\hline
+\end{tabular}
+\caption{Incident Summary Statistics}
+\end{table}
+
+\section{Notification Reference}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|p{5cm}|p{8cm}|}
+\hline
+\textbf{Early Warning (24h)} & Submitted: [DATE/TIME] \\
+\hline
+\textbf{Incident Notification (72h)} & Submitted: [DATE/TIME] \\
+\hline
+\textbf{Final Report (1 month)} & Submitted: [DATE/TIME] \\
+\hline
+\textbf{Incident ID} & INC-[YEAR]-[NUMBER] \\
+\hline
+\textbf{Authority Reference} & [REF NUMBER from authority] \\
+\hline
+\end{tabular}
+\caption{Notification Timeline}
+\end{table}
+
+\section{Detailed Incident Analysis}
+
+\subsection{Incident Classification}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|p{5cm}|p{8cm}|}
+\hline
+\textbf{Incident Type} & [e.g., Ransomware Attack] \\
+\hline
+\textbf{Category} & [Cyber Attack / System Failure / etc.] \\
+\hline
+\textbf{Severity} & Critical / High / Medium \\
+\hline
+\textbf{Significance} & Significant Incident (NIS2) \\
+\hline
+\end{tabular}
+\caption{Final Classification}
+\end{table}
+
+\subsection{Root Cause Analysis}
+
+\subsubsection{Primary Root Cause}
+
+[Detailed explanation of the root cause]
+
+\vspace{3cm}
+
+\subsubsection{Contributing Factors}
+
+\begin{enumerate}
+    \item [Contributing factor 1]
+    \item [Contributing factor 2]
+    \item [Contributing factor 3]
+\end{enumerate}
+
+\subsubsection{Attack Vector and Methodology}
+
+Detailed description of how the attack was carried out:
+
+\vspace{4cm}
+
+\subsection{Complete Timeline}
+
+\begin{longtable}{|p{3.5cm}|p{10cm}|}
+\hline
+\textbf{Date/Time} & \textbf{Event Description} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Date/Time} & \textbf{Event Description} \\
+\hline
+\endhead
+[DATE/TIME] & Initial compromise occurred (estimated based on forensics) \\
+\hline
+[DATE/TIME] & Attacker established persistence \\
+\hline
+[DATE/TIME] & Lateral movement began \\
+\hline
+[DATE/TIME] & Data exfiltration detected (if applicable) \\
+\hline
+[DATE/TIME] & Malicious activity first detected \\
+\hline
+[DATE/TIME] & Incident reported internally \\
+\hline
+[DATE/TIME] & IR team activated \\
+\hline
+[DATE/TIME] & Containment initiated \\
+\hline
+[DATE/TIME] & Early warning submitted (24h notification) \\
+\hline
+[DATE/TIME] & Containment completed \\
+\hline
+[DATE/TIME] & Incident notification submitted (72h) \\
+\hline
+[DATE/TIME] & Eradication completed \\
+\hline
+[DATE/TIME] & Recovery initiated \\
+\hline
+[DATE/TIME] & Services fully restored \\
+\hline
+[DATE/TIME] & Incident declared resolved \\
+\hline
+\caption{Complete Incident Timeline}
+\end{longtable}
+
+\section{Impact Assessment}
+
+\subsection{Service Impact}
+
+\begin{longtable}{|p{4cm}|p{3cm}|p{2cm}|p{4cm}|}
+\hline
+\textbf{Service} & \textbf{Impact Level} & \textbf{Downtime} & \textbf{Recovery} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Service} & \textbf{Impact Level} & \textbf{Downtime} & \textbf{Recovery} \\
+\hline
+\endhead
+[Service 1] & Complete/Partial & [HOURS] & [DATE/TIME] \\
+\hline
+[Service 2] & Complete/Partial & [HOURS] & [DATE/TIME] \\
+\hline
+\caption{Service Impact Summary}
+\end{longtable}
+
+\subsection{User/Customer Impact}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|p{5cm}|p{8cm}|}
+\hline
+\textbf{Total Users Affected} & [NUMBER] (confirmed) \\
+\hline
+\textbf{Individual Customers} & [NUMBER] \\
+\hline
+\textbf{Business Customers} & [NUMBER] \\
+\hline
+\textbf{Geographic Scope} & [COUNTRIES/REGIONS] \\
+\hline
+\textbf{Average Downtime per User} & [HOURS/DAYS] \\
+\hline
+\end{tabular}
+\caption{User Impact Analysis}
+\end{table}
+
+\subsection{Data Impact}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|p{5cm}|p{8cm}|}
+\hline
+\textbf{Data Compromised} & YES / NO \\
+\hline
+\textbf{Data Categories} & [List: Personal, Financial, etc.] \\
+\hline
+\textbf{Records Affected} & [NUMBER] records \\
+\hline
+\textbf{Data Exfiltrated} & [VOLUME] or None detected \\
+\hline
+\textbf{Sensitive Data Involved} & YES / NO - [Specify type] \\
+\hline
+\textbf{GDPR Notification} & Required: YES/NO | Completed: [DATE] \\
+\hline
+\end{tabular}
+\caption{Data Impact Summary}
+\end{table}
+
+\subsection{Financial Impact}
+
+\begin{longtable}{|p{5cm}|p{3cm}|p{5cm}|}
+\hline
+\textbf{Cost Category} & \textbf{Amount (€)} & \textbf{Details} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Cost Category} & \textbf{Amount (€)} & \textbf{Details} \\
+\hline
+\endhead
+Investigation Costs & [AMOUNT] & Forensics, consultants \\
+\hline
+Remediation Costs & [AMOUNT] & System recovery, rebuilds \\
+\hline
+Recovery Costs & [AMOUNT] & Data restoration, testing \\
+\hline
+Revenue Loss & [AMOUNT] & Service downtime \\
+\hline
+Customer Compensation & [AMOUNT] & SLA penalties, refunds \\
+\hline
+Legal/Regulatory & [AMOUNT] & Legal fees, potential fines \\
+\hline
+Notification Costs & [AMOUNT] & Customer communications \\
+\hline
+Security Improvements & [AMOUNT] & Enhanced controls \\
+\hline
+\textbf{Total Direct Costs} & \textbf{[TOTAL]} & \\
+\hline
+Reputational Damage & Estimated [AMOUNT] & Long-term revenue impact \\
+\hline
+\textbf{Grand Total} & \textbf{[TOTAL]} & \\
+\hline
+\caption{Detailed Financial Impact}
+\end{longtable}
+
+\subsection{Operational Impact}
+
+\begin{itemize}
+    \item \textbf{Business Processes Disrupted:} [List]
+    \item \textbf{Employee Productivity Loss:} [Hours/Days]
+    \item \textbf{Supply Chain Impact:} [Description]
+    \item \textbf{Compliance Issues:} [Any regulatory violations]
+\end{itemize}
+
+\section{Response and Recovery}
+
+\subsection{Response Actions Taken}
+
+\subsubsection{Detection Phase}
+[Describe how the incident was detected]
+
+\vspace{2cm}
+
+\subsubsection{Containment Phase}
+
+Actions taken to contain the incident:
+\begin{itemize}
+    \item [Action 1]
+    \item [Action 2]
+    \item [Action 3]
+\end{itemize}
+
+\subsubsection{Eradication Phase}
+
+Actions taken to remove the threat:
+\begin{itemize}
+    \item [Action 1]
+    \item [Action 2]
+    \item [Action 3]
+\end{itemize}
+
+\subsubsection{Recovery Phase}
+
+Recovery steps and verification:
+\begin{itemize}
+    \item [Action 1]
+    \item [Action 2]
+    \item [Action 3]
+\end{itemize}
+
+\subsection{External Assistance}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|p{5cm}|p{8cm}|}
+\hline
+\textbf{Forensic Firm} & [NAME] - [Role] \\
+\hline
+\textbf{Law Enforcement} & [AGENCY] - [Involvement] \\
+\hline
+\textbf{Cyber Insurance} & [INSURER] - [Coverage] \\
+\hline
+\textbf{Technology Vendors} & [VENDORS] - [Support provided] \\
+\hline
+\textbf{Legal Counsel} & [FIRM] - [Services] \\
+\hline
+\end{tabular}
+\caption{External Support}
+\end{table}
+
+\section{Technical Details}
+
+\subsection{Indicators of Compromise (IoCs)}
+
+\begin{longtable}{|p{3.5cm}|p{10cm}|}
+\hline
+\textbf{IoC Type} & \textbf{Values} \\
+\hline
+\endfirsthead
+\hline
+\textbf{IoC Type} & \textbf{Values} \\
+\hline
+\endhead
+IP Addresses & [Complete list of malicious IPs] \\
+\hline
+Domain Names & [Complete list of malicious domains] \\
+\hline
+File Hashes (MD5) & [List] \\
+\hline
+File Hashes (SHA-256) & [List] \\
+\hline
+Malware Family & [Name and variant] \\
+\hline
+URLs & [Malicious URLs] \\
+\hline
+Email Addresses & [Attacker emails, phishing senders] \\
+\hline
+Registry Keys & [Modified/created registry keys] \\
+\hline
+File Paths & [Malicious file locations] \\
+\hline
+\caption{Complete IoC List}
+\end{longtable}
+
+\subsection{Vulnerabilities Exploited}
+
+\begin{longtable}{|p{3cm}|p{4cm}|p{2cm}|p{4cm}|}
+\hline
+\textbf{CVE} & \textbf{Description} & \textbf{CVSS} & \textbf{Affected Systems} \\
+\hline
+\endfirsthead
+\hline
+\textbf{CVE} & \textbf{Description} & \textbf{CVSS} & \textbf{Affected Systems} \\
+\hline
+\endhead
+[CVE-XXXX-XXXXX] & [Description] & [Score] & [Systems] \\
+\hline
+\caption{Exploited Vulnerabilities}
+\end{longtable}
+
+\subsection{Attack Tools and Techniques (MITRE ATT\&CK)}
+
+\begin{itemize}
+    \item \textbf{Initial Access:} [Technique - TID]
+    \item \textbf{Execution:} [Technique - TID]
+    \item \textbf{Persistence:} [Technique - TID]
+    \item \textbf{Privilege Escalation:} [Technique - TID]
+    \item \textbf{Defense Evasion:} [Technique - TID]
+    \item \textbf{Credential Access:} [Technique - TID]
+    \item \textbf{Discovery:} [Technique - TID]
+    \item \textbf{Lateral Movement:} [Technique - TID]
+    \item \textbf{Collection:} [Technique - TID]
+    \item \textbf{Exfiltration:} [Technique - TID]
+    \item \textbf{Impact:} [Technique - TID]
+\end{itemize}
+
+\section{Lessons Learned}
+
+\subsection{What Worked Well}
+
+\begin{enumerate}
+    \item [Success 1]
+    \item [Success 2]
+    \item [Success 3]
+\end{enumerate}
+
+\subsection{What Could Be Improved}
+
+\begin{enumerate}
+    \item [Improvement area 1]
+    \item [Improvement area 2]
+    \item [Improvement area 3]
+\end{enumerate}
+
+\subsection{Gaps Identified}
+
+\begin{itemize}
+    \item \textbf{People:} [Skills, training, staffing gaps]
+    \item \textbf{Process:} [Procedure gaps, communication issues]
+    \item \textbf{Technology:} [Tool gaps, detection limitations]
+\end{itemize}
+
+\section{Preventive and Corrective Measures}
+
+\subsection{Immediate Actions Completed (0-30 days)}
+
+\begin{longtable}{|p{6cm}|p{3cm}|p{4cm}|}
+\hline
+\textbf{Action} & \textbf{Completion Date} & \textbf{Owner} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Action} & \textbf{Completion Date} & \textbf{Owner} \\
+\hline
+\endhead
+[Action 1] & [DATE] & [OWNER] \\
+\hline
+[Action 2] & [DATE] & [OWNER] \\
+\hline
+\caption{Immediate Corrective Actions}
+\end{longtable}
+
+\subsection{Short-term Improvements (30-90 days)}
+
+\begin{longtable}{|p{6cm}|p{3cm}|p{4cm}|}
+\hline
+\textbf{Planned Action} & \textbf{Target Date} & \textbf{Owner} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Planned Action} & \textbf{Target Date} & \textbf{Owner} \\
+\hline
+\endhead
+[Action 1] & [DATE] & [OWNER] \\
+\hline
+[Action 2] & [DATE] & [OWNER] \\
+\hline
+\caption{Short-term Improvements}
+\end{longtable}
+
+\subsection{Long-term Strategic Changes (90+ days)}
+
+\begin{itemize}
+    \item [Strategic initiative 1]
+    \item [Strategic initiative 2]
+    \item [Strategic initiative 3]
+\end{itemize}
+
+\subsection{Policy and Procedure Updates}
+
+\begin{itemize}
+    \item [Updated policy 1] - Effective: [DATE]
+    \item [Updated policy 2] - Effective: [DATE]
+    \item [New procedure 1] - Implemented: [DATE]
+\end{itemize}
+
+\section{Recommendations for the Sector}
+
+\subsection{Threat Intelligence Sharing}
+
+Information that may benefit other entities in the sector:
+
+\vspace{3cm}
+
+\subsection{Best Practices}
+
+Recommendations based on this incident:
+
+\begin{enumerate}
+    \item [Recommendation 1]
+    \item [Recommendation 2]
+    \item [Recommendation 3]
+\end{enumerate}
+
+\section{Regulatory Compliance}
+
+\subsection{NIS2 Compliance}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|p{6cm}|p{7cm}|}
+\hline
+\textbf{Early Warning (24h)} & ✓ Submitted within deadline \\
+\hline
+\textbf{Incident Notification (72h)} & ✓ Submitted within deadline \\
+\hline
+\textbf{Final Report (1 month)} & ✓ Submitted within deadline \\
+\hline
+\textbf{Interim Updates} & [NUMBER] updates provided \\
+\hline
+\end{tabular}
+\caption{NIS2 Reporting Compliance}
+\end{table}
+
+\subsection{Other Regulatory Notifications}
+
+\begin{itemize}
+    \item \textbf{GDPR:} [Notification status to DPA and data subjects]
+    \item \textbf{Sector-specific:} [Any other regulatory notifications]
+    \item \textbf{Law Enforcement:} [Reporting status]
+\end{itemize}
+
+\section{Conclusion}
+
+[Comprehensive conclusion summarizing the incident, response, and path forward]
+
+\vspace{3cm}
+
+\section{Appendices}
+
+\subsection{Appendix A: Forensic Analysis Report}
+[Attach or reference detailed forensic report]
+
+\subsection{Appendix B: Complete IoC List}
+[Detailed technical appendix with all indicators]
+
+\subsection{Appendix C: Communication Records}
+[Customer notifications, media statements, etc.]
+
+\subsection{Appendix D: Evidence Preservation}
+[Chain of custody, evidence location]
+
+\section{Declaration}
+
+I, the undersigned, declare that this final incident report is complete and accurate to the best of my knowledge.
+
+\vspace{1cm}
+
+\begin{tabular}{|p{5cm}|p{8cm}|}
+\hline
+\textbf{Name} & [FULL NAME] \\
+\hline
+\textbf{Position} & [TITLE] \\
+\hline
+\textbf{Date} & \today \\
+\hline
+\textbf{Signature} & \\
+& \\
+\hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{Reviewed and Approved by:}
+
+\vspace{0.3cm}
+
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Role} & \textbf{Name} & \textbf{Date} \\
+\hline
+CISO & & \\
+\hline
+Legal Counsel & & \\
+\hline
+CEO & & \\
+\hline
+\end{tabular}
+
+\end{document}

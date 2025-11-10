@@ -1,0 +1,168 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\geometry{margin=1in}
+\definecolor{nis2blue}{RGB}{0,51,153}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{nis2blue}{\textbf{DDoS Response Playbook}}}
+\fancyfoot[C]{\small Page \thepage}
+
+\begin{document}
+
+\begin{center}
+{\Huge\bfseries DDoS Attack Response Playbook}\\
+\vspace{0.3cm}
+{\Large Denial of Service Incident Response}
+\end{center}
+
+\section*{Quick Reference}
+
+\textbf{INDICATORS:}
+\begin{itemize}
+    \item Sudden spike in traffic (10x-100x normal)
+    \item Service degradation or unavailability
+    \item Specific endpoint or service targeted
+    \item Unusual geographic traffic sources
+    \item Network bandwidth saturation
+\end{itemize}
+
+\textbf{IMMEDIATE ACTIONS:}
+\begin{enumerate}
+    \item Verify it's DDoS (not legitimate traffic spike)
+    \item Activate DDoS mitigation service
+    \item Contact ISP/hosting provider
+    \item Enable rate limiting
+    \item Notify stakeholders
+\end{enumerate}
+
+\section{DDoS Types}
+
+\textbf{Volume-Based:} Saturate bandwidth (UDP floods, ICMP floods, spoofed packets)
+
+\textbf{Protocol Attacks:} Exploit protocol weaknesses (SYN floods, fragmented packets, Ping of Death)
+
+\textbf{Application Layer:} HTTP floods, DNS query floods, targeting web applications
+
+\section{Response Phases}
+
+\subsection{Phase 1: Detection \& Assessment (0-15 min)}
+
+\textbf{Validate Attack:}
+\begin{itemize}
+    \item Check traffic volume vs baseline
+    \item Analyze traffic sources and patterns
+    \item Identify targeted service/endpoint
+    \item Determine attack type
+\end{itemize}
+
+\textbf{Impact Assessment:}
+\begin{itemize}
+    \item Which services affected?
+    \item User impact (number, geography)
+    \item Business criticality
+\end{itemize}
+
+\subsection{Phase 2: Mitigation (15-60 min)}
+
+\textbf{Immediate Actions:}
+\begin{enumerate}
+    \item \textbf{Activate DDoS Protection:} Enable cloud-based scrubbing (Cloudflare, Akamai, AWS Shield)
+    \item \textbf{Contact ISP:} Request upstream filtering
+    \item \textbf{Rate Limiting:} Implement aggressive rate limits
+    \item \textbf{Geo-blocking:} Block traffic from attack sources if appropriate
+    \item \textbf{WAF Rules:} Deploy web application firewall rules
+    \item \textbf{Traffic Routing:} Redirect traffic through scrubbing center
+\end{enumerate}
+
+\textbf{Technical Measures:}
+\begin{itemize}
+    \item Block malicious IP ranges
+    \item Implement SYN cookies (for SYN floods)
+    \item Increase server capacity (scale up/out)
+    \item Enable CDN caching
+    \item Reduce attack surface (disable non-essential services)
+\end{itemize}
+
+\subsection{Phase 3: Monitoring \& Optimization}
+
+\textbf{Continuous Monitoring:}
+\begin{itemize}
+    \item Traffic patterns and volume
+    \item Mitigation effectiveness
+    \item Legitimate traffic impact (false positives)
+    \item Attack evolution/changes
+\end{itemize}
+
+\textbf{Adjust Mitigation:}
+\begin{itemize}
+    \item Fine-tune filtering rules
+    \item Whitelist legitimate sources
+    \item Optimize rate limits
+\end{itemize}
+
+\subsection{Phase 4: Recovery \& Analysis}
+
+\textbf{When Attack Subsides:}
+\begin{enumerate}
+    \item Gradually restore normal operations
+    \item Keep mitigation active for 24-48h
+    \item Verify service restoration
+    \item Document attack characteristics
+\end{enumerate}
+
+\textbf{Post-Incident Analysis:}
+\begin{itemize}
+    \item Attack type and vectors
+    \item Peak traffic volume
+    \item Duration and patterns
+    \item Mitigation effectiveness
+    \item Financial impact
+    \item Lessons learned
+\end{itemize}
+
+\section{Communication}
+
+\textbf{Internal:} Notify executives, customer service, IT operations
+
+\textbf{External:} 
+\begin{itemize}
+    \item Customers (if service impact)
+    \item ISP/Hosting provider
+    \item DDoS mitigation service
+    \item Law enforcement (if severe/prolonged)
+\end{itemize}
+
+\textbf{NIS2 Reporting:} If significant service disruption
+
+\section{Prevention}
+
+\begin{itemize}
+    \item DDoS mitigation service (always-on or on-demand)
+    \item CDN for static content
+    \item Auto-scaling infrastructure
+    \item Rate limiting and traffic shaping
+    \item Network redundancy
+    \item Incident response drills
+\end{itemize}
+
+\section{Key Contacts}
+
+\begin{tabular}{|l|l|}
+\hline
+\textbf{DDoS Mitigation Service} & [PROVIDER] - [HOTLINE] \\
+\hline
+\textbf{ISP} & [PROVIDER] - [NOC PHONE] \\
+\hline
+\textbf{Hosting Provider} & [PROVIDER] - [SUPPORT] \\
+\hline
+\textbf{Network Team} & [CONTACT] \\
+\hline
+\end{tabular}
+
+\end{document}

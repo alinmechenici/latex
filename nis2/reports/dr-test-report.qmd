@@ -1,0 +1,136 @@
+---
+title: "Dr Test Report"
+subtitle: "NIS2 Directive Compliance"
+author: "[ORGANIZATION]"
+date: today
+format:
+  pdf:
+    documentclass: article
+    papersize: a4
+    geometry:
+      - margin=2.5cm
+    number-sections: true
+    colorlinks: true
+    toc: true
+    toc-depth: 3
+    header-includes: |
+      \usepackage{fancyhdr}
+      \pagestyle{fancy}
+      \fancyhead[L]{\textbf{[ORGANIZATION]}}
+      \fancyhead[R]{Dr Test Report}
+      \fancyfoot[L]{CONFIDENTIAL}
+      \fancyfoot[R]{\thepage}
+      \definecolor{nis2blue}{RGB}{0,51,102}
+      \definecolor{nis2red}{RGB}{204,0,0}
+---
+
+\documentclass[11pt,a4paper]{article}
+
+\geometry{margin=1in}
+\definecolor{nis2blue}{RGB}{0,51,153}
+\definecolor{pass}{RGB}{0,153,51}
+\definecolor{fail}{RGB}{204,0,0}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{nis2blue}{**DR Test Report**}}
+\fancyfoot[C]{\small Page \thepage}
+
+\begin{center}
+{\Huge\bfseries Disaster Recovery Test Report}\\
+{\Large DR Exercise Results}
+\end{center}
+
+\section*{Test Overview}
+
+|p{9cm}|}
+
+**Test Date** & [DATE] \\
+
+**Test Type** & $\square$ Full Failover \quad $\square$ Partial \quad $\square$ Tabletop \\
+
+**Test Leader** & [NAME] \\
+
+**Participants** & [NUMBER] participants \\
+
+**Duration** & [HOURS/DAYS] \\
+
+\section*{Test Objectives}
+
+- Validate RTO/RPO targets
+- Test recovery procedures
+- Verify backup integrity
+- Train DR team
+- Identify gaps/improvements
+
+\section*{Systems Tested}
+
+|p{2cm}|p{2cm}|p{2cm}|p{3cm}|}
+
+**System** & **RTO Target** & **Actual** & **Status** & **Notes** \\
+
+\endfirsthead
+
+**System** & **RTO Target** & **Actual** & **Status** & **Notes** \\
+
+\endhead
+[System 1] & 4h & 3.5h & \textcolor{pass}{PASS} & \\
+
+[System 2] & 24h & 26h & \textcolor{fail}{FAIL} & Exceeded target \\
+
+\section*{Test Results}
+
+\subsection*{Success Criteria}
+
+|p{2cm}|p{5cm}|}
+
+**Criterion** & **Met?** & **Comments** \\
+
+All critical systems recovered & YES/NO & \\
+
+RTO targets met & YES/NO & \\
+
+RPO targets met & YES/NO & \\
+
+Data integrity verified & YES/NO & \\
+
+Applications functional & YES/NO & \\
+
+\subsection*{Issues Encountered}
+
+- [Issue 1 - Impact - Resolution]
+- [Issue 2 - Impact - Resolution]
+
+\section*{Lessons Learned}
+
+**What Worked Well:**
+- [Success 1]
+- [Success 2]
+
+**What Needs Improvement:**
+- [Improvement 1]
+- [Improvement 2]
+
+\section*{Action Items}
+
+|p{5cm}|p{3cm}|p{3cm}|}
+
+**ID** & **Action** & **Owner** & **Due Date** \\
+
+A-01 & [Action description] & [Owner] & [Date] \\
+
+A-02 & [Action description] & [Owner] & [Date] \\
+
+\section*{Recommendations}
+
+- Update DR procedures
+- Additional training
+- Infrastructure improvements
+
+\section*{Conclusion}
+
+Overall test result: $\square$ \textcolor{pass}{SUCCESSFUL} \quad $\square$ \textcolor{fail}{UNSUCCESSFUL} \quad $\square$ PARTIAL
+
+Next DR test scheduled for: [DATE]
+
+**Approved:** \underline{\hspace{6cm}} **Date:** \underline{\hspace{3cm}}
+

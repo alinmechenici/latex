@@ -1,0 +1,519 @@
+---
+title: "Incident Response Plan"
+subtitle: "NIS2 Directive Compliance"
+author: "[ORGANIZATION]"
+date: today
+format:
+  pdf:
+    documentclass: article
+    papersize: a4
+    geometry:
+      - margin=2.5cm
+    number-sections: true
+    colorlinks: true
+    toc: true
+    toc-depth: 3
+    header-includes: |
+      \usepackage{fancyhdr}
+      \pagestyle{fancy}
+      \fancyhead[L]{\textbf{[ORGANIZATION]}}
+      \fancyhead[R]{Incident Response Plan}
+      \fancyfoot[L]{CONFIDENTIAL}
+      \fancyfoot[R]{\thepage}
+      \definecolor{nis2blue}{RGB}{0,51,102}
+      \definecolor{nis2red}{RGB}{204,0,0}
+---
+
+\documentclass[11pt,a4paper]{article}
+
+\usetikzlibrary{shapes,arrows,positioning}
+
+\geometry{margin=1in}
+
+\definecolor{nis2blue}{RGB}{0,51,153}
+\definecolor{nis2gray}{RGB}{100,100,100}
+\definecolor{nis2red}{RGB}{204,0,0}
+\definecolor{nis2orange}{RGB}{255,153,0}
+\definecolor{nis2yellow}{RGB}{255,204,0}
+\definecolor{nis2green}{RGB}{0,153,51}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{nis2blue}{**Incident Response Plan**}}
+\fancyhead[R]{\includegraphics[height=0.8cm]{logo.png}}
+\fancyfoot[L]{\textcolor{nis2gray}{\small \jobname}}
+\fancyfoot[C]{\textcolor{nis2gray}{\small **CONFIDENTIAL**}}
+\fancyfoot[R]{\textcolor{nis2gray}{\small Page \thepage\ of \pageref{LastPage}}}
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=nis2blue,
+    filecolor=nis2blue,
+    urlcolor=nis2blue,
+}
+
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+
+    {\Huge\bfseries\textcolor{nis2blue}{Incident Response Plan}\par}
+    
+
+    {\Large NIS2 Directive Compliance\par}
+    
+
+    {\Large**Organization:** [ORGANIZATION]\par}
+    
+
+    {\Large**Effective Date:** \today\par}
+    
+
+    {\Large**Version:** 1.0\par}
+    
+
+    {\large**Classification:** \textcolor{nis2red}{CONFIDENTIAL}\par}
+    \vfill
+
+    {\large Incident Response Team Leader: [NAME]\par}
+    {\large Emergency Contact: [PHONE NUMBER]\par}
+    {\large Email: [INCIDENT EMAIL]\par}
+    
+
+    {\small NIS2 Directive (EU) 2022/2555 Article 23 Compliance\par}
+\end{titlepage}
+
+{{< pagebreak >}}
+
+# Document Control
+
+\centering
+
+**Document Title** & Incident Response Plan \\
+
+**Document Owner** & Chief Information Security Officer \\
+
+**Version** & 1.0 \\
+
+**Effective Date** & \today \\
+
+**Review Frequency** & Semi-Annual \\
+
+**Next Review Date** & [DATE] \\
+
+\caption{Document Control Information}
+
+# Executive Summary
+
+This Incident Response Plan (IRP) provides a structured approach to managing cybersecurity incidents in compliance with NIS2 Directive requirements. The plan ensures rapid detection, containment, eradication, and recovery from security incidents while meeting regulatory reporting obligations.
+
+## Key Objectives
+- Minimize impact of security incidents on business operations
+- Ensure timely detection and response to incidents
+- Comply with NIS2 incident reporting requirements
+- Preserve evidence for investigations
+- Learn from incidents to improve security posture
+
+# Incident Response Team
+
+## Team Structure
+
+\centering
+
+|p{4cm}|p{4cm}|}
+
+**Role** & **Name** & **Contact** \\
+
+IR Team Leader & [Name] & [Phone/Email] \\
+
+CISO & [Name] & [Phone/Email] \\
+
+IT Manager & [Name] & [Phone/Email] \\
+
+Security Analyst & [Name] & [Phone/Email] \\
+
+Legal Counsel & [Name] & [Phone/Email] \\
+
+Communications Lead & [Name] & [Phone/Email] \\
+
+External Forensics & [Company] & [Phone/Email] \\
+
+\caption{Incident Response Team Contacts}
+
+## Team Responsibilities
+
+### IR Team Leader
+- Overall incident coordination
+- Escalation decisions
+- Communication with management
+- Resource allocation
+
+### Security Analysts
+- Incident detection and triage
+- Technical analysis and investigation
+- Evidence collection
+- Containment actions
+
+### Legal Counsel
+- Legal implications assessment
+- Regulatory reporting guidance
+- Evidence handling procedures
+- External communication review
+
+# Incident Classification
+
+## Severity Levels
+
+\centering
+
+|}
+
+\rowcolor{nis2red} \textcolor{white}{**Critical**} &
+\textcolor{white}{Complete service disruption, data breach affecting sensitive data, ransomware encryption of critical systems, nation-state attack} \\
+
+\rowcolor{nis2orange} **High** &
+Major service degradation, unauthorized access to critical systems, malware on multiple systems, successful phishing campaign \\
+
+\rowcolor{nis2yellow} **Medium** &
+Limited service impact, attempted unauthorized access, isolated malware infection, minor data exposure \\
+
+\rowcolor{nis2green} **Low** &
+No service impact, failed attack attempts, policy violations, suspicious activity \\
+
+\caption{Incident Severity Classification}
+
+## NIS2 Significant Incidents
+
+A significant incident under NIS2 has caused or is capable of causing:
+- Severe operational disruption of services or financial loss
+- Considerable material or non-material damage to natural or legal persons
+
+Significant incidents require reporting to competent authorities.
+
+# Incident Response Process
+
+## Incident Response Lifecycle
+
+\begin{center}
+\begin{tikzpicture}[node distance=2cm, auto]
+    \tikzstyle{phase} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=nis2blue, fill=nis2blue!20, font=\bfseries]
+    \tikzstyle{arrow} = [thick,->,>=stealth,nis2blue]
+
+    \node (prep) [phase] {1. Preparation};
+    \node (detect) [phase, below of=prep] {2. Detection};
+    \node (analysis) [phase, below of=detect] {3. Analysis};
+    \node (contain) [phase, below of=analysis] {4. Containment};
+    \node (eradicate) [phase, below of=contain] {5. Eradication};
+    \node (recover) [phase, below of=eradicate] {6. Recovery};
+    \node (lessons) [phase, below of=recover] {7. Lessons Learned};
+
+    \draw [arrow] (prep) -- (detect);
+    \draw [arrow] (detect) -- (analysis);
+    \draw [arrow] (analysis) -- (contain);
+    \draw [arrow] (contain) -- (eradicate);
+    \draw [arrow] (eradicate) -- (recover);
+    \draw [arrow] (recover) -- (lessons);
+    \draw [arrow] (lessons.east) -- ++(1,0) |- (prep.east);
+\end{tikzpicture}
+\end{center}
+
+## Phase 1: Preparation
+
+**Ongoing Activities:**
+- Maintain incident response capabilities
+- Conduct regular IR drills and tabletop exercises
+- Update contact lists and escalation procedures
+- Maintain incident response tools and access
+- Train staff on incident reporting procedures
+
+## Phase 2: Detection and Identification
+
+**Detection Sources:**
+- Security monitoring tools (SIEM, IDS/IPS)
+- Automated alerts
+- User reports
+- External notifications (customers, partners, authorities)
+- Threat intelligence
+
+**Actions:**
+
+- Receive and log incident report
+- Assign incident ID and open ticket
+- Perform initial triage
+- Notify IR Team Leader
+
+**Timeline:** Immediate (within 15 minutes of detection)
+
+## Phase 3: Analysis and Scoping
+
+**Actions:**
+
+- Gather additional information
+- Determine incident type and scope
+- Assess impact and severity
+- Identify affected systems and data
+- Determine root cause
+- Document findings
+
+**Timeline:** 1-4 hours depending on complexity
+
+**Key Questions:**
+- What systems are affected?
+- What data is at risk?
+- How did the incident occur?
+- Is the threat still active?
+- What is the business impact?
+
+## Phase 4: Containment
+
+### Short-term Containment
+**Immediate actions to prevent incident spread:**
+- Isolate affected systems from network
+- Disable compromised accounts
+- Block malicious IP addresses
+- Implement temporary access restrictions
+
+### Long-term Containment
+**Sustained measures while preparing for recovery:**
+- Apply temporary patches or workarounds
+- Implement enhanced monitoring
+- Restore services to temporary infrastructure
+- Continue evidence collection
+
+**Timeline:** Critical incidents - within 1 hour; High - within 4 hours
+
+## Phase 5: Eradication
+
+**Actions:**
+
+- Remove malware and backdoors
+- Delete unauthorized accounts
+- Close vulnerabilities exploited
+- Reset compromised credentials
+- Apply security patches
+- Rebuild compromised systems if necessary
+
+**Verification:**
+- Scan systems for remaining threats
+- Verify vulnerability remediation
+- Confirm no persistence mechanisms remain
+
+## Phase 6: Recovery
+
+**Actions:**
+
+- Restore systems from clean backups
+- Verify system integrity
+- Implement additional security controls
+- Gradually return systems to production
+- Monitor for signs of reinfection
+- Validate business functionality
+
+**Recovery Priorities:**
+
+- Critical business systems (RTO < 4 hours)
+- Essential services (RTO < 24 hours)
+- Standard systems (RTO < 72 hours)
+
+## Phase 7: Post-Incident Activities
+
+**Lessons Learned Meeting:**
+- Conduct within 2 weeks of incident closure
+- Review incident timeline and response
+- Identify what worked well
+- Document areas for improvement
+- Update procedures and controls
+
+**Final Report Components:**
+- Executive summary
+- Incident timeline
+- Root cause analysis
+- Impact assessment
+- Response effectiveness
+- Recommendations
+- Action items
+
+# NIS2 Incident Reporting
+
+## Reporting Timeline
+
+|p{4cm}|p{6cm}|}
+
+**Timeframe** & **Report Type** & **Content** \\
+
+\endfirsthead
+
+**Timeframe** & **Report Type** & **Content** \\
+
+\endhead
+**24 hours** & Early Warning & Basic notification of significant incident \\
+
+**72 hours** & Incident Notification & Initial assessment: type, severity, impact, indicators of compromise \\
+
+**1 month** & Final Report & Detailed analysis, root cause, impacts, response actions, preventive measures \\
+
+\caption{NIS2 Incident Reporting Timeline}
+
+## Reporting Authority
+
+**Competent Authority:** [NATIONAL CSIRT/COMPETENT AUTHORITY]
+
+**Contact Information:**
+- Email: [AUTHORITY EMAIL]
+- Phone: [AUTHORITY PHONE]
+- Portal: [REPORTING PORTAL URL]
+
+## Report Content Requirements
+
+### Early Warning (24 hours)
+- Incident detected: Date and time
+- Incident type (e.g., ransomware, data breach, DDoS)
+- Preliminary impact assessment
+- Contact person details
+
+### Incident Notification (72 hours)
+- Incident description and classification
+- Affected systems and services
+- Estimated number of affected users/customers
+- Geographic scope
+- Indicators of compromise (IoCs)
+- Initial assessment of severity and impact
+- Response measures taken
+
+### Final Report (1 month)
+- Comprehensive incident timeline
+- Root cause analysis
+- Detailed impact assessment (financial, operational, reputational)
+- Complete list of affected systems and data
+- Response and recovery actions
+- Lessons learned
+- Preventive measures implemented
+- Recommendations for the sector
+
+# Communication Plan
+
+## Internal Communications
+
+\centering
+
+**Audience** & **Information** & **Timing** \\
+
+Management & Impact, response status & Immediate \\
+
+Employees & Need-to-know basis & As appropriate \\
+
+IT Staff & Technical details & Immediate \\
+
+\caption{Internal Communication Matrix}
+
+## External Communications
+- **Customers:** If service impact or data exposure affects them
+- **Partners:** If incident may affect their systems or data
+- **Regulators:** As required by NIS2
+- **Media:** Only through designated spokesperson
+- **Law Enforcement:** For criminal incidents
+
+**Communication Guidelines:**
+- All external communications approved by legal counsel
+- Maintain message consistency
+- Protect sensitive technical details
+- Be transparent and factual
+
+# Evidence Handling
+
+## Evidence Collection
+- Maintain chain of custody documentation
+- Use forensically sound tools and methods
+- Create and verify cryptographic hashes
+- Document all collection activities
+- Store evidence securely
+
+## Evidence Types
+- System logs and event data
+- Network traffic captures
+- Memory dumps
+- Disk images
+- Screenshots and photographs
+- Email and communication records
+
+# Incident Response Tools
+
+## Technical Tools
+- SIEM platform
+- Forensic analysis tools
+- Network traffic analyzers
+- Malware analysis sandbox
+- Backup and recovery systems
+- Secure communication channels
+
+## Documentation Templates
+- Incident Report Form
+- Evidence Collection Log
+- Chain of Custody Form
+- Communication Templates
+- Lessons Learned Template
+
+# Testing and Exercises
+
+## Tabletop Exercises
+- Frequency: Quarterly
+- Participants: IR Team and key stakeholders
+- Scenarios: Based on current threat landscape
+- Document lessons learned
+
+## Technical Drills
+- Frequency: Semi-annually
+- Test technical response procedures
+- Validate tools and access
+- Measure response times
+
+## Full-scale Simulations
+- Frequency: Annually
+- Comprehensive incident simulation
+- Include all stakeholders
+- Test communications and escalation
+
+# Plan Maintenance
+
+This plan shall be reviewed and updated:
+- Semi-annually at minimum
+- After significant incidents
+- After exercises reveal gaps
+- When organizational or technical changes occur
+- When regulatory requirements change
+
+# Appendices
+
+## Appendix A: Incident Report Form
+[Include incident report template]
+
+## Appendix B: Contact Lists
+[Detailed contact information for all stakeholders]
+
+## Appendix C: Incident Playbooks
+[Specific procedures for common incident types:
+- Ransomware Response
+- Data Breach Response
+- DDoS Response
+- Insider Threat Response
+]
+
+## Appendix D: Legal and Regulatory Requirements
+[Specific reporting requirements by jurisdiction]
+
+# Approval
+
+\centering
+
+**Role** & **Name** & **Signature & Date** \\
+
+CISO & & \\
+
+Legal Counsel & & \\
+
+CEO & & \\
+
+\caption{Plan Approval}
+

@@ -1,0 +1,364 @@
+---
+title: "Nis2 Incident Notification 72H"
+subtitle: "NIS2 Directive Compliance"
+author: "[ORGANIZATION]"
+date: today
+format:
+  pdf:
+    documentclass: article
+    papersize: a4
+    geometry:
+      - margin=2.5cm
+    number-sections: true
+    colorlinks: true
+    toc: true
+    toc-depth: 3
+    header-includes: |
+      \usepackage{fancyhdr}
+      \pagestyle{fancy}
+      \fancyhead[L]{\textbf{[ORGANIZATION]}}
+      \fancyhead[R]{Nis2 Incident Notification 72H}
+      \fancyfoot[L]{CONFIDENTIAL}
+      \fancyfoot[R]{\thepage}
+      \definecolor{nis2blue}{RGB}{0,51,102}
+      \definecolor{nis2red}{RGB}{204,0,0}
+---
+
+\documentclass[11pt,a4paper]{article}
+
+\geometry{margin=1in}
+
+\definecolor{nis2blue}{RGB}{0,51,153}
+\definecolor{nis2gray}{RGB}{100,100,100}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{nis2blue}{**NIS2 Incident Notification (72h)**}}
+\fancyhead[R]{\includegraphics[height=0.8cm]{logo.png}}
+\fancyfoot[L]{\textcolor{nis2gray}{\small \jobname}}
+\fancyfoot[C]{\textcolor{nis2gray}{\small Regulatory Notification}}
+\fancyfoot[R]{\textcolor{nis2gray}{\small Page \thepage\ of \pageref{LastPage}}}
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=nis2blue,
+    filecolor=nis2blue,
+    urlcolor=nis2blue,
+}
+
+\begin{center}
+{\Huge\bfseries\textcolor{nis2blue}{NIS2 INCIDENT NOTIFICATION}}\\
+
+{\Large 72-Hour Detailed Notification}\\
+
+{\large Directive (EU) 2022/2555 - Article 23(2)}
+\end{center}
+
+\section*{Notification Reference}
+
+|p{9cm}|}
+
+**Early Warning Ref** & [REF NUMBER from 24h notification] \\
+
+**Incident ID** & INC-[YEAR]-[NUMBER] \\
+
+**Notification Date/Time** & [DATE] at [TIME] [TIMEZONE] \\
+
+**Hours Since Detection** & [HOURS] hours \\
+
+\section*{Entity Information}
+
+|p{9cm}|}
+
+**Entity Name** & [ORGANIZATION] \\
+
+**NIS2 Registration** & [NUMBER] \\
+
+**Contact Person** & [NAME] - [TITLE] \\
+
+**Email / Phone** & [EMAIL] / [PHONE] \\
+
+\section*{1. Incident Classification}
+
+\subsection*{Incident Type}
+
+|p{9cm}|}
+
+**Primary Type** & [SELECT: Cyber Attack, System Failure, Human Error, etc.] \\
+
+**Specific Category** & [e.g., Ransomware, DDoS, Data Breach, Misconfiguration] \\
+
+**Attack Vector** & [e.g., Phishing email, Unpatched vulnerability, Stolen credentials] \\
+
+\subsection*{Severity Assessment}
+
+|p{9cm}|}
+
+**Severity Level** & $\square$ Critical \quad $\square$ High \quad $\square$ Medium \\
+
+**Significance** & $\square$ Significant incident (reporting required) \\
+& $\square$ Major incident (substantial impact) \\
+
+\section*{2. Detailed Impact Assessment}
+
+\subsection*{Services Affected}
+
+|p{3cm}|p{5cm}|}
+
+**Service/System** & **Impact Level** & **Status** \\
+
+\endfirsthead
+
+**Service/System** & **Impact Level** & **Status** \\
+
+\endhead
+[Service 1] & Complete/Partial/None & Offline/Degraded/Operational \\
+
+[Service 2] & Complete/Partial/None & Offline/Degraded/Operational \\
+
+[Service 3] & Complete/Partial/None & Offline/Degraded/Operational \\
+
+\caption{Affected Services}
+
+\subsection*{User/Customer Impact}
+
+|p{9cm}|}
+
+**Total Users Affected** & [NUMBER] (approximate) \\
+
+**Customer Categories** & $\square$ Individual consumers: [NUMBER] \\
+& $\square$ Business customers: [NUMBER] \\
+& $\square$ Public sector: [NUMBER] \\
+
+**Geographic Distribution** & $\square$ Single location \\
+& $\square$ Multiple locations in [COUNTRY] \\
+& $\square$ Multiple Member States: [LIST] \\
+
+**Service Downtime** & Start: [DATE/TIME] \\
+& Duration: [HOURS/DAYS] or Ongoing \\
+
+\subsection*{Data Impact}
+
+|p{9cm}|}
+
+**Data Compromised** & $\square$ YES \quad $\square$ NO \quad $\square$ Under Investigation \\
+
+**Data Types** & $\square$ Personal data (GDPR) \\
+& $\square$ Financial information \\
+& $\square$ Business confidential \\
+& $\square$ Operational/technical data \\
+& $\square$ Other: \underline{\hspace{5cm}} \\
+
+**Records Affected** & [NUMBER] records (estimated) \\
+
+**Data Exfiltration** & $\square$ Confirmed \quad $\square$ Suspected \quad $\square$ No evidence \\
+
+\subsection*{Financial Impact (Estimated)}
+
+|p{9cm}|}
+
+**Direct Costs** & €[AMOUNT] \\
+
+**Revenue Loss** & €[AMOUNT] \\
+
+**Recovery Costs** & €[AMOUNT] (estimated) \\
+
+**Total Estimated** & €[AMOUNT] \\
+
+\section*{3. Technical Analysis}
+
+\subsection*{Indicators of Compromise (IoCs)}
+
+|p{10cm}|}
+
+**IoC Type** & **Values** \\
+
+\endfirsthead
+
+**IoC Type** & **Values** \\
+
+\endhead
+IP Addresses & [List malicious IPs] \\
+
+Domain Names & [List malicious domains] \\
+
+File Hashes & [MD5/SHA-256 hashes] \\
+
+Malware Family & [Name if identified] \\
+
+URLs & [Malicious URLs] \\
+
+Email Addresses & [Attacker emails] \\
+
+\caption{Indicators of Compromise}
+
+\subsection*{Attack Timeline}
+
+|p{10cm}|}
+
+**Date/Time** & **Event** \\
+
+\endfirsthead
+
+**Date/Time** & **Event** \\
+
+\endhead
+[DATE/TIME] & Initial compromise (estimated) \\
+
+[DATE/TIME] & First malicious activity detected \\
+
+[DATE/TIME] & Incident discovered/reported \\
+
+[DATE/TIME] & IR team notified \\
+
+[DATE/TIME] & Containment initiated \\
+
+[DATE/TIME] & Early warning submitted (24h) \\
+
+[DATE/TIME] & Current status \\
+
+\caption{Incident Timeline}
+
+\subsection*{Root Cause Analysis}
+
+**How did the incident occur?**
+
+**Vulnerabilities Exploited:**
+
+**Security Control Failures:**
+
+\section*{4. Response Measures}
+
+\subsection*{Containment Actions}
+- $\square$ Affected systems isolated from network
+- $\square$ Compromised accounts disabled
+- $\square$ Malicious IP addresses blocked
+- $\square$ Network traffic filtered
+- $\square$ Enhanced monitoring deployed
+- $\square$ Backup systems protected
+- $\square$ Other: \underline{\hspace{8cm}}
+
+\subsection*{Eradication Measures}
+- $\square$ Malware removed from affected systems
+- $\square$ Vulnerabilities patched
+- $\square$ Compromised systems rebuilt
+- $\square$ Security configurations hardened
+- $\square$ Unauthorized access points closed
+- $\square$ Other: \underline{\hspace{8cm}}
+
+\subsection*{Recovery Status}
+
+|p{9cm}|}
+
+**Recovery Progress** & $\square$ Not started \\
+& $\square$ In progress ([X]% complete) \\
+& $\square$ Completed \\
+
+**Services Restored** & [NUMBER/TOTAL] services operational \\
+
+**Estimated Full Recovery** & [DATE/TIME] or $\square$ Unknown \\
+
+\section*{5. Cross-Border and Sectoral Impact}
+
+\subsection*{Cross-Border Implications}
+
+|p{9cm}|}
+
+**Cross-Border Impact** & $\square$ YES \quad $\square$ NO \\
+
+**Affected Member States** & [LIST COUNTRIES] \\
+
+**Notifications Sent** & $\square$ Relevant authorities notified \\
+& $\square$ In progress \\
+& $\square$ Not applicable \\
+
+\subsection*{Other Sectors Affected}
+
+|p{9cm}|}
+
+**Impact on Other Sectors** & $\square$ YES \quad $\square$ NO \quad $\square$ Potential \\
+
+**Sectors** & [LIST - e.g., Energy, Transport, Finance] \\
+
+**Coordination** & $\square$ Coordinating with sector authorities \\
+
+\section*{6. Communication}
+
+\subsection*{Stakeholder Notifications}
+
+|p{9cm}|}
+
+**Customers Notified** & $\square$ YES on [DATE] \\
+& $\square$ NO - Reason: \underline{\hspace{5cm}} \\
+& $\square$ Planned for [DATE] \\
+
+**Partners Notified** & $\square$ YES \quad $\square$ NO \quad $\square$ N/A \\
+
+**Media Statement** & $\square$ Issued \quad $\square$ Planned \quad $\square$ Not planned \\
+
+**Law Enforcement** & $\square$ Notified \quad $\square$ Not notified \\
+
+\subsection*{Other Regulatory Notifications}
+- $\square$ GDPR breach notification to DPA
+- $\square$ Sector-specific regulator
+- $\square$ Other: \underline{\hspace{8cm}}
+
+\section*{7. Preventive Measures}
+
+\subsection*{Immediate Actions Taken}
+
+\subsection*{Planned Improvements}
+
+Short-term (0-30 days):
+
+Medium-term (30-90 days):
+
+Long-term (90+ days):
+
+\section*{8. Additional Information}
+
+Provide any other relevant information for the competent authority:
+
+\section*{Next Steps}
+
+|p{9cm}|}
+
+**Final Report** & Will be submitted by: [DATE] (within 1 month of initial notification) \\
+
+**Interim Updates** & $\square$ As significant developments occur \\
+& $\square$ [FREQUENCY - e.g., Daily, Weekly] \\
+
+\section*{Declaration}
+
+I, the undersigned, declare that the information provided in this incident notification is accurate and complete to the best of my knowledge.
+
+|p{9cm}|}
+
+**Name** & [FULL NAME] \\
+
+**Position** & [TITLE] \\
+
+**Date & Time** & [DATE] at [TIME] \\
+
+**Signature** & \\
+& \\
+
+\hrule
+
+\footnotesize
+**Submission Information:**
+- Competent Authority: [AUTHORITY NAME]
+- Submission Method: [Email/Portal/Phone]
+- Contact: [AUTHORITY CONTACT]
+
+**Legal Basis:** NIS2 Directive (EU) 2022/2555, Article 23(2) - Notification within 72 hours with initial assessment
+
+**Attachments:**
+- $\square$ Technical analysis report
+- $\square$ IoC list
+- $\square$ Impact assessment
+- $\square$ Other: \underline{\hspace{5cm}}
+

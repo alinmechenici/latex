@@ -1,0 +1,174 @@
+---
+title: "Vendor Security Assessment"
+subtitle: "NIS2 Directive Compliance"
+author: "[ORGANIZATION]"
+date: today
+format:
+  pdf:
+    documentclass: article
+    papersize: a4
+    geometry:
+      - margin=2.5cm
+    number-sections: true
+    colorlinks: true
+    toc: true
+    toc-depth: 3
+    header-includes: |
+      \usepackage{fancyhdr}
+      \pagestyle{fancy}
+      \fancyhead[L]{\textbf{[ORGANIZATION]}}
+      \fancyhead[R]{Vendor Security Assessment}
+      \fancyfoot[L]{CONFIDENTIAL}
+      \fancyfoot[R]{\thepage}
+      \definecolor{nis2blue}{RGB}{0,51,102}
+      \definecolor{nis2red}{RGB}{204,0,0}
+---
+
+\documentclass[11pt,a4paper]{article}
+
+\geometry{margin=1in}
+
+\definecolor{nis2blue}{RGB}{0,51,153}
+\definecolor{nis2gray}{RGB}{100,100,100}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{nis2blue}{**Vendor Security Assessment**}}
+\fancyhead[R]{\includegraphics[height=0.8cm]{logo.png}}
+\fancyfoot[L]{\textcolor{nis2gray}{\small \jobname}}
+\fancyfoot[C]{\textcolor{nis2gray}{\small Confidential}}
+\fancyfoot[R]{\textcolor{nis2gray}{\small Page \thepage\ of \pageref{LastPage}}}
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=nis2blue,
+    filecolor=nis2blue,
+    urlcolor=nis2blue,
+}
+
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\Huge\bfseries\textcolor{nis2blue}{Vendor Security Assessment}\par}
+    
+
+    {\Large NIS2 Supply Chain Security\par}
+    
+
+    {\Large**Vendor:** [VENDOR NAME]\par}
+    
+
+    {\Large**Assessment Date:** \today\par}
+    
+
+    {\Large**Assessor:** [NAME]\par}
+    \vfill
+    {\small NIS2 Article 21 - Supply Chain Security\par}
+\end{titlepage}
+
+{{< pagebreak >}}
+
+# Vendor Information
+\centering
+
+|}
+
+**Vendor Name** & [NAME] \\
+
+**Service Provided** & [DESCRIPTION] \\
+
+**Risk Classification** & High / Medium / Low \\
+
+**Contract Value** & [AMOUNT] \\
+
+**Data Access** & Yes / No \\
+
+# Security Assessment
+
+## Information Security Management
+
+|p{2cm}|p{5cm}|}
+
+**Control** & **Status** & **Comments** \\
+
+\endfirsthead
+
+**Control** & **Status** & **Comments** \\
+
+\endhead
+ISO 27001 certification & Yes/No & \\
+
+Security policies documented & Yes/No & \\
+
+Risk assessment conducted & Yes/No & \\
+
+Incident response plan & Yes/No & \\
+
+\caption{Information Security Management Assessment}
+
+## Access Control
+
+|p{2cm}|p{5cm}|}
+
+**Control** & **Status** & **Comments** \\
+
+Multi-factor authentication & Yes/No & \\
+
+Least privilege principle & Yes/No & \\
+
+Access reviews conducted & Yes/No & \\
+
+\caption{Access Control Assessment}
+
+## Data Protection
+
+|p{2cm}|p{5cm}|}
+
+**Control** & **Status** & **Comments** \\
+
+Data encryption at rest & Yes/No & \\
+
+Data encryption in transit & Yes/No & \\
+
+GDPR compliance & Yes/No & \\
+
+Data backup procedures & Yes/No & \\
+
+\caption{Data Protection Assessment}
+
+# Risk Assessment
+
+## Identified Risks
+
+|p{2cm}|p{2cm}|p{5cm}|}
+
+**Risk** & **Likelihood** & **Impact** & **Mitigation** \\
+
+[Risk 1] & High/Med/Low & High/Med/Low & [Actions] \\
+
+\caption{Risk Assessment}
+
+# Recommendations
+
+- [Recommendation 1]
+- [Recommendation 2]
+- [Recommendation 3]
+
+# Assessment Conclusion
+
+**Overall Risk Rating:** [High / Medium / Low]
+
+**Recommendation:** [Approve / Approve with conditions / Reject]
+
+# Approval
+\centering
+
+**Role** & **Name** & **Date** \\
+
+Security Assessor & & \\
+
+CISO & & \\
+

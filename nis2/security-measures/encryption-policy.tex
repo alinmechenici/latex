@@ -1,0 +1,311 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{lastpage}
+
+\geometry{margin=1in}
+
+\definecolor{nis2blue}{RGB}{0,51,153}
+\definecolor{nis2gray}{RGB}{100,100,100}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{nis2blue}{\textbf{Encryption \& Cryptography Policy}}}
+\fancyhead[R]{\includegraphics[height=0.8cm]{logo.png}}
+\fancyfoot[L]{\textcolor{nis2gray}{\small \jobname}}
+\fancyfoot[C]{\textcolor{nis2gray}{\small Internal Use Only}}
+\fancyfoot[R]{\textcolor{nis2gray}{\small Page \thepage\ of \pageref{LastPage}}}
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=nis2blue,
+    filecolor=nis2blue,
+    urlcolor=nis2blue,
+}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\Huge\bfseries\textcolor{nis2blue}{Encryption \& Cryptography Policy}\par}
+    \vspace{0.5cm}
+    {\Large NIS2 Directive Compliance\par}
+    \vspace{2cm}
+    {\Large\textbf{Organization:} [ORGANIZATION]\par}
+    \vspace{0.5cm}
+    {\Large\textbf{Version:} 1.0\par}
+    \vspace{0.5cm}
+    {\Large\textbf{Effective Date:} \today\par}
+    \vfill
+    {\small NIS2 Article 21(2)(h) - Cryptography and Encryption\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Purpose}
+This policy establishes requirements for the use of cryptography and encryption to protect [ORGANIZATION]'s sensitive data and communications in compliance with NIS2 Directive requirements.
+
+\section{Scope}
+This policy applies to all data storage, processing, and transmission involving sensitive or confidential information.
+
+\section{Policy Statements}
+
+\subsection{Data at Rest Encryption}
+
+\subsubsection{Mandatory Encryption}
+The following data must be encrypted when stored:
+\begin{itemize}
+    \item Customer personal data
+    \item Payment card information
+    \item Authentication credentials
+    \item Cryptographic keys
+    \item Confidential business information
+    \item Backup data
+    \item Mobile devices and laptops
+\end{itemize}
+
+\subsubsection{Encryption Standards}
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Use Case} & \textbf{Standard} \\
+\hline
+Database encryption & AES-256 (TDE) \\
+\hline
+File/Folder encryption & AES-256 \\
+\hline
+Full disk encryption & AES-256 (BitLocker, FileVault, LUKS) \\
+\hline
+Backup encryption & AES-256 \\
+\hline
+Cloud storage & AES-256 (provider managed or customer managed keys) \\
+\hline
+\end{tabular}
+\caption{Encryption Standards for Data at Rest}
+\end{table}
+
+\subsection{Data in Transit Encryption}
+
+\subsubsection{Network Communications}
+\begin{itemize}
+    \item External communications: TLS 1.3 (minimum)
+    \item Internal communications: TLS 1.2 minimum, TLS 1.3 preferred
+    \item Legacy systems: TLS 1.2 with strong cipher suites only
+    \item VPN: IPsec or SSL VPN with AES-256
+\end{itemize}
+
+\subsubsection{Prohibited Protocols}
+The following are prohibited:
+\begin{itemize}
+    \item SSL v2, SSL v3, TLS 1.0, TLS 1.1
+    \item Weak cipher suites (RC4, DES, 3DES, MD5)
+    \item Unencrypted protocols (HTTP, FTP, Telnet) for sensitive data
+\end{itemize}
+
+\subsection{Email Security}
+\begin{itemize}
+    \item S/MIME or PGP required for confidential emails
+    \item TLS enforced for email transmission
+    \item Email gateway encryption for sensitive attachments
+\end{itemize}
+
+\subsection{Key Management}
+
+\subsubsection{Key Generation}
+\begin{itemize}
+    \item Use cryptographically secure random number generators
+    \item Minimum key lengths:
+    \begin{itemize}
+        \item RSA: 2048 bits (4096 bits preferred)
+        \item ECC: 256 bits (384 bits preferred)
+        \item AES: 256 bits
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Key Storage}
+\begin{itemize}
+    \item Keys stored in Hardware Security Modules (HSM) when available
+    \item Key encryption keys (KEK) separate from data encryption keys (DEK)
+    \item Keys never stored in plain text
+    \item Access to keys restricted to authorized personnel only
+\end{itemize}
+
+\subsubsection{Key Rotation}
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Key Type} & \textbf{Rotation Frequency} \\
+\hline
+Data encryption keys & Annually \\
+\hline
+TLS/SSL certificates & Before expiration (recommended: annually) \\
+\hline
+API keys & Every 6 months \\
+\hline
+Database encryption keys & Every 2 years \\
+\hline
+Compromised keys & Immediately \\
+\hline
+\end{tabular}
+\caption{Key Rotation Schedule}
+\end{table}
+
+\subsubsection{Key Destruction}
+\begin{itemize}
+    \item Secure deletion of keys when no longer needed
+    \item Cryptographic erasure for decommissioned systems
+    \item Documentation of key destruction
+\end{itemize}
+
+\subsection{Certificate Management}
+\begin{itemize}
+    \item Use trusted Certificate Authorities (CA)
+    \item Monitor certificate expiration (alerts 90, 60, 30 days before)
+    \item Automated renewal where possible
+    \item Revoke compromised certificates immediately
+    \item Maintain certificate inventory
+\end{itemize}
+
+\subsection{Algorithm Approval}
+
+\subsubsection{Approved Algorithms}
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Purpose} & \textbf{Approved Algorithms} \\
+\hline
+Symmetric encryption & AES-256, AES-192, AES-128 \\
+\hline
+Asymmetric encryption & RSA (2048+), ECC (256+) \\
+\hline
+Hashing & SHA-256, SHA-384, SHA-512 \\
+\hline
+Digital signatures & RSA-SHA256, ECDSA \\
+\hline
+Key exchange & ECDHE, DHE \\
+\hline
+\end{tabular}
+\caption{Approved Cryptographic Algorithms}
+\end{table}
+
+\subsubsection{Deprecated/Prohibited}
+\begin{itemize}
+    \item MD5, SHA-1 (for security purposes)
+    \item DES, 3DES, RC4
+    \item RSA < 2048 bits
+    \item Custom/proprietary encryption
+\end{itemize}
+
+\subsection{Mobile Devices}
+\begin{itemize}
+    \item Full device encryption mandatory
+    \item Encrypted communication apps for business use
+    \item Remote wipe capability enabled
+    \item Encrypted backup to cloud services
+\end{itemize}
+
+\subsection{Cloud Services}
+\begin{itemize}
+    \item Encryption at rest and in transit
+    \item Customer-managed encryption keys preferred
+    \item Verify provider encryption practices
+    \item Contractual encryption requirements
+\end{itemize}
+
+\section{Roles and Responsibilities}
+
+\subsection{CISO}
+\begin{itemize}
+    \item Policy oversight and approval
+    \item Encryption standard selection
+    \item Annual policy review
+\end{itemize}
+
+\subsection{Security Team}
+\begin{itemize}
+    \item Implementation guidance
+    \item Key management oversight
+    \item Compliance monitoring
+    \item Encryption technology evaluation
+\end{itemize}
+
+\subsection{IT Operations}
+\begin{itemize}
+    \item Encryption implementation
+    \item Key rotation execution
+    \item Certificate management
+    \item Technical support
+\end{itemize}
+
+\subsection{Data Owners}
+\begin{itemize}
+    \item Classification of data
+    \item Encryption requirements determination
+    \item Access authorization
+\end{itemize}
+
+\section{Exceptions}
+Exceptions to this policy require:
+\begin{itemize}
+    \item Written justification
+    \item Risk assessment
+    \item Compensating controls
+    \item CISO approval
+    \item Annual review
+\end{itemize}
+
+\section{Compliance}
+\begin{itemize}
+    \item Quarterly encryption compliance audits
+    \item Annual external assessment
+    \item Violations subject to disciplinary action
+\end{itemize}
+
+\section{Review}
+This policy shall be reviewed annually or when:
+\begin{itemize}
+    \item Cryptographic vulnerabilities discovered
+    \item New standards published (NIST, ENISA)
+    \item Regulatory requirements change
+    \item Technology changes warrant update
+\end{itemize}
+
+\section{Related Documents}
+\begin{itemize}
+    \item Cybersecurity Policy
+    \item Data Classification Policy
+    \item Access Control Policy
+    \item Mobile Device Management Policy
+    \item Cloud Security Policy
+\end{itemize}
+
+\section{Approval}
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Role} & \textbf{Name} & \textbf{Date} \\
+\hline
+CISO & & \\
+\hline
+CTO & & \\
+\hline
+\end{tabular}
+\end{table}
+
+\end{document}

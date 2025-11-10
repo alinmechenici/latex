@@ -1,0 +1,249 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{lastpage}
+
+\geometry{margin=1in}
+
+\definecolor{nis2blue}{RGB}{0,51,153}
+\definecolor{nis2gray}{RGB}{100,100,100}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{nis2blue}{\textbf{Business Impact Analysis}}}
+\fancyhead[R]{\includegraphics[height=0.8cm]{logo.png}}
+\fancyfoot[L]{\textcolor{nis2gray}{\small \jobname}}
+\fancyfoot[C]{\textcolor{nis2gray}{\small Confidential}}
+\fancyfoot[R]{\textcolor{nis2gray}{\small Page \thepage\ of \pageref{LastPage}}}
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=nis2blue,
+    filecolor=nis2blue,
+    urlcolor=nis2blue,
+}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\Huge\bfseries\textcolor{nis2blue}{Business Impact Analysis}\par}
+    \vspace{0.5cm}
+    {\Large NIS2 Business Continuity Assessment\par}
+    \vspace{2cm}
+    {\Large\textbf{Organization:} [ORGANIZATION]\par}
+    \vspace{0.5cm}
+    {\Large\textbf{Analysis Date:} \today\par}
+    \vspace{0.5cm}
+    {\Large\textbf{Version:} 1.0\par}
+    \vfill
+    {\small NIS2 Article 21(2)(c) - Business Continuity\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Executive Summary}
+
+\subsection{Purpose}
+This Business Impact Analysis (BIA) identifies critical business functions, their dependencies, and the impact of disruptions to support NIS2-compliant business continuity planning.
+
+\subsection{Scope}
+\begin{itemize}
+    \item All business functions and processes
+    \item Critical IT systems and infrastructure
+    \item Dependencies and resource requirements
+    \item Recovery objectives and priorities
+\end{itemize}
+
+\section{Methodology}
+
+\subsection{Process}
+\begin{enumerate}
+    \item Identify business functions and processes
+    \item Interview process owners
+    \item Determine criticality and dependencies
+    \item Define recovery time and point objectives
+    \item Calculate financial and operational impacts
+    \item Prioritize recovery efforts
+\end{enumerate}
+
+\section{Critical Business Functions}
+
+\begin{longtable}{|p{3cm}|p{4cm}|p{2.5cm}|p{2.5cm}|p{2cm}|}
+\hline
+\textbf{Function} & \textbf{Description} & \textbf{Process Owner} & \textbf{Criticality} & \textbf{Staff Required} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Function} & \textbf{Description} & \textbf{Process Owner} & \textbf{Criticality} & \textbf{Staff Required} \\
+\hline
+\endhead
+[Function 1] & [Description] & [Owner] & Critical & [Number] \\
+\hline
+[Function 2] & [Description] & [Owner] & High & [Number] \\
+\hline
+[Function 3] & [Description] & [Owner] & Medium & [Number] \\
+\hline
+\caption{Critical Business Functions}
+\end{longtable}
+
+\section{Recovery Objectives}
+
+\subsection{Recovery Time Objective (RTO)}
+Maximum acceptable downtime for each function.
+
+\subsection{Recovery Point Objective (RPO)}
+Maximum acceptable data loss for each function.
+
+\begin{longtable}{|p{3.5cm}|p{2cm}|p{2cm}|p{4cm}|p{2cm}|}
+\hline
+\textbf{Function/System} & \textbf{RTO} & \textbf{RPO} & \textbf{Impact if Unavailable} & \textbf{Priority} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Function/System} & \textbf{RTO} & \textbf{RPO} & \textbf{Impact if Unavailable} & \textbf{Priority} \\
+\hline
+\endhead
+[System 1] & 4 hours & 1 hour & Service disruption, revenue loss & P1 \\
+\hline
+[System 2] & 24 hours & 4 hours & Limited operations & P2 \\
+\hline
+[System 3] & 72 hours & 24 hours & Administrative delay & P3 \\
+\hline
+\caption{Recovery Objectives by System}
+\end{longtable}
+
+\section{Impact Analysis}
+
+\subsection{Financial Impact}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|r|r|r|}
+\hline
+\textbf{Outage Duration} & \textbf{Revenue Loss} & \textbf{Recovery Costs} & \textbf{Total Impact} \\
+\hline
+1 hour & €[AMOUNT] & €[AMOUNT] & €[AMOUNT] \\
+\hline
+4 hours & €[AMOUNT] & €[AMOUNT] & €[AMOUNT] \\
+\hline
+24 hours & €[AMOUNT] & €[AMOUNT] & €[AMOUNT] \\
+\hline
+1 week & €[AMOUNT] & €[AMOUNT] & €[AMOUNT] \\
+\hline
+\end{tabular}
+\caption{Financial Impact by Outage Duration}
+\end{table}
+
+\subsection{Operational Impact}
+\begin{itemize}
+    \item Customer service degradation
+    \item Employee productivity loss
+    \item Supply chain disruption
+    \item Regulatory compliance violations
+    \item Data loss or corruption
+\end{itemize}
+
+\subsection{Reputational Impact}
+\begin{itemize}
+    \item Customer confidence erosion
+    \item Media coverage (negative)
+    \item Market share loss
+    \item Partner relationship damage
+\end{itemize}
+
+\section{Dependencies}
+
+\subsection{IT Systems Dependencies}
+
+\begin{longtable}{|p{3cm}|p{5cm}|p{5cm}|}
+\hline
+\textbf{System} & \textbf{Depends On} & \textbf{Single Point of Failure} \\
+\hline
+\endfirsthead
+\hline
+\textbf{System} & \textbf{Depends On} & \textbf{Single Point of Failure} \\
+\hline
+\endhead
+[System A] & Network, Database, Authentication & [Yes/No - Description] \\
+\hline
+\caption{System Dependencies}
+\end{longtable}
+
+\subsection{Resource Dependencies}
+\begin{itemize}
+    \item Personnel (key roles)
+    \item Facilities and workspace
+    \item Technology and equipment
+    \item Third-party services
+    \item Utilities (power, internet)
+\end{itemize}
+
+\section{Recovery Strategies}
+
+\subsection{Technology Recovery}
+\begin{itemize}
+    \item Hot site for Tier 1 systems (RTO < 4h)
+    \item Warm site for Tier 2 systems (RTO < 24h)
+    \item Cold site for Tier 3 systems (RTO < 72h)
+    \item Cloud-based disaster recovery
+\end{itemize}
+
+\subsection{Personnel}
+\begin{itemize}
+    \item Work-from-home capabilities
+    \item Cross-training programs
+    \item Succession planning
+    \item External expertise contracts
+\end{itemize}
+
+\subsection{Facilities}
+\begin{itemize}
+    \item Alternate work locations identified
+    \item Emergency supplies and equipment
+    \item Communication systems
+\end{itemize}
+
+\section{Recommendations}
+
+\begin{enumerate}
+    \item Implement automated failover for critical systems
+    \item Increase backup frequency for high-RPO systems
+    \item Establish alternate supplier agreements
+    \item Conduct quarterly BC/DR testing
+    \item Invest in redundancy for single points of failure
+\end{enumerate}
+
+\section{Conclusion}
+
+[Summary of critical functions, recovery priorities, and recommended investments]
+
+\section{Approval}
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Role} & \textbf{Name} & \textbf{Date} \\
+\hline
+BIA Lead & & \\
+\hline
+CISO & & \\
+\hline
+CEO & & \\
+\hline
+\end{tabular}
+\end{table}
+
+\end{document}

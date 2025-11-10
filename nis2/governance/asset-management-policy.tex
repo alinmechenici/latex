@@ -1,0 +1,410 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{lastpage}
+
+\geometry{margin=1in}
+
+\definecolor{nis2blue}{RGB}{0,51,153}
+\definecolor{nis2gray}{RGB}{100,100,100}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{nis2blue}{\textbf{Asset Management Policy}}}
+\fancyhead[R]{\includegraphics[height=0.8cm]{logo.png}}
+\fancyfoot[L]{\textcolor{nis2gray}{\small \jobname}}
+\fancyfoot[C]{\textcolor{nis2gray}{\small Internal Use Only}}
+\fancyfoot[R]{\textcolor{nis2gray}{\small Page \thepage\ of \pageref{LastPage}}}
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=nis2blue,
+    filecolor=nis2blue,
+    urlcolor=nis2blue,
+}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\Huge\bfseries\textcolor{nis2blue}{Asset Management Policy}\par}
+    \vspace{0.5cm}
+    {\Large NIS2 Directive Compliance\par}
+    \vspace{2cm}
+    {\Large\textbf{Organization:} [ORGANIZATION]\par}
+    \vspace{0.5cm}
+    {\Large\textbf{Version:} 1.0\par}
+    \vspace{0.5cm}
+    {\Large\textbf{Effective Date:} \today\par}
+    \vfill
+    {\small NIS2 Article 21(2)(i) - Asset Management\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Purpose}
+This Asset Management Policy establishes requirements for identifying, tracking, and managing information assets to support NIS2 compliance and cybersecurity risk management.
+
+\section{Scope}
+This policy applies to all information assets including:
+\begin{itemize}
+    \item Hardware (servers, workstations, network devices, mobile devices)
+    \item Software (applications, operating systems, licenses)
+    \item Data and information
+    \item Cloud services and SaaS applications
+    \item Network infrastructure
+    \item Documentation and procedures
+\end{itemize}
+
+\section{Policy Statements}
+
+\subsection{Asset Inventory}
+
+\subsubsection{Inventory Requirements}
+\begin{itemize}
+    \item Complete inventory of all IT assets maintained
+    \item Automated discovery tools deployed
+    \item Manual verification quarterly
+    \item Asset information updated within 48 hours of changes
+    \item Centralized asset management database (CMDB)
+\end{itemize}
+
+\subsubsection{Asset Information}
+Each asset record must include:
+\begin{itemize}
+    \item Asset ID (unique identifier)
+    \item Asset type and category
+    \item Owner and custodian
+    \item Location (physical or virtual)
+    \item Status (active, inactive, retired)
+    \item Criticality rating
+    \item Purchase date and cost
+    \item Warranty and support information
+    \item Configuration details
+    \item Dependencies
+\end{itemize}
+
+\subsection{Asset Classification}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|p{9cm}|}
+\hline
+\textbf{Criticality} & \textbf{Description} \\
+\hline
+\textbf{Critical} & Essential for business operations; failure causes immediate severe impact \\
+\hline
+\textbf{High} & Important for operations; failure causes significant impact within hours \\
+\hline
+\textbf{Medium} & Supports business operations; failure causes moderate impact within days \\
+\hline
+\textbf{Low} & Non-essential; failure causes minimal impact \\
+\hline
+\end{tabular}
+\caption{Asset Criticality Classification}
+\end{table}
+
+\subsection{Asset Lifecycle Management}
+
+\subsubsection{Acquisition}
+\begin{enumerate}
+    \item Business justification and approval
+    \item Security requirements defined
+    \item Procurement through approved vendors
+    \item Security assessment completed
+    \item Asset registered in CMDB
+    \item Security baseline configuration applied
+    \item Ownership and responsibility assigned
+\end{enumerate}
+
+\subsubsection{Deployment}
+\begin{itemize}
+    \item Hardening according to security standards
+    \item Installation of security agents (antivirus, EDR)
+    \item Network access controls applied
+    \item Monitoring and logging configured
+    \item Documentation updated
+    \item User training provided (if applicable)
+\end{itemize}
+
+\subsubsection{Operations and Maintenance}
+\begin{itemize}
+    \item Regular patching and updates
+    \item Performance monitoring
+    \item Configuration management
+    \item Quarterly asset verification
+    \item License compliance tracking
+    \item Documentation maintenance
+\end{itemize}
+
+\subsubsection{Retirement and Disposal}
+\begin{enumerate}
+    \item Decommissioning approval obtained
+    \item Data backup (if needed)
+    \item Secure data sanitization/destruction
+    \item Physical destruction (if required)
+    \item Certificate of destruction obtained
+    \item Asset record updated to "Retired"
+    \item Removal from monitoring systems
+    \item License reclamation
+\end{enumerate}
+
+\subsection{Data Sanitization Standards}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Asset Type} & \textbf{Data Classification} & \textbf{Method} \\
+\hline
+Hard Drives & Confidential/Critical & Degaussing + Physical destruction \\
+\hline
+Hard Drives & Internal/Public & Secure wipe (3+ passes) \\
+\hline
+SSDs & Any & Crypto erase + Physical destruction \\
+\hline
+Mobile Devices & Any & Factory reset + Encryption key destruction \\
+\hline
+Removable Media & Confidential & Physical destruction \\
+\hline
+\end{tabular}
+\caption{Data Sanitization Standards}
+\end{table}
+
+\subsection{Hardware Assets}
+
+\subsubsection{Servers}
+\begin{itemize}
+    \item Asset tagging with unique ID
+    \item Configuration documentation
+    \item Network diagram updates
+    \item Backup verification
+    \item Quarterly inventory audit
+\end{itemize}
+
+\subsubsection{Workstations and Laptops}
+\begin{itemize}
+    \item Full disk encryption mandatory
+    \item Asset tag affixed
+    \item User assignment tracked
+    \item Annual physical verification
+    \item Immediate reporting of loss/theft
+\end{itemize}
+
+\subsubsection{Mobile Devices}
+\begin{itemize}
+    \item MDM enrollment required
+    \item Asset register maintained
+    \item Remote wipe capability
+    \item IMEI/serial number tracked
+    \item Monthly access review
+\end{itemize}
+
+\subsubsection{Network Equipment}
+\begin{itemize}
+    \item Configuration backups automated
+    \item Network topology maintained
+    \item Firmware version tracked
+    \item Support contract status monitored
+    \item Change management process required
+\end{itemize}
+
+\subsection{Software Assets}
+
+\subsubsection{Licensed Software}
+\begin{itemize}
+    \item License inventory maintained
+    \item Usage monitored vs. licenses purchased
+    \item Annual license compliance audit
+    \item Unauthorized software prohibited
+    \item License harvesting from retired assets
+\end{itemize}
+
+\subsubsection{Software Versioning}
+\begin{itemize}
+    \item Approved software list maintained
+    \item Version control for internally developed software
+    \item End-of-life software identification
+    \item Upgrade planning for deprecated versions
+\end{itemize}
+
+\subsection{Cloud Services}
+\begin{itemize}
+    \item SaaS application inventory
+    \item Shadow IT discovery and management
+    \item Cloud resource tagging standards
+    \item Cost tracking and optimization
+    \item Security posture monitoring
+    \item Data location tracking
+\end{itemize}
+
+\subsection{Asset Ownership}
+
+\subsubsection{Asset Owner Responsibilities}
+\begin{itemize}
+    \item Define security requirements
+    \item Approve access requests
+    \item Ensure proper usage
+    \item Participate in risk assessments
+    \item Approve changes
+    \item Budget for maintenance and replacement
+\end{itemize}
+
+\subsubsection{Asset Custodian Responsibilities}
+\begin{itemize}
+    \item Day-to-day management
+    \item Apply security controls
+    \item Perform maintenance
+    \item Monitor performance
+    \item Report issues
+    \item Maintain documentation
+\end{itemize}
+
+\section{Asset Inventory Procedures}
+
+\subsection{Automated Discovery}
+\begin{itemize}
+    \item Network scanning tools (daily)
+    \item Agent-based inventory collection
+    \item Cloud resource enumeration
+    \item Active Directory integration
+    \item SIEM log correlation
+\end{itemize}
+
+\subsection{Manual Verification}
+\begin{itemize}
+    \item Quarterly physical asset verification
+    \item Reconciliation with purchase records
+    \item User attestation for assigned assets
+    \item Location verification
+    \item Status confirmation
+\end{itemize}
+
+\subsection{Reporting}
+\begin{itemize}
+    \item Monthly asset status report to management
+    \item Quarterly compliance report
+    \item Annual comprehensive audit
+    \item Ad-hoc reports as requested
+\end{itemize}
+
+\section{Metrics and KPIs}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Metric} & \textbf{Target} \\
+\hline
+Asset inventory accuracy & >98\% \\
+\hline
+Assets with owners assigned & 100\% \\
+\hline
+Critical assets identified & 100\% \\
+\hline
+Unauthorized devices detected & <1\% \\
+\hline
+Asset verification completion & >95\% quarterly \\
+\hline
+Retired asset data destruction & 100\% \\
+\hline
+Software license compliance & 100\% \\
+\hline
+\end{tabular}
+\caption{Asset Management KPIs}
+\end{table}
+
+\section{Roles and Responsibilities}
+
+\subsection{Chief Information Officer (CIO)}
+\begin{itemize}
+    \item Policy oversight and approval
+    \item Budget allocation
+    \item Strategic asset planning
+\end{itemize}
+
+\subsection{IT Asset Manager}
+\begin{itemize}
+    \item Asset inventory maintenance
+    \item Lifecycle management
+    \item Reporting and compliance
+    \item Tool administration
+\end{itemize}
+
+\subsection{IT Operations}
+\begin{itemize}
+    \item Asset deployment and configuration
+    \item Maintenance and updates
+    \item Decommissioning execution
+\end{itemize}
+
+\subsection{Security Team}
+\begin{itemize}
+    \item Security baseline definition
+    \item Vulnerability tracking
+    \item Security compliance verification
+\end{itemize}
+
+\subsection{Asset Owners}
+\begin{itemize}
+    \item Classification and ownership
+    \item Access approval
+    \item Risk acceptance
+\end{itemize}
+
+\section{Compliance}
+\begin{itemize}
+    \item Quarterly asset inventory audits
+    \item Annual independent assessment
+    \item Non-compliance investigation and remediation
+    \item Disciplinary action for policy violations
+\end{itemize}
+
+\section{Related Documents}
+\begin{itemize}
+    \item Cybersecurity Policy
+    \item Access Control Policy
+    \item Change Management Procedure
+    \item Data Classification Policy
+    \item Procurement Policy
+    \item Hardware Disposal Procedure
+\end{itemize}
+
+\section{Review}
+This policy shall be reviewed annually or when:
+\begin{itemize}
+    \item Major organizational changes
+    \item New asset types introduced
+    \item Regulatory requirements change
+    \item Significant compliance issues identified
+\end{itemize}
+
+\section{Approval}
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Role} & \textbf{Name} & \textbf{Date} \\
+\hline
+CIO & & \\
+\hline
+CISO & & \\
+\hline
+CFO & & \\
+\hline
+\end{tabular}
+\end{table}
+
+\end{document}

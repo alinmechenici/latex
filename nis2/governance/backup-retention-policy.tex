@@ -1,0 +1,180 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{xcolor}
+\geometry{margin=1in}
+\definecolor{nis2blue}{RGB}{0,51,153}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{nis2blue}{\textbf{Backup \& Retention Policy}}}
+\fancyfoot[C]{\small Page \thepage}
+\begin{document}
+\begin{center}
+{\Huge\bfseries Backup \& Data Retention Policy}\\
+{\Large NIS2 Business Continuity Compliance}
+\end{center}
+
+\section{Purpose}
+Establish requirements for data backup, recovery, and retention to ensure business continuity and regulatory compliance.
+
+\section{Backup Strategy}
+
+\subsection{3-2-1 Backup Rule}
+\begin{itemize}
+\item \textbf{3} copies of data
+\item \textbf{2} different media types
+\item \textbf{1} copy off-site
+\end{itemize}
+
+\subsection{Backup Schedule}
+
+\begin{longtable}{|p{4cm}|p{3cm}|p{2cm}|p{4cm}|}
+\hline
+\textbf{Data Type} & \textbf{Frequency} & \textbf{Retention} & \textbf{Method} \\
+\hline
+Critical Databases & Hourly inc. & 30 days & Snapshots \\
+& Daily full & 90 days & \\
+\hline
+File Servers & Daily & 60 days & Full backup \\
+\hline
+Email & Daily & 90 days & Cloud backup \\
+\hline
+Virtual Machines & Daily & 14 days & Snapshots \\
+\hline
+Configurations & Weekly & 365 days & Version control \\
+\hline
+\end{longtable}
+
+\subsection{Recovery Objectives}
+
+\begin{tabular}{|p{4cm}|p{2cm}|p{2cm}|}
+\hline
+\textbf{System} & \textbf{RTO} & \textbf{RPO} \\
+\hline
+Critical Systems & 4 hours & 1 hour \\
+\hline
+Important Systems & 24 hours & 4 hours \\
+\hline
+Standard Systems & 72 hours & 24 hours \\
+\hline
+\end{tabular}
+
+\section{Backup Types}
+
+\subsection{Full Backup}
+Complete copy of all data
+
+\subsection{Incremental}
+Changes since last backup (any type)
+
+\subsection{Differential}
+Changes since last full backup
+
+\section{Backup Locations}
+
+\begin{enumerate}
+\item \textbf{Primary:} On-site NAS (7-day retention)
+\item \textbf{Secondary:} Off-site datacenter (30-day retention)
+\item \textbf{Tertiary:} Cloud storage (90-day retention)
+\item \textbf{Archive:} Tape/cold storage (7-year retention)
+\end{enumerate}
+
+\section{Backup Testing}
+
+\subsection{Verification}
+\begin{itemize}
+\item Daily: Automated backup success verification
+\item Weekly: Random file restoration test
+\item Monthly: Full system restoration test
+\item Quarterly: Complete DR test
+\end{itemize}
+
+\subsection{Documentation}
+\begin{itemize}
+\item Test results logged
+\item Failures investigated immediately
+\item Success rate target: 99\%
+\end{itemize}
+
+\section{Data Retention}
+
+\subsection{Retention Periods}
+
+\begin{longtable}{|p{5cm}|p{3cm}|p{5cm}|}
+\hline
+\textbf{Data Category} & \textbf{Retention} & \textbf{Regulatory Requirement} \\
+\hline
+Financial Records & 7 years & Tax law \\
+\hline
+Customer Data & 5 years & GDPR + business need \\
+\hline
+Employee Records & 10 years & Labor law \\
+\hline
+Security Logs & 2 years & NIS2 \\
+\hline
+Email & 3 years & Business + legal \\
+\hline
+Contracts & 7 years after expiry & Legal \\
+\hline
+\end{longtable}
+
+\subsection{Secure Disposal}
+\begin{itemize}
+\item Automated deletion after retention period
+\item Secure wipe (3+ passes) or physical destruction
+\item Certificate of destruction for sensitive data
+\item Documentation of disposal
+\end{itemize}
+
+\section{Ransomware Protection}
+
+\subsection{Immutable Backups}
+\begin{itemize}
+\item 30-day immutable backup retention
+\item Air-gapped or write-once storage
+\item Protected from ransomware encryption
+\end{itemize}
+
+\subsection{Backup Security}
+\begin{itemize}
+\item Encrypted backups (AES-256)
+\item Separate credentials from production
+\item MFA for backup administrator access
+\item Regular security audits
+\end{itemize}
+
+\section{Roles \& Responsibilities}
+
+\textbf{Backup Administrator:}
+\begin{itemize}
+\item Daily backup monitoring
+\item Test execution
+\item Issue resolution
+\end{itemize}
+
+\textbf{Data Owners:}
+\begin{itemize}
+\item Define retention requirements
+\item Approve restoration requests
+\end{itemize}
+
+\textbf{IT Operations:}
+\begin{itemize}
+\item Execute backups
+\item Perform restorations
+\item Maintain backup infrastructure
+\end{itemize}
+
+\section{Monitoring \& Metrics}
+
+\begin{itemize}
+\item Backup success rate (target: 99\%)
+\item Failed backups (investigate within 4h)
+\item Restoration success rate
+\item Storage capacity utilization
+\item RTO/RPO compliance
+\end{itemize}
+
+\end{document}

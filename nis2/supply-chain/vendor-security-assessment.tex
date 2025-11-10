@@ -1,0 +1,167 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{lastpage}
+
+\geometry{margin=1in}
+
+\definecolor{nis2blue}{RGB}{0,51,153}
+\definecolor{nis2gray}{RGB}{100,100,100}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{nis2blue}{\textbf{Vendor Security Assessment}}}
+\fancyhead[R]{\includegraphics[height=0.8cm]{logo.png}}
+\fancyfoot[L]{\textcolor{nis2gray}{\small \jobname}}
+\fancyfoot[C]{\textcolor{nis2gray}{\small Confidential}}
+\fancyfoot[R]{\textcolor{nis2gray}{\small Page \thepage\ of \pageref{LastPage}}}
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=nis2blue,
+    filecolor=nis2blue,
+    urlcolor=nis2blue,
+}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\Huge\bfseries\textcolor{nis2blue}{Vendor Security Assessment}\par}
+    \vspace{0.5cm}
+    {\Large NIS2 Supply Chain Security\par}
+    \vspace{2cm}
+    {\Large\textbf{Vendor:} [VENDOR NAME]\par}
+    \vspace{0.5cm}
+    {\Large\textbf{Assessment Date:} \today\par}
+    \vspace{0.5cm}
+    {\Large\textbf{Assessor:} [NAME]\par}
+    \vfill
+    {\small NIS2 Article 21 - Supply Chain Security\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Vendor Information}
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|p{8cm}|}
+\hline
+\textbf{Vendor Name} & [NAME] \\
+\hline
+\textbf{Service Provided} & [DESCRIPTION] \\
+\hline
+\textbf{Risk Classification} & High / Medium / Low \\
+\hline
+\textbf{Contract Value} & [AMOUNT] \\
+\hline
+\textbf{Data Access} & Yes / No \\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Security Assessment}
+
+\subsection{Information Security Management}
+\begin{longtable}{|p{6cm}|p{2cm}|p{5cm}|}
+\hline
+\textbf{Control} & \textbf{Status} & \textbf{Comments} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Control} & \textbf{Status} & \textbf{Comments} \\
+\hline
+\endhead
+ISO 27001 certification & Yes/No & \\
+\hline
+Security policies documented & Yes/No & \\
+\hline
+Risk assessment conducted & Yes/No & \\
+\hline
+Incident response plan & Yes/No & \\
+\hline
+\caption{Information Security Management Assessment}
+\end{longtable}
+
+\subsection{Access Control}
+\begin{longtable}{|p{6cm}|p{2cm}|p{5cm}|}
+\hline
+\textbf{Control} & \textbf{Status} & \textbf{Comments} \\
+\hline
+Multi-factor authentication & Yes/No & \\
+\hline
+Least privilege principle & Yes/No & \\
+\hline
+Access reviews conducted & Yes/No & \\
+\hline
+\caption{Access Control Assessment}
+\end{longtable}
+
+\subsection{Data Protection}
+\begin{longtable}{|p{6cm}|p{2cm}|p{5cm}|}
+\hline
+\textbf{Control} & \textbf{Status} & \textbf{Comments} \\
+\hline
+Data encryption at rest & Yes/No & \\
+\hline
+Data encryption in transit & Yes/No & \\
+\hline
+GDPR compliance & Yes/No & \\
+\hline
+Data backup procedures & Yes/No & \\
+\hline
+\caption{Data Protection Assessment}
+\end{longtable}
+
+\section{Risk Assessment}
+
+\subsection{Identified Risks}
+\begin{longtable}{|p{4cm}|p{2cm}|p{2cm}|p{5cm}|}
+\hline
+\textbf{Risk} & \textbf{Likelihood} & \textbf{Impact} & \textbf{Mitigation} \\
+\hline
+[Risk 1] & High/Med/Low & High/Med/Low & [Actions] \\
+\hline
+\caption{Risk Assessment}
+\end{longtable}
+
+\section{Recommendations}
+\begin{enumerate}
+    \item [Recommendation 1]
+    \item [Recommendation 2]
+    \item [Recommendation 3]
+\end{enumerate}
+
+\section{Assessment Conclusion}
+
+\textbf{Overall Risk Rating:} [High / Medium / Low]
+
+\textbf{Recommendation:} [Approve / Approve with conditions / Reject]
+
+\section{Approval}
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Role} & \textbf{Name} & \textbf{Date} \\
+\hline
+Security Assessor & & \\
+\hline
+CISO & & \\
+\hline
+\end{tabular}
+\end{table}
+
+\end{document}

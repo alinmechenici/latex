@@ -1,0 +1,514 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{lastpage}
+
+\geometry{margin=1in}
+
+\definecolor{nis2blue}{RGB}{0,51,153}
+\definecolor{nis2gray}{RGB}{100,100,100}
+\definecolor{critical}{RGB}{204,0,0}
+\definecolor{confidential}{RGB}{255,102,0}
+\definecolor{internal}{RGB}{255,204,0}
+\definecolor{public}{RGB}{0,153,51}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{nis2blue}{\textbf{Data Classification Policy}}}
+\fancyhead[R]{\includegraphics[height=0.8cm]{logo.png}}
+\fancyfoot[L]{\textcolor{nis2gray}{\small \jobname}}
+\fancyfoot[C]{\textcolor{nis2gray}{\small Internal Use Only}}
+\fancyfoot[R]{\textcolor{nis2gray}{\small Page \thepage\ of \pageref{LastPage}}}
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=nis2blue,
+    filecolor=nis2blue,
+    urlcolor=nis2blue,
+}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\Huge\bfseries\textcolor{nis2blue}{Data Classification Policy}\par}
+    \vspace{0.5cm}
+    {\Large NIS2 Directive Compliance\par}
+    \vspace{2cm}
+    {\Large\textbf{Organization:} [ORGANIZATION]\par}
+    \vspace{0.5cm}
+    {\Large\textbf{Version:} 1.0\par}
+    \vspace{0.5cm}
+    {\Large\textbf{Effective Date:} \today\par}
+    \vfill
+    {\small NIS2 Article 21 - Data Protection\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Purpose}
+This Data Classification Policy establishes a framework for classifying and protecting organizational data based on its sensitivity, value, and criticality to support NIS2 compliance and data protection requirements.
+
+\section{Scope}
+This policy applies to all data created, received, maintained, or transmitted by [ORGANIZATION] regardless of format:
+\begin{itemize}
+    \item Electronic data (databases, files, emails)
+    \item Physical documents (paper, printed materials)
+    \item Verbal communications (meetings, calls)
+    \item Visual data (presentations, diagrams, videos)
+\end{itemize}
+
+\section{Data Classification Levels}
+
+\subsection{Classification Scheme}
+
+\begin{longtable}{|p{2.5cm}|p{11cm}|}
+\hline
+\rowcolor{critical} \textcolor{white}{\textbf{CRITICAL}} &
+\textcolor{white}{\textbf{Highly sensitive data requiring maximum protection}} \\
+\hline
+\multicolumn{2}{|p{13.5cm}|}{
+\textbf{Definition:} Data whose unauthorized disclosure, modification, or destruction would cause catastrophic impact to the organization, customers, or legal/regulatory standing.
+
+\textbf{Examples:}
+\begin{itemize}
+    \item Customer payment card data (PCI DSS)
+    \item Personal health information (PHI)
+    \item Trade secrets and proprietary algorithms
+    \item Encryption keys and credentials
+    \item Merger and acquisition information
+\end{itemize}
+
+\textbf{Impact of Breach:}
+\begin{itemize}
+    \item Severe financial loss (>€1M)
+    \item Existential threat to organization
+    \item Major regulatory fines and sanctions
+    \item Irreparable reputational damage
+    \item Legal liability and lawsuits
+\end{itemize}
+} \\
+\hline
+\rowcolor{confidential} \textbf{CONFIDENTIAL} &
+\textbf{Sensitive data requiring strong protection} \\
+\hline
+\multicolumn{2}{|p{13.5cm}|}{
+\textbf{Definition:} Data whose unauthorized disclosure would cause serious harm to the organization, employees, or stakeholders.
+
+\textbf{Examples:}
+\begin{itemize}
+    \item Employee personal data (GDPR covered)
+    \item Customer contact information and accounts
+    \item Financial statements and budgets
+    \item Business strategies and plans
+    \item Unpublished research and development
+    \item Internal audit reports
+    \item Vendor contracts (non-public terms)
+\end{itemize}
+
+\textbf{Impact of Breach:}
+\begin{itemize}
+    \item Significant financial loss (€100K-€1M)
+    \item Competitive disadvantage
+    \item Regulatory investigations
+    \item Customer trust erosion
+    \item Legal obligations (breach notifications)
+\end{itemize}
+} \\
+\hline
+\rowcolor{internal} \textbf{INTERNAL} &
+\textbf{Internal use only - moderate protection required} \\
+\hline
+\multicolumn{2}{|p{13.5cm}|}{
+\textbf{Definition:} Data intended for internal use that should not be publicly disclosed but would cause limited harm if exposed.
+
+\textbf{Examples:}
+\begin{itemize}
+    \item Internal policies and procedures
+    \item Organizational charts
+    \item Meeting minutes (non-sensitive)
+    \item Internal communications and memos
+    \item Training materials
+    \item IT documentation (non-security)
+\end{itemize}
+
+\textbf{Impact of Breach:}
+\begin{itemize}
+    \item Minor financial impact (<€100K)
+    \item Operational inconvenience
+    \item Potential embarrassment
+    \item Limited competitive impact
+\end{itemize}
+} \\
+\hline
+\rowcolor{public} \textcolor{white}{\textbf{PUBLIC}} &
+\textcolor{white}{\textbf{Publicly available information}} \\
+\hline
+\multicolumn{2}{|p{13.5cm}|}{
+\textbf{Definition:} Information approved for public release with no confidentiality restrictions.
+
+\textbf{Examples:}
+\begin{itemize}
+    \item Marketing materials and brochures
+    \item Press releases
+    \item Public website content
+    \item Job postings
+    \item Published annual reports
+    \item Product documentation (public)
+\end{itemize}
+
+\textbf{Impact of Breach:}
+\begin{itemize}
+    \item No negative impact
+    \item Information is publicly available
+\end{itemize}
+} \\
+\hline
+\caption{Data Classification Levels}
+\end{longtable}
+
+\section{Handling Requirements by Classification}
+
+\subsection{CRITICAL Data}
+
+\subsubsection{Storage}
+\begin{itemize}
+    \item \textbf{Encryption:} AES-256 encryption mandatory (at rest and in transit)
+    \item \textbf{Location:} Approved secure storage only (no personal devices)
+    \item \textbf{Access:} Minimum necessary personnel only
+    \item \textbf{Audit:} All access logged and monitored
+\end{itemize}
+
+\subsubsection{Transmission}
+\begin{itemize}
+    \item Encrypted channels only (TLS 1.3, S/MIME, PGP)
+    \item Encrypted file containers for attachments
+    \item Secure file sharing platforms only
+    \item Recipients verified before transmission
+    \item Transmission logged
+\end{itemize}
+
+\subsubsection{Disposal}
+\begin{itemize}
+    \item Secure deletion (multiple overwrites)
+    \item Physical destruction for media
+    \item Certificate of destruction required
+    \item Documented disposal with approval
+\end{itemize}
+
+\subsubsection{Labeling}
+\begin{itemize}
+    \item \textbf{Electronic:} Header/footer: "CRITICAL - HANDLE WITH EXTREME CARE"
+    \item \textbf{Physical:} Red stamp/label on all pages
+    \item \textbf{Email:} Subject line must include [CRITICAL]
+\end{itemize}
+
+\subsection{CONFIDENTIAL Data}
+
+\subsubsection{Storage}
+\begin{itemize}
+    \item \textbf{Encryption:} AES-256 strongly recommended
+    \item \textbf{Location:} Corporate systems or approved cloud services
+    \item \textbf{Access:} Role-based access control
+    \item \textbf{Audit:} Access logging enabled
+\end{itemize}
+
+\subsubsection{Transmission}
+\begin{itemize}
+    \item Encrypted transmission required
+    \item Secure email or file sharing platforms
+    \item Password-protected documents
+    \item Recipients must have business need
+\end{itemize}
+
+\subsubsection{Disposal}
+\begin{itemize}
+    \item Secure deletion or shredding
+    \item Not to be placed in regular trash
+    \item Electronic deletion with overwrite
+\end{itemize}
+
+\subsubsection{Labeling}
+\begin{itemize}
+    \item \textbf{Electronic:} Header/footer: "CONFIDENTIAL"
+    \item \textbf{Physical:} Orange stamp/label
+    \item \textbf{Email:} Subject line should include [CONFIDENTIAL]
+\end{itemize}
+
+\subsection{INTERNAL Data}
+
+\subsubsection{Storage}
+\begin{itemize}
+    \item Corporate systems preferred
+    \item Encryption recommended but not required
+    \item Standard access controls
+\end{itemize}
+
+\subsubsection{Transmission}
+\begin{itemize}
+    \item Standard email acceptable
+    \item File sharing via corporate tools
+    \item External transmission requires approval
+\end{itemize}
+
+\subsubsection{Disposal}
+\begin{itemize}
+    \item Standard deletion acceptable
+    \item Shredding recommended for physical documents
+\end{itemize}
+
+\subsubsection{Labeling}
+\begin{itemize}
+    \item \textbf{Electronic:} Footer: "Internal Use Only"
+    \item \textbf{Physical:} Yellow label (optional)
+\end{itemize}
+
+\subsection{PUBLIC Data}
+
+\subsubsection{Storage}
+\begin{itemize}
+    \item No special requirements
+    \item Version control recommended
+\end{itemize}
+
+\subsubsection{Transmission}
+\begin{itemize}
+    \item No restrictions
+    \item Standard communication channels
+\end{itemize}
+
+\subsubsection{Disposal}
+\begin{itemize}
+    \item Standard deletion
+    \item Recycling acceptable
+\end{itemize}
+
+\subsubsection{Labeling}
+\begin{itemize}
+    \item Optional: "Public" or "Approved for Release"
+\end{itemize}
+
+\section{Classification Process}
+
+\subsection{Initial Classification}
+\begin{enumerate}
+    \item \textbf{Data Creator:} Classifies data at creation
+    \item \textbf{Assessment:} Evaluates potential impact of disclosure
+    \item \textbf{Application:} Applies appropriate marking
+    \item \textbf{Review:} Data owner reviews classification (if needed)
+    \item \textbf{Protection:} Applies required controls
+\end{enumerate}
+
+\subsection{Classification Criteria}
+
+Consider the following when classifying data:
+\begin{itemize}
+    \item \textbf{Regulatory requirements:} GDPR, PCI DSS, industry regulations
+    \item \textbf{Contractual obligations:} Customer agreements, NDAs
+    \item \textbf{Business impact:} Financial, operational, reputational
+    \item \textbf{Competitive sensitivity:} Strategic value
+    \item \textbf{Privacy implications:} Personal data protection
+\end{itemize}
+
+\subsection{Reclassification}
+Data classification may change when:
+\begin{itemize}
+    \item Information becomes public (downgrade to PUBLIC)
+    \item Sensitivity increases (upgrade classification)
+    \item Retention period expires
+    \item Regulatory requirements change
+\end{itemize}
+
+\textbf{Process:}
+\begin{enumerate}
+    \item Data owner approves reclassification
+    \item Update classification markings
+    \item Apply new handling requirements
+    \item Notify relevant stakeholders
+    \item Document reclassification decision
+\end{enumerate}
+
+\section{Special Data Categories}
+
+\subsection{Personal Data (GDPR)}
+All personal data must be classified at minimum CONFIDENTIAL:
+\begin{itemize}
+    \item Names, addresses, email addresses
+    \item Identification numbers (SSN, passport)
+    \item Financial information
+    \item Health information
+    \item Biometric data
+    \item IP addresses and online identifiers
+\end{itemize}
+
+\textbf{Additional Requirements:}
+\begin{itemize}
+    \item Data Processing Agreement (DPA) for processors
+    \item Privacy by design principles
+    \item Data minimization
+    \item Retention limits enforced
+    \item Subject rights honored (access, deletion, portability)
+\end{itemize}
+
+\subsection{Payment Card Data (PCI DSS)}
+All payment card data classified as CRITICAL:
+\begin{itemize}
+    \item Cardholder name
+    \item Card number (PAN)
+    \item Expiration date
+    \item CVV/CVC codes (storage prohibited)
+\end{itemize}
+
+\textbf{Requirements:}
+\begin{itemize}
+    \item PCI DSS compliance mandatory
+    \item Tokenization or encryption required
+    \item Minimal retention periods
+    \item Secure disposal procedures
+    \item Annual PCI audit
+\end{itemize}
+
+\subsection{Intellectual Property}
+\begin{itemize}
+    \item \textbf{Patents (filed):} CONFIDENTIAL
+    \item \textbf{Patents (pending):} CRITICAL
+    \item \textbf{Trade Secrets:} CRITICAL
+    \item \textbf{Copyright Material:} CONFIDENTIAL or INTERNAL
+    \item \textbf{Trademarks:} PUBLIC or INTERNAL
+\end{itemize}
+
+\section{Responsibilities}
+
+\subsection{Data Owners}
+\begin{itemize}
+    \item Define classification for data in their domain
+    \item Approve access to classified data
+    \item Review classification annually
+    \item Ensure compliance with handling requirements
+    \item Authorize reclassification or disposal
+\end{itemize}
+
+\subsection{Data Custodians}
+\begin{itemize}
+    \item Implement technical controls per classification
+    \item Monitor access and usage
+    \item Report security incidents
+    \item Maintain data according to requirements
+\end{itemize}
+
+\subsection{Data Users (All Employees)}
+\begin{itemize}
+    \item Classify data created
+    \item Handle data according to classification
+    \item Apply proper markings
+    \item Report misclassification or breaches
+    \item Complete annual training
+\end{itemize}
+
+\subsection{Information Security Team}
+\begin{itemize}
+    \item Provide classification guidance
+    \item Monitor compliance
+    \item Conduct audits
+    \item Investigate violations
+    \item Update policy as needed
+\end{itemize}
+
+\section{Compliance and Enforcement}
+
+\subsection{Training}
+\begin{itemize}
+    \item Mandatory annual data classification training
+    \item Training completion required for all employees
+    \item Role-specific training for data owners
+    \item New hire onboarding includes classification training
+\end{itemize}
+
+\subsection{Audits}
+\begin{itemize}
+    \item Quarterly sampling of classified data
+    \item Annual comprehensive audit
+    \item Random access log reviews
+    \item Incident-driven investigations
+\end{itemize}
+
+\subsection{Violations}
+Violations of this policy may result in:
+\begin{itemize}
+    \item First offense: Written warning and re-training
+    \item Second offense: Formal reprimand
+    \item Serious violations: Suspension or termination
+    \item Legal action if criminal activity suspected
+\end{itemize}
+
+\section{Metrics}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Metric} & \textbf{Target} \\
+\hline
+Data classification training completion & 100\% \\
+\hline
+Critical data with proper controls & 100\% \\
+\hline
+Classification audit compliance & >95\% \\
+\hline
+Misclassification incidents & <5 per year \\
+\hline
+Data classification at creation & >90\% \\
+\hline
+\end{tabular}
+\caption{Data Classification KPIs}
+\end{table}
+
+\section{Related Documents}
+\begin{itemize}
+    \item Cybersecurity Policy
+    \item Encryption Policy
+    \item Access Control Policy
+    \item Data Retention Policy
+    \item GDPR Privacy Policy
+    \item Acceptable Use Policy
+    \item Clean Desk Policy
+\end{itemize}
+
+\section{Review}
+Annual review or when:
+\begin{itemize}
+    \item Regulatory requirements change
+    \item New data types emerge
+    \item Significant breaches occur
+    \item Business operations change substantially
+\end{itemize}
+
+\section{Approval}
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Role} & \textbf{Name} & \textbf{Date} \\
+\hline
+CISO & & \\
+\hline
+Chief Privacy Officer & & \\
+\hline
+Legal Counsel & & \\
+\hline
+\end{tabular}
+\end{table}
+
+\end{document}

@@ -1,0 +1,207 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{xcolor}
+\geometry{margin=1in}
+\definecolor{nis2blue}{RGB}{0,51,153}
+\definecolor{pass}{RGB}{0,153,51}
+\definecolor{fail}{RGB}{204,0,0}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{nis2blue}{\textbf{Security Audit Checklist}}}
+\fancyfoot[C]{\small Page \thepage}
+\begin{document}
+\begin{center}
+{\Huge\bfseries Internal Security Audit}\\
+{\Large NIS2 Compliance Audit Checklist}
+\end{center}
+
+\section*{Audit Information}
+
+\begin{tabular}{|p{4cm}|p{9cm}|}
+\hline
+\textbf{Audit Date} & [DATE] \\
+\hline
+\textbf{Auditor} & [NAME] - [TITLE] \\
+\hline
+\textbf{Audit Scope} & [DEPARTMENT/SYSTEMS] \\
+\hline
+\textbf{Audit Type} & $\square$ Comprehensive \quad $\square$ Focused \quad $\square$ Follow-up \\
+\hline
+\end{tabular}
+
+\section{NIS2 Article 21 Compliance}
+
+\subsection{Risk Analysis \& Security Policies (21.2.a)}
+
+\begin{longtable}{|p{8cm}|p{1.5cm}|p{4cm}|}
+\hline
+\textbf{Control} & \textbf{Status} & \textbf{Comments} \\
+\hline
+Annual risk assessment conducted & $\square$Pass $\square$Fail & \\
+\hline
+Risk assessment approved by management & $\square$Pass $\square$Fail & \\
+\hline
+Risk register maintained & $\square$Pass $\square$Fail & \\
+\hline
+Cybersecurity policy exists & $\square$Pass $\square$Fail & \\
+\hline
+Policy reviewed annually & $\square$Pass $\square$Fail & \\
+\hline
+\end{longtable}
+
+\subsection{Incident Handling (21.2.b)}
+
+\begin{longtable}{|p{8cm}|p{1.5cm}|p{4cm}|}
+\hline
+\textbf{Control} & \textbf{Status} & \textbf{Comments} \\
+\hline
+IR plan documented & $\square$Pass $\square$Fail & \\
+\hline
+IR team established & $\square$Pass $\square$Fail & \\
+\hline
+24/7 incident reporting capability & $\square$Pass $\square$Fail & \\
+\hline
+NIS2 reporting procedure defined & $\square$Pass $\square$Fail & \\
+\hline
+IR plan tested in past 12 months & $\square$Pass $\square$Fail & \\
+\hline
+\end{longtable}
+
+\subsection{Business Continuity (21.2.c)}
+
+\begin{longtable}{|p{8cm}|p{1.5cm}|p{4cm}|}
+\hline
+BCP documented & $\square$Pass $\square$Fail & \\
+\hline
+RTO/RPO defined & $\square$Pass $\square$Fail & \\
+\hline
+BCP tested annually & $\square$Pass $\square$Fail & \\
+\hline
+DR plan exists & $\square$Pass $\square$Fail & \\
+\hline
+Backups verified regularly & $\square$Pass $\square$Fail & \\
+\hline
+\end{longtable}
+
+\subsection{Supply Chain Security (21.2.d)}
+
+\begin{longtable}{|p{8cm}|p{1.5cm}|p{4cm}|}
+\hline
+Vendor security assessment process & $\square$Pass $\square$Fail & \\
+\hline
+Critical vendors identified & $\square$Pass $\square$Fail & \\
+\hline
+Vendor assessments current & $\square$Pass $\square$Fail & \\
+\hline
+Contractual security requirements & $\square$Pass $\square$Fail & \\
+\hline
+\end{longtable}
+
+\subsection{Training \& Awareness (21.2.g)}
+
+\begin{longtable}{|p{8cm}|p{1.5cm}|p{4cm}|}
+\hline
+Annual security awareness training & $\square$Pass $\square$Fail & \\
+\hline
+Training completion >95\% & $\square$Pass $\square$Fail & \\
+\hline
+Phishing simulations conducted & $\square$Pass $\square$Fail & \\
+\hline
+Cyber hygiene practices documented & $\square$Pass $\square$Fail & \\
+\hline
+\end{longtable}
+
+\subsection{Cryptography \& Encryption (21.2.h)}
+
+\begin{longtable}{|p{8cm}|p{1.5cm}|p{4cm}|}
+\hline
+Encryption policy exists & $\square$Pass $\square$Fail & \\
+\hline
+Data-at-rest encrypted (sensitive) & $\square$Pass $\square$Fail & \\
+\hline
+Data-in-transit encrypted & $\square$Pass $\square$Fail & \\
+\hline
+TLS 1.2+ enforced & $\square$Pass $\square$Fail & \\
+\hline
+Key management procedures & $\square$Pass $\square$Fail & \\
+\hline
+\end{longtable}
+
+\subsection{Access Control (21.2.i,j)}
+
+\begin{longtable}{|p{8cm}|p{1.5cm}|p{4cm}|}
+\hline
+Access control policy exists & $\square$Pass $\square$Fail & \\
+\hline
+Least privilege enforced & $\square$Pass $\square$Fail & \\
+\hline
+MFA mandatory for all users & $\square$Pass $\square$Fail & \\
+\hline
+MFA adoption 100\% & $\square$Pass $\square$Fail & \\
+\hline
+Quarterly access reviews & $\square$Pass $\square$Fail & \\
+\hline
+Asset inventory maintained & $\square$Pass $\square$Fail & \\
+\hline
+\end{longtable}
+
+\section{Technical Controls}
+
+\subsection{Vulnerability Management}
+
+\begin{longtable}{|p{8cm}|p{1.5cm}|p{4cm}|}
+\hline
+Regular vulnerability scanning & $\square$Pass $\square$Fail & \\
+\hline
+Critical patches within 72h & $\square$Pass $\square$Fail & \\
+\hline
+Patch compliance >95\% & $\square$Pass $\square$Fail & \\
+\hline
+\end{longtable}
+
+\subsection{Endpoint Security}
+
+\begin{longtable}{|p{8cm}|p{1.5cm}|p{4cm}|}
+\hline
+EDR deployed on all endpoints & $\square$Pass $\square$Fail & \\
+\hline
+Full disk encryption & $\square$Pass $\square$Fail & \\
+\hline
+\end{longtable}
+
+\section{Summary}
+
+\begin{tabular}{|l|r|}
+\hline
+\textbf{Total Controls Checked} & [NUMBER] \\
+\hline
+\textbf{Pass} & [NUMBER] \\
+\hline
+\textbf{Fail} & [NUMBER] \\
+\hline
+\textbf{Compliance Rate} & [PERCENTAGE]\% \\
+\hline
+\end{tabular}
+
+\section*{Critical Findings}
+
+\begin{enumerate}
+\item [Finding 1]
+\item [Finding 2]
+\end{enumerate}
+
+\section*{Recommendations}
+
+\begin{enumerate}
+\item [Recommendation 1]
+\item [Recommendation 2]
+\end{enumerate}
+
+\vspace{1cm}
+
+\textbf{Auditor Signature:} \underline{\hspace{6cm}} \textbf{Date:} \underline{\hspace{3cm}}
+
+\end{document}

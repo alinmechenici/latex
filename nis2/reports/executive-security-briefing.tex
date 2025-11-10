@@ -1,0 +1,155 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{xcolor}
+\usepackage{tikz}
+\geometry{margin=1in}
+\definecolor{nis2blue}{RGB}{0,51,153}
+\definecolor{critical}{RGB}{204,0,0}
+\definecolor{good}{RGB}{0,153,51}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{nis2blue}{\textbf{Executive Security Briefing}}}
+\fancyfoot[C]{\small Page \thepage}
+\begin{document}
+\begin{center}
+{\Huge\bfseries Executive Security Briefing}\\
+\vspace{0.3cm}
+{\Large Monthly Cybersecurity Report}\\
+\vspace{0.3cm}
+{\large [MONTH YEAR]}
+\end{center}
+
+\section*{Security Posture Summary}
+
+\begin{center}
+\begin{tikzpicture}
+\node[circle, fill=good, minimum size=1.5cm, text=white, font=\huge\bfseries] at (0,0) {B+};
+\node[below] at (0,-1) {Overall Security Score};
+\end{tikzpicture}
+\end{center}
+
+\subsection*{Key Metrics}
+
+\begin{tabular}{|p{6cm}|p{2cm}|p{2cm}|p{2cm}|}
+\hline
+\textbf{Metric} & \textbf{Current} & \textbf{Target} & \textbf{Trend} \\
+\hline
+Security Incidents (Month) & [N] & <5 & $\uparrow$/$\downarrow$ \\
+\hline
+Critical Vulnerabilities & [N] & 0 & $\uparrow$/$\downarrow$ \\
+\hline
+Patch Compliance & [X]\% & 95\% & $\uparrow$/$\downarrow$ \\
+\hline
+Training Completion & [X]\% & 100\% & $\uparrow$/$\downarrow$ \\
+\hline
+Phishing Click Rate & [X]\% & <5\% & $\uparrow$/$\downarrow$ \\
+\hline
+\end{tabular}
+
+\section*{This Month's Highlights}
+
+\subsection*{Achievements}
+\begin{itemize}
+\item ✅ [Achievement 1]
+\item ✅ [Achievement 2]
+\end{itemize}
+
+\subsection*{Concerns}
+\begin{itemize}
+\item ⚠️ [Concern 1]
+\item ⚠️ [Concern 2]
+\end{itemize}
+
+\section*{Incident Summary}
+
+\begin{tabular}{|l|r|}
+\hline
+\textbf{Total Incidents} & [NUMBER] \\
+\hline
+Critical (P1) & [NUMBER] \\
+\hline
+High (P2) & [NUMBER] \\
+\hline
+Medium (P3) & [NUMBER] \\
+\hline
+NIS2 Reportable & [NUMBER] \\
+\hline
+\end{tabular}
+
+\subsection*{Notable Incidents}
+
+\textbf{INC-[ID]:} [Brief description] - Status: [Resolved/Ongoing]
+
+\section*{Threat Landscape}
+
+\textbf{Current Threats Targeting Our Sector:}
+\begin{itemize}
+\item [Threat 1 - e.g., Ransomware campaign targeting healthcare]
+\item [Threat 2]
+\end{itemize}
+
+\textbf{Intelligence:} [Brief summary of threat intel]
+
+\section*{Compliance Status}
+
+\begin{tabular}{|l|p{8cm}|}
+\hline
+\textbf{NIS2 Compliance} & \textcolor{good}{✓ Compliant} \\
+\hline
+\textbf{GDPR} & \textcolor{good}{✓ Compliant} \\
+\hline
+\textbf{ISO 27001} & \textcolor{good}{✓ Certified} \\
+\hline
+\textbf{Next Audit} & [DATE] \\
+\hline
+\end{tabular}
+
+\section*{Key Projects}
+
+\begin{enumerate}
+\item \textbf{[Project Name]} - [Status] - [Completion \%]
+\item \textbf{[Project Name]} - [Status] - [Completion \%]
+\end{enumerate}
+
+\section*{Budget \& Resources}
+
+\begin{tabular}{|l|r|r|}
+\hline
+\textbf{Budget Item} & \textbf{Allocated} & \textbf{Spent YTD} \\
+\hline
+Security Tools & €[AMOUNT] & €[AMOUNT] \\
+\hline
+Personnel & €[AMOUNT] & €[AMOUNT] \\
+\hline
+Training & €[AMOUNT] & €[AMOUNT] \\
+\hline
+\textbf{Total} & €[AMOUNT] & €[AMOUNT] \\
+\hline
+\end{tabular}
+
+\section*{Recommendations}
+
+\begin{enumerate}
+\item [Recommendation requiring exec decision/budget]
+\item [Recommendation requiring exec decision/budget]
+\end{enumerate}
+
+\section*{Looking Ahead}
+
+\textbf{Next Month Priorities:}
+\begin{itemize}
+\item [Priority 1]
+\item [Priority 2]
+\item [Priority 3]
+\end{itemize}
+
+\vspace{1cm}
+
+\textbf{Prepared by:} [CISO NAME]
+
+\textbf{Date:} [DATE]
+
+\end{document}

@@ -1,0 +1,276 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{lastpage}
+
+\geometry{margin=1in}
+
+% Define NIS2 colors
+\definecolor{nis2blue}{RGB}{0,51,153}
+\definecolor{nis2gray}{RGB}{100,100,100}
+
+% Header and footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{nis2blue}{\textbf{NIS2 Risk Assessment Report}}}
+\fancyhead[R]{\includegraphics[height=0.8cm]{logo.png}}
+\fancyfoot[L]{\textcolor{nis2gray}{\small \jobname}}
+\fancyfoot[C]{\textcolor{nis2gray}{\small Confidential}}
+\fancyfoot[R]{\textcolor{nis2gray}{\small Page \thepage\ of \pageref{LastPage}}}
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+% Hyperref setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=nis2blue,
+    filecolor=nis2blue,
+    urlcolor=nis2blue,
+}
+
+\begin{document}
+
+% Title Page
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+
+    {\Huge\bfseries\textcolor{nis2blue}{Risk Assessment Report}\par}
+    \vspace{0.5cm}
+    {\Large NIS2 Directive Compliance\par}
+    \vspace{2cm}
+
+    {\Large\textbf{Organization Name:} [ORGANIZATION]\par}
+    \vspace{0.5cm}
+    {\Large\textbf{Assessment Date:} \today\par}
+    \vspace{0.5cm}
+    {\Large\textbf{Version:} 1.0\par}
+    \vspace{2cm}
+
+    {\large\textbf{Classification:} \textcolor{red}{CONFIDENTIAL}\par}
+    \vfill
+
+    {\large Prepared by: [ASSESSOR NAME]\par}
+    {\large Approved by: [APPROVER NAME]\par}
+    \vspace{1cm}
+
+    {\small This document is prepared in compliance with the NIS2 Directive (EU) 2022/2555\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Executive Summary}
+
+This risk assessment report has been prepared in accordance with Article 21 of the NIS2 Directive (EU) 2022/2555 to identify, analyze, and evaluate cybersecurity risks to the organization's network and information systems.
+
+\subsection{Purpose}
+\begin{itemize}
+    \item Identify critical assets and information systems
+    \item Assess current cybersecurity risks and threats
+    \item Evaluate existing security controls
+    \item Provide recommendations for risk mitigation
+\end{itemize}
+
+\subsection{Scope}
+[Define the scope of the risk assessment, including systems, networks, and business processes covered]
+
+\subsection{Key Findings}
+[Summarize the most critical findings and risk ratings]
+
+\section{Assessment Methodology}
+
+\subsection{Risk Assessment Framework}
+This assessment follows the methodology outlined in:
+\begin{itemize}
+    \item NIS2 Directive (EU) 2022/2555
+    \item ISO/IEC 27005:2022 - Information security risk management
+    \item NIST Cybersecurity Framework
+\end{itemize}
+
+\subsection{Risk Calculation}
+Risk is calculated using the formula:
+\begin{center}
+\textbf{Risk = Likelihood × Impact}
+\end{center}
+
+\subsection{Risk Rating Scale}
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Rating} & \textbf{Score} & \textbf{Description} \\
+\hline
+Critical & 16-25 & Immediate action required \\
+High & 11-15 & Action required within 30 days \\
+Medium & 6-10 & Action required within 90 days \\
+Low & 1-5 & Monitor and review \\
+\hline
+\end{tabular}
+\caption{Risk Rating Scale}
+\end{table}
+
+\section{Asset Inventory}
+
+\subsection{Critical Information Systems}
+\begin{longtable}{|p{3cm}|p{4cm}|p{3cm}|p{4cm}|}
+\hline
+\textbf{Asset ID} & \textbf{Asset Name} & \textbf{Owner} & \textbf{Criticality} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Asset ID} & \textbf{Asset Name} & \textbf{Owner} & \textbf{Criticality} \\
+\hline
+\endhead
+AS-001 & [Asset Name] & [Owner] & [High/Medium/Low] \\
+\hline
+AS-002 & [Asset Name] & [Owner] & [High/Medium/Low] \\
+\hline
+\caption{Critical Assets Inventory}
+\end{longtable}
+
+\section{Threat Analysis}
+
+\subsection{Identified Threats}
+\begin{longtable}{|p{2cm}|p{4cm}|p{3cm}|p{4cm}|}
+\hline
+\textbf{Threat ID} & \textbf{Threat Description} & \textbf{Category} & \textbf{Affected Assets} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Threat ID} & \textbf{Threat Description} & \textbf{Category} & \textbf{Affected Assets} \\
+\hline
+\endhead
+TH-001 & Ransomware attacks & Malware & [Assets] \\
+\hline
+TH-002 & Phishing attacks & Social Engineering & [Assets] \\
+\hline
+TH-003 & Unauthorized access & Access Control & [Assets] \\
+\hline
+TH-004 & DDoS attacks & Availability & [Assets] \\
+\hline
+TH-005 & Data breaches & Confidentiality & [Assets] \\
+\hline
+\caption{Threat Analysis}
+\end{longtable}
+
+\section{Vulnerability Assessment}
+
+\subsection{Identified Vulnerabilities}
+\begin{longtable}{|p{2cm}|p{5cm}|p{2cm}|p{4cm}|}
+\hline
+\textbf{Vuln ID} & \textbf{Vulnerability} & \textbf{Severity} & \textbf{Affected Systems} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Vuln ID} & \textbf{Vulnerability} & \textbf{Severity} & \textbf{Affected Systems} \\
+\hline
+\endhead
+VL-001 & [Description] & [Critical/High/Medium/Low] & [Systems] \\
+\hline
+\caption{Vulnerability Assessment}
+\end{longtable}
+
+\section{Risk Register}
+
+\begin{longtable}{|p{1.5cm}|p{3.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{3cm}|}
+\hline
+\textbf{Risk ID} & \textbf{Risk Description} & \textbf{Like-lihood} & \textbf{Impact} & \textbf{Risk Score} & \textbf{Owner} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Risk ID} & \textbf{Risk Description} & \textbf{Like-lihood} & \textbf{Impact} & \textbf{Risk Score} & \textbf{Owner} \\
+\hline
+\endhead
+R-001 & [Risk description] & [1-5] & [1-5] & [Score] & [Owner] \\
+\hline
+\caption{Risk Register}
+\end{longtable}
+
+\section{Control Assessment}
+
+\subsection{Existing Security Controls}
+[Evaluate the effectiveness of current security controls in mitigating identified risks]
+
+\subsection{Control Gaps}
+[Identify gaps in current security controls]
+
+\section{Recommendations}
+
+\subsection{Immediate Actions (Critical Risks)}
+\begin{enumerate}
+    \item [Recommendation 1]
+    \item [Recommendation 2]
+\end{enumerate}
+
+\subsection{Short-term Actions (High Risks)}
+\begin{enumerate}
+    \item [Recommendation 1]
+    \item [Recommendation 2]
+\end{enumerate}
+
+\subsection{Medium-term Actions (Medium Risks)}
+\begin{enumerate}
+    \item [Recommendation 1]
+    \item [Recommendation 2]
+\end{enumerate}
+
+\section{Risk Treatment Plan}
+
+\begin{longtable}{|p{1.5cm}|p{3cm}|p{2.5cm}|p{2cm}|p{2cm}|p{2cm}|}
+\hline
+\textbf{Risk ID} & \textbf{Treatment} & \textbf{Action} & \textbf{Owner} & \textbf{Deadline} & \textbf{Status} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Risk ID} & \textbf{Treatment} & \textbf{Action} & \textbf{Owner} & \textbf{Deadline} & \textbf{Status} \\
+\hline
+\endhead
+R-001 & Mitigate & [Action] & [Owner] & [Date] & [Status] \\
+\hline
+\caption{Risk Treatment Plan}
+\end{longtable}
+
+\section{Conclusion}
+
+[Summarize the overall risk posture and next steps for maintaining NIS2 compliance]
+
+\section{Approval}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Role} & \textbf{Name} & \textbf{Signature \& Date} \\
+\hline
+Risk Manager & & \\
+\hline
+CISO & & \\
+\hline
+Management & & \\
+\hline
+\end{tabular}
+\caption{Document Approval}
+\end{table}
+
+\appendix
+\section{Risk Assessment Questionnaire}
+[Include detailed questionnaire used for the assessment]
+
+\section{References}
+\begin{itemize}
+    \item NIS2 Directive (EU) 2022/2555
+    \item ISO/IEC 27001:2022
+    \item ISO/IEC 27005:2022
+    \item NIST Cybersecurity Framework v1.1
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,482 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{lastpage}
+
+\geometry{margin=1in}
+
+\definecolor{nis2blue}{RGB}{0,51,153}
+\definecolor{nis2gray}{RGB}{100,100,100}
+\definecolor{nis2red}{RGB}{204,0,0}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{nis2blue}{\textbf{Data Breach Response Playbook}}}
+\fancyhead[R]{\includegraphics[height=0.8cm]{logo.png}}
+\fancyfoot[L]{\textcolor{nis2gray}{\small \jobname}}
+\fancyfoot[C]{\textcolor{nis2red}{\small\textbf{CONFIDENTIAL}}}
+\fancyfoot[R]{\textcolor{nis2gray}{\small Page \thepage\ of \pageref{LastPage}}}
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=nis2blue,
+    filecolor=nis2blue,
+    urlcolor=nis2blue,
+}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\Huge\bfseries\textcolor{nis2blue}{Data Breach Response Playbook}\par}
+    \vspace{0.5cm}
+    {\Large NIS2 \& GDPR Compliance\par}
+    \vspace{2cm}
+    \textcolor{nis2red}{\Large\textbf{CRITICAL INCIDENT - TIME-SENSITIVE}}
+    \vfill
+    {\large Organization: [ORGANIZATION]\par}
+    {\large Version: 1.0\par}
+    {\large Last Updated: \today\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Quick Reference}
+
+\begin{center}
+\fbox{\begin{minipage}{0.9\textwidth}
+\textbf{DATA BREACH - IMMEDIATE ACTIONS}
+
+\textbf{Indicators:}
+\begin{itemize}
+    \item Unauthorized access to databases
+    \item Data exfiltration alerts
+    \item Misconfigured systems exposing data
+    \item External notification of leaked data
+    \item Dark web monitoring alerts
+\end{itemize}
+
+\textbf{CRITICAL TIMELINE:}
+\begin{itemize}
+    \item \textbf{NIS2}: 24h early warning, 72h notification, 1 month final report
+    \item \textbf{GDPR}: 72 hours to DPA (Data Protection Authority)
+    \item \textbf{Data Subjects}: Without undue delay if high risk
+\end{itemize}
+
+\textbf{IMMEDIATE ACTIONS:}
+\begin{enumerate}
+    \item CONTAIN: Stop data exfiltration
+    \item ASSESS: Determine scope and impact
+    \item NOTIFY: IR Team, CISO, Legal, DPO
+    \item PRESERVE: Collect forensic evidence
+    \item REPORT: Initiate regulatory notifications
+\end{enumerate}
+\end{minipage}}
+\end{center}
+
+\section{Phase 1: Detection \& Containment (0-2 Hours)}
+
+\subsection{Detection Methods}
+
+\textbf{Internal Detection:}
+\begin{itemize}
+    \item DLP (Data Loss Prevention) alerts
+    \item SIEM unusual data transfer patterns
+    \item Database audit logs
+    \item Cloud access security broker (CASB)
+    \item Network traffic anomalies
+\end{itemize}
+
+\textbf{External Notification:}
+\begin{itemize}
+    \item Security researcher report
+    \item Customer complaint
+    \item Media inquiry
+    \item Dark web monitoring service
+    \item Law enforcement notification
+\end{itemize}
+
+\subsection{Immediate Containment Actions}
+
+\textbf{Stop Data Exposure (0-30 min):}
+\begin{enumerate}
+    \item Take misconfigured system offline
+    \item Revoke compromised credentials
+    \item Block unauthorized IP addresses
+    \item Disable compromised accounts
+    \item Close exposed ports/services
+    \item Remove publicly accessible data
+\end{enumerate}
+
+\textbf{Preserve Evidence (30-60 min):}
+\begin{itemize}
+    \item Capture system logs
+    \item Database access logs
+    \item Network traffic captures
+    \item Screenshots of exposure
+    \item User activity logs
+\end{itemize}
+
+\textbf{Notify IR Team (60-120 min):}
+\begin{itemize}
+    \item IR Team Leader
+    \item CISO
+    \item Data Protection Officer (DPO)
+    \item Legal Counsel
+    \item Privacy Team
+    \item Communications Lead
+\end{itemize}
+
+\section{Phase 2: Assessment (2-24 Hours)}
+
+\subsection{Scope Determination}
+
+\textbf{Critical Questions:}
+\begin{enumerate}
+    \item What data was accessed/exposed?
+    \item How much data? (number of records)
+    \item What type of data? (personal, sensitive, financial)
+    \item Who was affected? (customers, employees, partners)
+    \item When did the breach occur?
+    \item How long was data exposed?
+    \item Was data exfiltrated or just accessed?
+    \item Is data encrypted or plaintext?
+\end{enumerate}
+
+\subsection{Data Classification}
+
+\begin{longtable}{|p{4cm}|p{9cm}|}
+\hline
+\textbf{Data Category} & \textbf{Examples \& Impact} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Data Category} & \textbf{Examples \& Impact} \\
+\hline
+\endhead
+\textbf{Personal Data} & Names, addresses, emails, phone numbers - GDPR applies \\
+\hline
+\textbf{Sensitive Personal Data} & Health, racial origin, political opinions, biometric - HIGH RISK \\
+\hline
+\textbf{Financial Data} & Bank accounts, credit cards (PCI DSS), payment information \\
+\hline
+\textbf{Authentication} & Passwords, security questions, MFA seeds - CRITICAL \\
+\hline
+\textbf{Business Data} & Trade secrets, IP, contracts, customer lists \\
+\hline
+\caption{Data Classification for Breach Assessment}
+\end{longtable}
+
+\subsection{Root Cause Analysis}
+
+\textbf{Common Causes:}
+\begin{itemize}
+    \item Misconfigured cloud storage (S3, Azure Blob)
+    \item SQL injection vulnerability
+    \item Stolen/compromised credentials
+    \item Insider threat (malicious or accidental)
+    \item Phishing leading to account compromise
+    \item Unpatched vulnerabilities
+    \item Third-party/supply chain breach
+\end{itemize}
+
+\subsection{Impact Assessment}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Impact Factor} & \textbf{Assessment} \\
+\hline
+Number of individuals & [NUMBER] \\
+\hline
+Type of data & [PERSONAL/SENSITIVE/FINANCIAL] \\
+\hline
+Likelihood of misuse & [HIGH/MEDIUM/LOW] \\
+\hline
+GDPR high risk? & [YES/NO] \\
+\hline
+NIS2 significant? & [YES/NO] \\
+\hline
+Business impact & €[AMOUNT] \\
+\hline
+\end{tabular}
+\caption{Impact Assessment Matrix}
+\end{table}
+
+\section{Phase 3: Regulatory Notification}
+
+\subsection{NIS2 Incident Reporting}
+
+\textbf{Significant Incident Criteria:}
+\begin{itemize}
+    \item Service disruption
+    \item Financial loss
+    \item Considerable damage to persons
+\end{itemize}
+
+\textbf{Reporting Timeline:}
+\begin{enumerate}
+    \item \textbf{24 hours}: Early warning to competent authority
+    \item \textbf{72 hours}: Incident notification with assessment
+    \item \textbf{1 month}: Final detailed report
+\end{enumerate}
+
+\subsection{GDPR Data Breach Notification}
+
+\textbf{72-Hour Rule:}
+
+Must notify Data Protection Authority within 72 hours if:
+\begin{itemize}
+    \item Breach likely to result in risk to individuals' rights and freedoms
+    \item Personal data involved
+    \item Not encrypted or otherwise protected
+\end{itemize}
+
+\textbf{DPA Notification Must Include:}
+\begin{enumerate}
+    \item Nature of breach
+    \item Categories and approximate number of individuals
+    \item Categories and approximate number of records
+    \item Contact point (DPO)
+    \item Likely consequences
+    \item Measures taken or proposed
+\end{enumerate}
+
+\textbf{Exceptions (No notification required if):}
+\begin{itemize}
+    \item Data encrypted and key not compromised
+    \item Technical/organizational measures prevent high risk
+    \item Subsequent measures eliminate high risk
+\end{itemize}
+
+\subsection{Data Subject Notification}
+
+\textbf{Required if high risk to individuals}
+
+\textbf{Notification Should Include:}
+\begin{itemize}
+    \item Description of breach in clear language
+    \item Contact point for more information (DPO)
+    \item Likely consequences
+    \item Measures taken to mitigate
+    \item Recommendations for individuals (password reset, monitoring)
+\end{itemize}
+
+\textbf{Notification Methods:}
+\begin{itemize}
+    \item Email (preferred)
+    \item Letter (for those without email)
+    \item Website notification (if contact details unavailable)
+    \item Media announcement (for mass breaches)
+\end{itemize}
+
+\section{Phase 4: Remediation}
+
+\subsection{Short-term Actions (0-7 days)}
+
+\begin{enumerate}
+    \item Fix vulnerability or misconfiguration
+    \item Revoke all potentially compromised credentials
+    \item Force password resets for affected accounts
+    \item Enhanced monitoring of affected systems
+    \item Remove exposed data from public internet
+    \item Contact search engines for de-indexing (if applicable)
+\end{enumerate}
+
+\subsection{Medium-term Actions (7-30 days)}
+
+\begin{itemize}
+    \item Security audit of similar systems
+    \item Implement additional controls
+    \item Third-party security assessment
+    \item Dark web monitoring for exposed data
+    \item Credit monitoring for affected individuals (if applicable)
+    \item Review and update security policies
+\end{itemize}
+
+\subsection{Long-term Actions (30+ days)}
+
+\begin{itemize}
+    \item Architecture review and improvements
+    \item Enhanced security controls implementation
+    \item Staff training and awareness
+    \item Process improvements
+    \item Technology upgrades
+\end{itemize}
+
+\section{Phase 5: Communication}
+
+\subsection{Internal Communications}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Audience} & \textbf{Message} & \textbf{Timing} \\
+\hline
+Executive Team & Full details, impact & Immediate \\
+\hline
+Employees & Need-to-know basis & Within 24h \\
+\hline
+Legal/Compliance & Complete information & Immediate \\
+\hline
+Customer Service & FAQs, talking points & Before public notice \\
+\hline
+\end{tabular}
+\caption{Internal Communication Plan}
+\end{table}
+
+\subsection{External Communications}
+
+\textbf{Press Release/Public Statement:}
+\begin{itemize}
+    \item Approved by Legal Counsel
+    \item Factual, concise, empathetic
+    \item Outline what happened
+    \item What we're doing about it
+    \item How to get more information
+    \item Avoid speculation or blame
+\end{itemize}
+
+\textbf{Customer Support:}
+\begin{itemize}
+    \item Dedicated hotline or email
+    \item FAQ document prepared
+    \item Response templates
+    \item Escalation procedures
+    \item Log all inquiries
+\end{itemize}
+
+\section{Decision Trees}
+
+\subsection{GDPR Notification Decision Tree}
+
+\begin{enumerate}
+    \item \textbf{Q:} Is personal data involved? \\
+    NO → No GDPR notification required \\
+    YES → Continue
+
+    \item \textbf{Q:} Is data encrypted with key not compromised? \\
+    YES → No notification required (document decision) \\
+    NO → Continue
+
+    \item \textbf{Q:} Likely to result in risk to individuals? \\
+    NO → No notification required (document decision) \\
+    YES → \textbf{Notify DPA within 72 hours}
+
+    \item \textbf{Q:} High risk to individuals? \\
+    NO → DPA notification only \\
+    YES → \textbf{Notify DPA AND data subjects without undue delay}
+\end{enumerate}
+
+\section{Key Contacts}
+
+\subsection{Internal Team}
+
+\begin{longtable}{|p{4cm}|p{3.5cm}|p{5cm}|}
+\hline
+\textbf{Role} & \textbf{Name} & \textbf{Contact} \\
+\hline
+Data Protection Officer & [NAME] & [PHONE/EMAIL] \\
+\hline
+Legal Counsel & [NAME] & [PHONE/EMAIL] \\
+\hline
+CISO & [NAME] & [PHONE/EMAIL] \\
+\hline
+Privacy Team Lead & [NAME] & [PHONE/EMAIL] \\
+\hline
+Communications Lead & [NAME] & [PHONE/EMAIL] \\
+\hline
+\caption{Internal Contacts}
+\end{longtable}
+
+\subsection{External Authorities}
+
+\begin{itemize}
+    \item \textbf{Data Protection Authority:} [NATIONAL DPA] - [CONTACT]
+    \item \textbf{NIS2 Competent Authority:} [AUTHORITY] - [CONTACT]
+    \item \textbf{Law Enforcement:} [CYBERCRIME UNIT] - [CONTACT]
+    \item \textbf{Cyber Insurance:} [INSURER] - [POLICY \#] - [HOTLINE]
+\end{itemize}
+
+\section{Templates}
+
+\subsection{Data Subject Notification Template}
+
+\textit{See Appendix A for full template}
+
+\textbf{Subject:} Important Security Notice Regarding Your [ORGANIZATION] Account
+
+\textbf{Body outline:}
+\begin{itemize}
+    \item What happened
+    \item What information was involved
+    \item What we are doing
+    \item What you should do (recommendations)
+    \item How to contact us
+    \item Resources (credit monitoring if applicable)
+\end{itemize}
+
+\subsection{GDPR DPA Notification Template}
+
+\textit{See Appendix B for full template}
+
+Must include all required elements per GDPR Article 33.
+
+\section{Post-Incident}
+
+\subsection{Lessons Learned}
+
+\textbf{Within 2 weeks of incident closure:}
+\begin{itemize}
+    \item What was the root cause?
+    \item How was it detected?
+    \item What worked well in response?
+    \item What can be improved?
+    \item Preventive measures needed?
+\end{itemize}
+
+\subsection{Documentation}
+
+Maintain for regulatory purposes:
+\begin{itemize}
+    \item Complete incident timeline
+    \item All notifications sent (DPA, data subjects)
+    \item Assessment and decision documentation
+    \item Evidence of remediation
+    \item Lessons learned report
+\end{itemize}
+
+\textbf{Retention:} Minimum 3 years (NIS2), longer if required by GDPR or other regulations
+
+\section{Prevention Checklist}
+
+\begin{itemize}
+    \item ✅ Regular security assessments
+    \item ✅ Data minimization practices
+    \item ✅ Encryption at rest and in transit
+    \item ✅ Access controls and least privilege
+    \item ✅ Regular access reviews
+    \item ✅ Security awareness training
+    \item ✅ Vulnerability management
+    \item ✅ Penetration testing
+    \item ✅ Data inventory maintained
+    \item ✅ Privacy by design
+    \item ✅ Vendor security assessments
+    \item ✅ Incident response plan tested
+\end{itemize}
+
+\end{document}

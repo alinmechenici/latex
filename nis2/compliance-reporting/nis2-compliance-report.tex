@@ -1,0 +1,464 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{lastpage}
+
+\geometry{margin=1in}
+
+\definecolor{nis2blue}{RGB}{0,51,153}
+\definecolor{nis2gray}{RGB}{100,100,100}
+\definecolor{compliant}{RGB}{0,153,51}
+\definecolor{partial}{RGB}{255,153,0}
+\definecolor{noncompliant}{RGB}{204,0,0}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{nis2blue}{\textbf{NIS2 Compliance Report}}}
+\fancyhead[R]{\includegraphics[height=0.8cm]{logo.png}}
+\fancyfoot[L]{\textcolor{nis2gray}{\small \jobname}}
+\fancyfoot[C]{\textcolor{nis2gray}{\small Internal Use Only}}
+\fancyfoot[R]{\textcolor{nis2gray}{\small Page \thepage\ of \pageref{LastPage}}}
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=nis2blue,
+    filecolor=nis2blue,
+    urlcolor=nis2blue,
+}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\Huge\bfseries\textcolor{nis2blue}{NIS2 Compliance Report}\par}
+    \vspace{0.5cm}
+    {\Large Annual Compliance Assessment\par}
+    \vspace{2cm}
+    {\Large\textbf{Organization:} [ORGANIZATION]\par}
+    \vspace{0.5cm}
+    {\Large\textbf{Reporting Period:} [PERIOD]\par}
+    \vspace{0.5cm}
+    {\Large\textbf{Report Date:} \today\par}
+    \vspace{0.5cm}
+    {\Large\textbf{Version:} 1.0\par}
+    \vfill
+    {\small Directive (EU) 2022/2555 - NIS2 Compliance Assessment\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Executive Summary}
+
+\subsection{Compliance Status Overview}
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|c|c|c|}
+\hline
+\textbf{Category} & \textbf{Compliant} & \textbf{Partial} & \textbf{Non-Compliant} \\
+\hline
+Risk Management & X/Y & X/Y & X/Y \\
+\hline
+Incident Handling & X/Y & X/Y & X/Y \\
+\hline
+Business Continuity & X/Y & X/Y & X/Y \\
+\hline
+Supply Chain Security & X/Y & X/Y & X/Y \\
+\hline
+Security Measures & X/Y & X/Y & X/Y \\
+\hline
+\textbf{Overall} & \textbf{X\%} & \textbf{X\%} & \textbf{X\%} \\
+\hline
+\end{tabular}
+\caption{Compliance Status Summary}
+\end{table}
+
+\subsection{Key Findings}
+\begin{itemize}
+    \item Overall compliance rate: [XX\%]
+    \item Critical gaps identified: [NUMBER]
+    \item Incidents reported: [NUMBER]
+    \item Major achievements: [SUMMARY]
+\end{itemize}
+
+\section{Organizational Context}
+
+\subsection{Entity Classification}
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Entity Type} & Essential / Important \\
+\hline
+\textbf{Sector} & [SECTOR] \\
+\hline
+\textbf{Size} & Medium / Large \\
+\hline
+\textbf{Employees} & [NUMBER] \\
+\hline
+\textbf{Annual Turnover} & [AMOUNT] \\
+\hline
+\end{tabular}
+\caption{Entity Classification}
+\end{table}
+
+\subsection{Competent Authority}
+\begin{itemize}
+    \item Authority: [NATIONAL AUTHORITY]
+    \item Registration Date: [DATE]
+    \item Entity ID: [ID NUMBER]
+\end{itemize}
+
+\section{Article 21 - Cybersecurity Risk Management}
+
+\subsection{Risk Analysis and Security Policies}
+
+\subsubsection{Requirement}
+Policies for risk analysis and information system security
+
+\subsubsection{Status}
+\textcolor{compliant}{$\blacksquare$} Compliant \quad
+$\square$ Partially Compliant \quad
+$\square$ Non-Compliant
+
+\subsubsection{Evidence}
+\begin{itemize}
+    \item Risk Assessment Report dated [DATE]
+    \item Cybersecurity Policy version [VERSION]
+    \item Annual risk assessment conducted
+    \item Management approval obtained
+\end{itemize}
+
+\subsubsection{Gaps Identified}
+[List any gaps or areas for improvement]
+
+\subsection{Incident Handling}
+
+\subsubsection{Requirement}
+Policies and procedures for incident handling
+
+\subsubsection{Status}
+\textcolor{compliant}{$\blacksquare$} Compliant \quad
+$\square$ Partially Compliant \quad
+$\square$ Non-Compliant
+
+\subsubsection{Evidence}
+\begin{itemize}
+    \item Incident Response Plan dated [DATE]
+    \item Incident Response Team established
+    \item 24/7 incident reporting capability
+    \item Incident handling procedures documented
+\end{itemize}
+
+\subsubsection{Performance Metrics}
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|r|}
+\hline
+\textbf{Metric} & \textbf{Value} \\
+\hline
+Total incidents & [NUMBER] \\
+\hline
+Significant incidents & [NUMBER] \\
+\hline
+Average response time & [TIME] \\
+\hline
+Incidents reported to authority & [NUMBER] \\
+\hline
+\end{tabular}
+\caption{Incident Handling Metrics}
+\end{table}
+
+\subsection{Business Continuity and Crisis Management}
+
+\subsubsection{Status}
+$\square$ Compliant \quad
+\textcolor{partial}{$\blacksquare$} Partially Compliant \quad
+$\square$ Non-Compliant
+
+\subsubsection{Evidence}
+\begin{itemize}
+    \item Business Continuity Plan dated [DATE]
+    \item Business Impact Analysis completed
+    \item RTO and RPO defined
+    \item BCP tested on [DATE]
+\end{itemize}
+
+\subsubsection{Gaps}
+\begin{itemize}
+    \item Crisis management procedures need enhancement
+    \item Communication plan requires update
+\end{itemize}
+
+\subsection{Supply Chain Security}
+
+\subsubsection{Status}
+\textcolor{compliant}{$\blacksquare$} Compliant \quad
+$\square$ Partially Compliant \quad
+$\square$ Non-Compliant
+
+\subsubsection{Evidence}
+\begin{itemize}
+    \item Vendor Security Assessment process implemented
+    \item Critical suppliers identified and assessed
+    \item Contractual security requirements in place
+    \item Regular vendor reviews conducted
+\end{itemize}
+
+\subsection{Security in Acquisition, Development, and Maintenance}
+
+\subsubsection{Status}
+\textcolor{compliant}{$\blacksquare$} Compliant \quad
+$\square$ Partially Compliant \quad
+$\square$ Non-Compliant
+
+\subsubsection{Evidence}
+\begin{itemize}
+    \item Secure development lifecycle implemented
+    \item Security requirements in procurement
+    \item Code review processes
+    \item Vulnerability scanning in CI/CD
+\end{itemize}
+
+\subsection{Effectiveness Assessment}
+
+\subsubsection{Status}
+\textcolor{compliant}{$\blacksquare$} Compliant \quad
+$\square$ Partially Compliant \quad
+$\square$ Non-Compliant
+
+\subsubsection{Evidence}
+\begin{itemize}
+    \item Quarterly security metrics reporting
+    \item Annual effectiveness review completed
+    \item KPIs defined and tracked
+    \item Internal audit program operational
+\end{itemize}
+
+\subsection{Cybersecurity Training and Hygiene}
+
+\subsubsection{Status}
+\textcolor{compliant}{$\blacksquare$} Compliant \quad
+$\square$ Partially Compliant \quad
+$\square$ Non-Compliant
+
+\subsubsection{Evidence}
+\begin{itemize}
+    \item Security Awareness Program implemented
+    \item 98\% training completion rate
+    \item Monthly phishing simulations
+    \item Cyber hygiene guidelines published
+\end{itemize}
+
+\subsection{Cryptography and Encryption}
+
+\subsubsection{Status}
+\textcolor{compliant}{$\blacksquare$} Compliant \quad
+$\square$ Partially Compliant \quad
+$\square$ Non-Compliant
+
+\subsubsection{Evidence}
+\begin{itemize}
+    \item Encryption Policy documented
+    \item Data at rest: AES-256 encryption
+    \item Data in transit: TLS 1.3
+    \item Key management procedures in place
+\end{itemize}
+
+\subsection{Human Resources, Access Control, Asset Management}
+
+\subsubsection{Status}
+\textcolor{compliant}{$\blacksquare$} Compliant \quad
+$\square$ Partially Compliant \quad
+$\square$ Non-Compliant
+
+\subsubsection{Evidence}
+\begin{itemize}
+    \item Access Control Policy implemented
+    \item Asset inventory maintained
+    \item Background checks for sensitive roles
+    \item Quarterly access reviews
+\end{itemize}
+
+\subsection{Multi-Factor Authentication}
+
+\subsubsection{Status}
+\textcolor{compliant}{$\blacksquare$} Compliant \quad
+$\square$ Partially Compliant \quad
+$\square$ Non-Compliant
+
+\subsubsection{Evidence}
+\begin{itemize}
+    \item MFA implemented for all users
+    \item 100\% adoption rate
+    \item MFA required for remote access
+    \item MFA required for privileged accounts
+\end{itemize}
+
+\section{Article 23 - Incident Reporting}
+
+\subsection{Reporting Obligations Compliance}
+
+\begin{longtable}{|p{3cm}|p{3cm}|p{3cm}|p{4cm}|}
+\hline
+\textbf{Incident} & \textbf{Classification} & \textbf{Reported} & \textbf{Timeline Met} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Incident} & \textbf{Classification} & \textbf{Reported} & \textbf{Timeline Met} \\
+\hline
+\endhead
+INC-2024-001 & Significant & Yes & 24h: Yes, 72h: Yes, Final: Yes \\
+\hline
+INC-2024-002 & Not significant & N/A & N/A \\
+\hline
+\caption{Incident Reporting Compliance}
+\end{longtable}
+
+\subsection{Reporting Performance}
+\begin{itemize}
+    \item Early warning (24h): [X/Y met]
+    \item Incident notification (72h): [X/Y met]
+    \item Final reports (1 month): [X/Y met]
+\end{itemize}
+
+\section{Management Body Oversight}
+
+\subsection{Management Involvement}
+\begin{itemize}
+    \item Quarterly cybersecurity briefings to management
+    \item Annual NIS2 compliance review by board
+    \item Management approved cybersecurity budget
+    \item CISO reports directly to CEO
+    \item Management participated in IR exercise
+\end{itemize}
+
+\subsection{Training}
+\begin{itemize}
+    \item Management completed cybersecurity awareness training
+    \item NIS2-specific training delivered
+    \item Crisis management training conducted
+\end{itemize}
+
+\section{Key Performance Indicators}
+
+\begin{longtable}{|p{5cm}|p{2cm}|p{2cm}|p{3cm}|}
+\hline
+\textbf{KPI} & \textbf{Target} & \textbf{Actual} & \textbf{Status} \\
+\hline
+\endfirsthead
+\hline
+\textbf{KPI} & \textbf{Target} & \textbf{Actual} & \textbf{Status} \\
+\hline
+\endhead
+Training completion rate & 100\% & [X\%] & [Status] \\
+\hline
+Phishing click rate & <5\% & [X\%] & [Status] \\
+\hline
+Patch compliance (critical) & 95\% & [X\%] & [Status] \\
+\hline
+Incident response time & <1h & [TIME] & [Status] \\
+\hline
+Vulnerability remediation & <30d & [DAYS] & [Status] \\
+\hline
+\caption{Key Performance Indicators}
+\end{longtable}
+
+\section{Gaps and Remediation Plan}
+
+\subsection{Critical Gaps}
+\begin{enumerate}
+    \item [Gap description]
+    \begin{itemize}
+        \item Remediation: [Action]
+        \item Owner: [Name]
+        \item Deadline: [Date]
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Areas for Improvement}
+\begin{enumerate}
+    \item [Improvement area]
+    \item [Improvement area]
+\end{enumerate}
+
+\section{Investment and Resources}
+
+\subsection{Cybersecurity Budget}
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|r|r|}
+\hline
+\textbf{Category} & \textbf{Budget} & \textbf{Spent} \\
+\hline
+Personnel & [AMOUNT] & [AMOUNT] \\
+\hline
+Technology & [AMOUNT] & [AMOUNT] \\
+\hline
+Training & [AMOUNT] & [AMOUNT] \\
+\hline
+Consulting & [AMOUNT] & [AMOUNT] \\
+\hline
+\textbf{Total} & \textbf{[AMOUNT]} & \textbf{[AMOUNT]} \\
+\hline
+\end{tabular}
+\caption{Cybersecurity Budget}
+\end{table}
+
+\subsection{Staffing}
+\begin{itemize}
+    \item CISO: 1 FTE
+    \item Security Team: [NUMBER] FTE
+    \item IT Security: [NUMBER] FTE
+\end{itemize}
+
+\section{Continuous Improvement}
+
+\subsection{Planned Initiatives}
+\begin{enumerate}
+    \item [Initiative 1] - [Completion date]
+    \item [Initiative 2] - [Completion date]
+    \item [Initiative 3] - [Completion date]
+\end{enumerate}
+
+\subsection{Next Period Objectives}
+\begin{itemize}
+    \item Achieve 100\% compliance across all areas
+    \item Reduce incident response time by 20\%
+    \item Implement advanced threat detection
+    \item Enhance supply chain security program
+\end{itemize}
+
+\section{Conclusion}
+
+[Summary of overall compliance posture, achievements, and commitment to continuous improvement]
+
+\section{Approval}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Role} & \textbf{Name} & \textbf{Date} \\
+\hline
+CISO & & \\
+\hline
+CEO & & \\
+\hline
+Management Board & & \\
+\hline
+\end{tabular}
+\end{table}
+
+\end{document}
